@@ -29,6 +29,8 @@ body {
 
 .top-nav {
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
 
   width: 100%;
   height: 52px;
@@ -39,6 +41,8 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  border-bottom: 1px solid #8c8c8c;
 }
 
 .top-nav__location {
@@ -70,11 +74,13 @@ body {
   box-sizing: border-box;
 
   width: 100%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
   padding: 0 16px;
   margin-bottom: 58px;
+  margin-top: 52px;
 }
 
 .product-container__item {
@@ -166,6 +172,8 @@ body {
   justify-content: space-around;
 
   padding: 8px;
+
+  border-top: 1px solid #8c8c8c;
 }
 
 .option-item {
