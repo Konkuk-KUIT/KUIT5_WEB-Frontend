@@ -1,30 +1,37 @@
 {
-  "name": "ho0010",
+  "name": "kuit5_web-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "KUIT 5기 WEB Part 스터디 실습, 미션 저장소입니다.    5th WEB Part Lead : @ho0010 @Jinho1011 @Turtle-Hwan @hamxxn   > 한 학기 동안 많은 것을 얻어갈 수 있으면 좋겠습니다.",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server . -p 3000",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:codegen": "playwright codegen",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Konkuk-KUIT/KUIT5_WEB-Frontend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "^5.0.1"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Konkuk-KUIT/KUIT5_WEB-Frontend/issues"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "homepage": "https://github.com/Konkuk-KUIT/KUIT5_WEB-Frontend#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0",
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-scripts": "^5.0.1"
   }
 }
