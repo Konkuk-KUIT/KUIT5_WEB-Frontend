@@ -1,0 +1,183 @@
+/* global styles 정의 */
+li {
+  list-style: none;
+}
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.post-header header {
+  display: flex;
+  position: fixed;
+  padding: 12px 16px;
+  width: 100%;
+  justify-content: space-between; /* 자식 요소들을 좌우 끝에 배치하고, 사이 공간은 최대한 벌려준다 -> padding 때문에 b가 화면상에서 사라짐 */
+  box-sizing: border-box;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+
+}
+
+.post-palce__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.post-place__btn .post-place__name {
+  margin-right: 6px;
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.post-header .header__menu-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  margin-top: 56px;
+  padding-bottom: 58px; /*아래 nav의 세로가 54px이어서 그만끔 뺀거임 */
+}
+
+.post .post-product__container {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.post .product__img {
+  border-radius: 4px;
+  /* background: url(<path-to-image>) lightgray 50% / cover no-repeat, #d9d9d9; */
+  margin-right: 16px;
+}
+
+.post .product__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.post .product-desc__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 4px;
+  flex: 1 0 0; /* 단위가 px인가? */
+}
+
+.product-desc__container .product__name {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.product-desc__container .product__place-date {
+  gap: 4px;
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.product-desc__container .product__price {
+  color: #ff7e36;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 146.667% */
+}
+
+.product-reaction__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.product__reaction img {
+  width: 16px;
+  height: 16px;
+}
+
+.product-reaction__container .product-reaction {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.product-reaction__container .reaction__num {
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 52px;
+  padding: 8px 0;
+  border-top: 1px solid #d9d9d9; /* nav바 위에 선 그어주기 */
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.bottom-bar .bottom__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.bottom-bar .btn__name {
+  color: #000;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.add__btn {
+  display: flex;
+  position: fixed;
+  bottom: 74px; /* 화면에 px로 지정해서 고정. 이렇게 하는게 맞나..? */
+  right: 16px;
+  padding: 12px 12px;
+  border-radius: 100px;
+  align-items: flex-start;
+  background: #ff7e36;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+}
