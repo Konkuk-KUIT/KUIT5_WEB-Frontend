@@ -74,4 +74,5 @@ const marketModel = {
   ],
 };
 
+//http://www.placehold.co/240
 export default marketModel;

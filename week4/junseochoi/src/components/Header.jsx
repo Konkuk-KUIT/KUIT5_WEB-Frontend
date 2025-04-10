@@ -1,11 +1,11 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ location }) => {
   return (
     <section className="post-header">
       <header>
         <div className="header__icons">
-          <span className="region_name">군자동</span>
+          <span className="region_name">{location}</span>
           <button>
             <img
               src="./assets/bottom_chevron.svg"
