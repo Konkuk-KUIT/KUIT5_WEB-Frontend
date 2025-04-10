@@ -1,0 +1,184 @@
+body {
+  width: 422px;
+}
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-header header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #eeeeee;
+  box-sizing: border-box;
+  align-items: center;
+  width: 390px;
+  height: 52px;
+  padding: 12px 16px;
+}
+
+.list-header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list-header__location {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+.list-header__span {
+  font-weight: 600;
+}
+
+.list-header__arrow-img {
+  width: 14px;
+}
+
+.list-header__notice-img {
+  width: 24px;
+}
+
+.list-body {
+  width: 390px;
+  height: 650px;
+  gap: 16px;
+  overflow-y: scroll;
+  padding: 0 16px;
+}
+
+.list-one {
+  display: flex;
+  flex-direction: row;
+  width: 358px;
+  height: 110px;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: solid 1px #eeeeee;
+}
+.list-one-explain {
+  display: flex;
+  flex-direction: column;
+  width: 232px;
+  height: 90px;
+  gap: 4px;
+}
+
+.list-one-item-wrapper {
+  overflow: hidden;
+  width: 110px;
+  height: 110px;
+}
+
+.list-one {
+  cursor: pointer;
+}
+
+.list-one-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.list-one-item-reaction {
+  width: 232px;
+  height: 16px;
+  gap: 4px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.list-one-item-reaction span {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #8c8c8c;
+  cursor: pointer;
+}
+
+.list-one-item-reaction svg {
+  cursor: pointer;
+}
+
+.list-one-item-title {
+  width: 232px;
+  height: 20px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.list-one-item-location {
+  height: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8c8c8c;
+}
+
+.list-one-item-price {
+  color: #ff7e36;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.carrot-footer {
+  width: 390px;
+  justify-content: end;
+  display: flex;
+}
+
+.carrot-footer-main {
+  width: 390px;
+  height: 58px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+  border-top: 1px solid #eeeeee;
+}
+
+.carrot-footer-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.carrot-footer-option span {
+  height: 14px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.carrot-footer-add {
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  bottom: 160px;
+}
+.carrot-footer-add button {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  background-color: #ff7e36;
+  left: 331px;
+  top: 643px;
+  border-radius: 100%;
+  color: white;
+  box-shadow: 0px 4px 12px 0px #0000001f;
+}
