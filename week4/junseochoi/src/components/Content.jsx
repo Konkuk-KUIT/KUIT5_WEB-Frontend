@@ -2,7 +2,7 @@ import React from "react";
 
 const Content = ({ items }) => {
   return (
-    <div>
+    <>
       <section className="post__list">
         {items.map(
           (items, index) =>
@@ -25,8 +25,8 @@ const Content = ({ items }) => {
                       <span className="merc__price">{items.price}</span>
                     </div>
                   </div>
-                  {(items.comments > 0 || items.likes > 0) && (
-                    <div className="bottom__content">
+                  <div className="bottom__content">
+                    {items.comments > 0 && (
                       <div className="chat">
                         <img
                           src="./assets/chat.svg"
@@ -35,6 +35,8 @@ const Content = ({ items }) => {
                         />
                         <div className="chat__num">{items.comments}</div>
                       </div>
+                    )}
+                    {items.likes > 0 && (
                       <div className="heart">
                         <img
                           src="./assets/heart.svg"
@@ -43,8 +45,8 @@ const Content = ({ items }) => {
                         />
                         <div className="heart_num">{items.likes}</div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </section>
               </article>
             )
@@ -58,7 +60,7 @@ const Content = ({ items }) => {
           className="plus__img"
         />
       </button>
-    </div>
+    </>
   );
 };
 

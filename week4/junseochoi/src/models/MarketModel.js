@@ -19,7 +19,7 @@ const marketModel = {
       image: "byredo-blanche.png",
       comments: 0,
       likes: 2,
-      isSold: false,
+      isSold: true,
     },
     {
       title: "샌드위치",
