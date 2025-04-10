@@ -25,24 +25,26 @@ const Content = ({ items }) => {
                       <span className="merc__price">{items.price}</span>
                     </div>
                   </div>
-                  <div className="bottom__content">
-                    <div className="chat">
-                      <img
-                        src="./assets/chat.svg"
-                        alt="채팅 수"
-                        className="chat1"
-                      />
-                      <div className="chat__num">{items.comments}</div>
+                  {(items.comments > 0 || items.likes > 0) && (
+                    <div className="bottom__content">
+                      <div className="chat">
+                        <img
+                          src="./assets/chat.svg"
+                          alt="채팅 수"
+                          className="chat1"
+                        />
+                        <div className="chat__num">{items.comments}</div>
+                      </div>
+                      <div className="heart">
+                        <img
+                          src="./assets/heart.svg"
+                          alt="좋아요 수"
+                          className="heart1"
+                        />
+                        <div className="heart_num">{items.likes}</div>
+                      </div>
                     </div>
-                    <div className="heart">
-                      <img
-                        src="./assets/heart.svg"
-                        alt="좋아요 수"
-                        className="heart1"
-                      />
-                      <div className="heart_num">{items.likes}</div>
-                    </div>
-                  </div>
+                  )}
                 </section>
               </article>
             )
