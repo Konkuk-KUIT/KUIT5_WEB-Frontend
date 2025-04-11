@@ -1,0 +1,250 @@
+/*Global Styles */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+body {
+  width: 390px;
+  height: 778px;
+  position: relative;
+}
+
+/*Dangen Styles*/
+.post-header header {
+  width: 390px;
+  display: flex;
+  position: fixed;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 12px;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  background: #ffffff;
+  z-index: 1;
+}
+
+.top-left > .location-tab {
+  width: 70px;
+  height: 28px;
+  gap: 6px;
+}
+
+.location-tab .now-location {
+  width: 50px;
+  height: 28px;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+
+.location-tab .location-list-icon {
+  width: 14px;
+  height: 14px;
+}
+header .top-right {
+  display: flex;
+  width: 104px;
+  height: 24px;
+  gap: 16px;
+}
+.post {
+  position: absolute;
+  top: 53px;
+  bottom: 19px;
+  padding: 0 16px;
+}
+
+.post .product_post {
+  display: flex;
+  padding: 16px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.post .product-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.product-image-container {
+  width: 110px;
+  height: 110px;
+}
+.product-info-container {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-1 {
+  display: flex;
+  flex-direction: column;
+  width: 232px;
+}
+
+.info1-1 {
+  display: flex;
+  flex-direction: row;
+  width: 232px;
+  height: 20px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #000000;
+}
+
+.info1-2-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 4px;
+  height: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: #8c8c8c;
+}
+.dot {
+  width: 4px;
+  height: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+.info1-2-2 {
+  display: flex;
+  flex-direction: row;
+  height: 22px;
+  color: #ff7e36;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0%;
+}
+
+.info-2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.chats {
+  display: flex;
+  width: 26px;
+  height: 16px;
+  gap: 2px;
+
+  .chat-number {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #8c8c8c;
+  }
+
+  .text {
+    width: 16px;
+    height: 16px;
+  }
+}
+.likes {
+  display: flex;
+  width: 30px;
+  height: 16px;
+  gap: 2px;
+
+  .like-number {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #8c8c8c;
+  }
+
+  .heart {
+    width: 16px;
+    height: 16px;
+  }
+}
+.post .product-container .product_img {
+  width: 100%;
+  height: 100%;
+}
+
+.post .horizon {
+  width: 100%;
+  height: 0;
+  border: 1px solid #eeeeee;
+}
+#bottom {
+  position: relative;
+}
+
+.add {
+  display: flex;
+  position: fixed;
+  width: 390px;
+  height: 80px;
+}
+
+.add-button {
+  position: fixed;
+  left: 326px;
+  bottom: 74px;
+  width: 48px;
+  height: 48px;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 100px;
+  background: #ff7e36;
+  box-shadow: 0px 4px 12px 0px #0000001f;
+}
+
+.plus-icon {
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.bottom-menu {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  border-top: 1px solid #eeeeee;
+  background: #ffffff;
+  padding: 8px 0;
+}
+
+.bottom-menu .icon {
+  width: 78px;
+  height: 42px;
+}
+
+.bottom-menu .icon > div {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 10px;
+  height: 14px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  color: #000000;
+}
+
+.bottom-menu .icon .home-button {
+  width: 10;
+  height: 14;
+}
