@@ -1,0 +1,155 @@
+// global
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.rowSet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+// header
+.contents {
+  width: 100%;
+  height: 100%;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 12px 16px;
+
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.locationBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  height: 52px;
+
+  &__text {
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+}
+
+.utilBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// content
+.contentSection {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.itemBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+  height: 142px;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.imageArea {
+  width: 30%;
+  height: 100%;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 4px;
+  }
+}
+
+.contentArea {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    &__title {
+      font-weight: bolder;
+    }
+    &__location {
+      color: #8c8c8c;
+    }
+    &__price {
+      font-weight: bolder;
+      color: #ff7e36;
+    }
+  }
+
+  &__reaction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 4px;
+  }
+}
+
+//bottomNav
+.bottomNavSection {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  position: absolute;
+  bottom: 0px;
+
+  border-top: 1px solid #d9d9d9;
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__text {
+      font-size: 13px;
+    }
+  }
+}
+
+//plus-button
+.plusButton {
+  position: fixed;
+  right: 16px;
+  bottom: 74px;
+}
