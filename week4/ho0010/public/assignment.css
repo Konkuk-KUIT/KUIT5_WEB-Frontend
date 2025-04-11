@@ -1,0 +1,158 @@
+button{
+    background:none;
+    border:none;
+    padding: none;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.location{
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    width: 50;
+    height: 28;
+
+}
+
+
+.post-header{
+    width: 100%;
+    position: relative;
+    display: flex;
+    height: 52px;
+    justify-content: space-between;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.post-header__icon-container{
+    display:flex;
+    align-items:  center;
+    width: 104px;
+    height: 24px;
+
+}
+
+.post{
+    width: 90%;
+    height: 726px;
+    padding: 16px;
+    align-items: center;
+}
+
+.product{
+    width: 100%;
+    padding: 10px 0 0 ;
+    border-bottom: 1px solid #ccc;
+}
+
+.product__img{
+    width: 90px;
+    border-radius: 4px;
+}
+
+.product__info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product__name{
+    color: #000000;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    width: 232;
+    height: 20;
+}
+
+.selllocation{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #8C8C8C;
+}
+
+.product__price{
+    color:#FF7E36;
+
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0%;
+
+}
+
+.comment-like{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 232;
+    height: 16;
+    gap: 4px;
+    color:#8C8C8C;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+
+}
+
+.whole-infomation{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    height: 100px;
+}
+
+.plus{
+    background-color: #FF7E36;
+    display: flex;
+    position: fixed;
+    right: 3%;
+    bottom : 105px;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.bottom-bar{
+    display: flex;
+    justify-content: space-between;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 92px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.set{
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    grid-template-columns: 1fr;
+    height: 42px;
+    padding: 20px;
+}
+
+.set .bottom-word{
+    color:  #000000;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    
+}

@@ -1,13 +1,17 @@
-import React from 'react';
-
-const Header = () => {};
-
-const Content = () => {};
-
-const BottomNav = () => {};
+import React from "react";
+import model from "./models/MarketModel"; // model만 import
+import { Header, Content, BottomNav } from "./components/index"; // components/index.js에서 export한 컴포넌트들
 
 const Home = () => {
-  return <div>Homedd</div>;
+  return (
+    <div>
+      <Header model={model} />
+      <Content model={model} />
+      <BottomNav />
+    </div>
+  );
 };
+
+
 
 export default Home;
