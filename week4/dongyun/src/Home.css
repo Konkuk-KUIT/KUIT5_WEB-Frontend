@@ -1,0 +1,262 @@
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* body {
+  width: 390px;
+  height: 778px;
+  top: 47px;
+} */
+
+.upper-nav {
+  width: 390px;
+  height: 52px;
+
+  padding-right: 16px;
+  padding-left: 16px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  flex-basis: 390px;
+
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-name {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.location-expand-btn {
+  width: 14px;
+  height: 14px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.menu-set {
+  width: 104px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 16px; */
+}
+
+.menu-set-btn {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.market {
+  width: 390px;
+  /* height: 726px; */
+  height: 668px;
+  gap: 16px;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  box-sizing: border-box;
+
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.market-item {
+  width: 358;
+  height: 110;
+  cursor: pointer;
+  padding: 16px;
+  box-sizing: border-box;
+  /* box-sizing: content-box; */
+  /* border-bottom: 1px solid #eeeeee; */
+
+  display: flex;
+
+  position: relative;
+}
+
+.market-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #eeeeee;
+}
+
+.item-img {
+  width: 110px;
+  height: 110px;
+  margin-right: 16px;
+
+  /* 2안 : absolute로 띄우고, 정렬 */
+  /* overflow: hidden;
+  position: relative; */
+}
+
+.item-img > img {
+  border-radius: 4px;
+
+  /* 1안 : img 태그에 object-fit 사용용 */
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+
+  /* 2안 : absolute로 띄우고, 정렬 */
+  /* position: absolute;
+  width: 100%;
+  width: 110px;
+  height: 110px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.item-info {
+  width: 232px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.item-description {
+  width: 232px;
+  height: 90px;
+  gap: 4px;
+}
+
+.item-name {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.item-loc-date {
+  width: 232px;
+  height: 16px;
+  gap: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8c8c8c;
+}
+
+.item-price {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #ff7e36;
+}
+
+.offer-info {
+  width: 232px;
+  height: 16px;
+  gap: 4px;
+  padding-top: 2px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  display: flex;
+}
+
+.offer-info-box {
+  width: 26px;
+  height: 16px;
+  gap: 2px;
+  display: flex;
+  padding-left: 2px;
+  justify-content: space-around;
+}
+
+.offer-info-img {
+  width: 16px;
+  height: 16px;
+}
+
+.offer-info-detail {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+
+.posting-btn-cover {
+  width: 48px;
+  height: 48px;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 100px;
+  border-color: #ff7e36;
+  background: #ff7e36;
+  box-shadow: 0px 4px 12px 0px #0000001f;
+
+  top: 650px;
+  left: 325px;
+
+  position: absolute;
+}
+
+.lower-nav {
+  display: flex;
+  width: 390px;
+  height: 58px;
+
+  justify-content: space-around;
+  align-items: center;
+
+  position: sticky;
+  gap: 4px;
+}
+
+.lower-nav-text {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0%;
+}
+
+.lower-nav-menu {
+  width: 78;
+  height: 42;
+  gap: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+lower-nav-icon {
+  width: 24px;
+  height: 24px;
+}
