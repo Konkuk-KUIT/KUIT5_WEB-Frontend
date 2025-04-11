@@ -1,0 +1,126 @@
+button {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.content {
+  margin: 20px auto 0;
+}
+.page-header {
+  width: 100%;
+  height: 52px;
+  font-weight: bold;
+  padding: 12px 16px;
+  font-size: 18px;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.dong-selector {
+  line-height: 24px;
+}
+.header_simple-bar {
+  position: absolute;
+  display: flex;
+  gap: 16px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 16px;
+}
+.post {
+  padding: 16px 0;
+  margin: 0 16px;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  position: relative;
+}
+.post:last-of-type {
+  border: none;
+  margin-bottom: 58px;
+}
+.post > img {
+  width: 110px;
+  height: 110px;
+}
+.thumbnail {
+  margin-right: 16px;
+}
+.item-description {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.item-name {
+  height: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.item-place {
+  font-size: 12px;
+  color: #8c8c8c;
+  height: 16px;
+  line-height: 16px;
+}
+.item-price {
+  color: #ff7e36;
+  font-size: 15px;
+  font-weight: bold;
+  height: 22px;
+  line-height: 22px;
+}
+.item-stats {
+  position: absolute;
+  bottom: 16px;
+  right: 0;
+  font-size: 12px;
+  color: #8c8c8c;
+  display: flex;
+  gap: 4px;
+}
+.item-stats span {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  cursor: pointer;
+}
+.new-post {
+  border-radius: 50%;
+  background-color: #ff7e36;
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  bottom: 74px;
+  right: 16px;
+}
+.new-post img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+}
+.footer-nav {
+  height: 58px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: white;
+  align-items: center;
+}
+.nav-menu {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  gap: 4px;
+}
+.nav-menu img {
+  height: 24px;
+  width: 24px;
+}
