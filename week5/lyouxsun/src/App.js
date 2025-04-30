@@ -9,6 +9,8 @@ const PRODUCTS = [
   { category: "Vegetables", price: "$1", stocked: true, name: "Peas" },
 ];
 const App = () => {
+  let searchInput = "";
+  let check = false;
   return <FilterableProductTable products={PRODUCTS} />;
 };
 
