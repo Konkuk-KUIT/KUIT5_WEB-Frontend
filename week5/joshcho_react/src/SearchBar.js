@@ -19,7 +19,7 @@ const SearchBar = ({
       <input
         type={"text"}
         placeholder="Search..."
-        onChange={(e) => onFilterTextChange(e.target.value)}
+        onChange={handleTextChange}
       />
       <br />
       <label>

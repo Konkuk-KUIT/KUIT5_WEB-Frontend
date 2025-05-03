@@ -2,32 +2,47 @@ import React from "react";
 import ProductCategoryRow from "./ProductCategoryRow";
 import ProductRow from "./ProductRow";
 
-const ProductTable = ({ products, filterText, inStockOnly }) => {
+const ProductTable = ({
+  products,
+  filterText,
+  inStockOnly,
+  deleteProduct,
+  updateProduct,
+}) => {
   const rows = [];
   let lastCategory = null;
 
-  products.map((product) => {
-    if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) == -1) {
-      return;
-    }
+  products
+    .sort((a, b) => a.category > b.category)
+    .map((product) => {
+      if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) == -1) {
+        return;
+      }
 
-    if (inStockOnly && !product.stocked) {
-      return;
-    }
+      if (inStockOnly && !product.stocked) {
+        return;
+      }
 
-    if (product.category !== lastCategory) {
+      if (product.category !== lastCategory) {
+        rows.push(
+          <ProductCategoryRow
+            key={product.category}
+            category={product.category}
+          />
+        );
+      }
+
       rows.push(
-        <ProductCategoryRow
-          key={product.category}
-          category={product.category}
+        <ProductRow
+          product={product}
+          key={product.name}
+          onDelete={deleteProduct}
+          onUpdate={updateProduct}
         />
       );
-    }
 
-    rows.push(<ProductRow product={product} key={product.name} />);
-
-    lastCategory = product.category;
-  });
+      lastCategory = product.category;
+    });
 
   return (
     <table>
