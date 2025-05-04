@@ -2,12 +2,14 @@ import React from "react";
 import ProductCategory from "./ProductCategory";
 import ProductRow from "./ProductRow";
 
-const ProductTable = ({ products, filterText, inStockOnly }) => {
+const ProductTable = ({ products, filterText, inStockOnly, deleteProduct }) => {
   const rows = [];
   let lastCategory = null;
 
-  products.map((product) => {
-    if(product.name.toLowerCase().indexOf(filterText.toLowerCase())===-1) {
+  products
+  .sort((a, b) => a.category.localeCompare(b.category))
+  .map((product) => {
+    if(product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
         return;
     }
 
@@ -23,10 +25,12 @@ const ProductTable = ({ products, filterText, inStockOnly }) => {
         />
       );
     }
+    
     rows.push(
         <ProductRow 
             key={product.name}  
             product={product} 
+            deleteProduct={deleteProduct}
         />
     );
 
