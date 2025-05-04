@@ -3,54 +3,55 @@ import ProductTable from './ProductTable';
 import SearchBar from './SearchBar';
 import InputBar from './InputBar';
 
-const FilterableProductTable = ({ products, setProducts }) => {
-  const [filterText, setFilterText] = useState(''); // 검색어
-  const [inStockOnly, setInStockOnly] = useState(false); // 재고만 보기
-  const [productToEdit, setProductToEdit] = useState(null); // 수정할 상품 상태
+const FilterableProductTable = ({ initialProducts, setProducts }) => {
+  const [filterText, setFilterText] = useState('');
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const [productToEdit, setProductToEdit] = useState(null);
+
+  // 기존 상품 데이터로 초기화
+  const [products, setProductsState] = useState(initialProducts);
 
   // 새 상품 추가 또는 수정
   const addProduct = (product) => {
     if (product.id) {
-      // 수정 모드: 이미 id가 있는 경우 해당 상품 수정
-      setProducts((prev) =>
-        prev.map((p) => (p.id === product.id ? product : p))
+      // 수정 모드
+      setProductsState((prev) =>
+        prev.map((p) => (p.id === product.id ? product : p)) // 수정
       );
     } else {
-      // 새 상품 추가: id가 없는 경우
-      setProducts((prev) => [...prev, { ...product, id: Date.now() }]);
+      // 새 상품 추가
+      setProductsState((prev) => [...prev, { ...product, id: Date.now() }]);
     }
   };
 
   // 상품 삭제
   const handleDeleteProduct = (productToDelete) => {
-    setProducts((prev) => prev.filter((p) => p.id !== productToDelete.id));
+    // 해당 id를 가진 상품만 삭제하고 나머지는 그대로 유지
+    setProductsState((prev) => {
+      return prev.filter((product) => product.id !== productToDelete.id);
+    });
   };
 
   // 상품 수정
   const handleEditProduct = (productToEdit) => {
-    setProductToEdit(productToEdit); // 수정할 상품 상태 설정
+    setProductToEdit(productToEdit); // 상품 수정만 처리
   };
 
   return (
     <div>
-      {/* 검색바 및 필터 기능 */}
       <SearchBar
         filterText={filterText}
         inStockOnly={inStockOnly}
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly}
       />
-      
-      {/* 상품 테이블 */}
       <ProductTable
         products={products}
         filterText={filterText}
         inStockOnly={inStockOnly}
-        onDelete={handleDeleteProduct} // 삭제 기능
-        onEdit={handleEditProduct} // 수정 기능
+        onDelete={handleDeleteProduct} // 삭제만 담당
+        onEdit={handleEditProduct} // 수정만 담당
       />
-      
-      {/* 상품 추가/수정 폼 */}
       <InputBar addProduct={addProduct} productToEdit={productToEdit} />
     </div>
   );
