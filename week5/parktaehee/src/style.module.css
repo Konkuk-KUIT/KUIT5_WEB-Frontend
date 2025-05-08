@@ -1,0 +1,12 @@
+.edit {
+  font-size: 20px;
+}
+.delete {
+  font-size: 20px;
+  color: red;
+}
+.func_div {
+  border: none;
+  background-color: transparent;
+  padding: 3px;
+}
