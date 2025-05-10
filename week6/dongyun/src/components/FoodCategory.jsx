@@ -1,7 +1,6 @@
 import FoodCell from "./FoodCell.jsx";
 import './FoodCategory.css'
 import {foodCategories} from "../models/stores.js";
-import { useNavigate } from 'react-router-dom';
 
 const FoodCategory = () => {
 

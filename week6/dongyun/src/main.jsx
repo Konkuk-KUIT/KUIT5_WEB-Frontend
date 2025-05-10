@@ -6,6 +6,7 @@ import Home from "./routes/Home.jsx";
 import Stores from "./routes/Stores.jsx"
 import Cart from "./routes/Cart.jsx"
 import GreetingPage from "./components/GreetingPage.jsx";
+import StoreMenuPage from "./components/StoreMenuPage.jsx";
 const router = createBrowserRouter([
     {
         path:"/",
@@ -17,8 +18,11 @@ const router = createBrowserRouter([
             },
             {
                 path:"/store",
-                // path:"/store/:storeId",
                 element: <Stores category="샐러드"/>
+            },
+            {
+                path:"/store/:storeId",
+                element: <StoreMenuPage storeName="샐로리 한남점"/>
             },
             {
                 path:"/cart",

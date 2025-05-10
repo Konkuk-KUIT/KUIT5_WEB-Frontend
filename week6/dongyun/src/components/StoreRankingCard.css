@@ -1,0 +1,54 @@
+.store-card{
+    display: flex;
+    flex-direction: row;
+    padding: 16px 24px 17px 0px;
+    height: auto;
+    max-height: 116px;
+    /*box-sizing: content-box;*/
+    box-sizing:border-box;
+    margin: 0;
+}
+
+.store-image{
+    width: 54px; height: 54px;
+    position: relative; background: #ECECEC;
+    border-radius: 8px;
+    margin-right: 17px;
+    margin-bottom: 3px;
+}
+
+.store-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    height: 100%;
+}
+
+.store-rank{
+    color: #333D4B;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 600;
+    word-wrap: break-word
+}
+.store-name{
+    color: #333D4B;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 600;
+    word-wrap: break-word
+}
+.store-reviews{
+    color: #6B7684;
+    font-size: 13px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word
+}
+.store-delievery{
+    color: #6B7684;
+    font-size: 13px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word
+}
