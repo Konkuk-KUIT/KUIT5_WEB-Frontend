@@ -1,0 +1,31 @@
+.food-cell {
+    display: flex;
+    width: 108px;
+    height: 74px;
+    padding: 12px 0 13px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    background-color: #FAFAFB;
+}
+
+.food-category-icon{
+    width: 28px;
+    height: 28px;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.food-category-name {
+    color: #333D4B;
+    text-align: center;
+    font-family: Pretendard, serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}
