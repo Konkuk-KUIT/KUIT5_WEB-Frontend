@@ -6,7 +6,7 @@ const list = document.getElementById("todo-list");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const text = input.value.trim();
+  const text = input.value.trim();//공백 제거
   if (text) {
     const newTodo = {
       id: Date.now(),
@@ -15,7 +15,7 @@ form.addEventListener("submit", (e) => {
     };
     todos = [...todos, newTodo];
     input.value = "";
-    render();//화면에 그리는 함수라고 합니다
+    render();
   }
 });
 
@@ -35,6 +35,7 @@ function updateTodo(id, newText) {
   todos = todos.map(todo =>
     todo.id === id ? { ...todo, text: newText } : todo
   );
+  //수정?이 안된다
   render();
 }
 
@@ -59,6 +60,7 @@ function render() {
       }
     };
 
+    //수정 버튼임 이거 누르면 바뀜
     const editBtn = document.createElement("button");
     editBtn.textContent = "수정";
     editBtn.onclick = () => {
@@ -67,10 +69,12 @@ function render() {
       editInput.focus();
     };
 
+    //삭제 버튼
     const delBtn = document.createElement("button");
     delBtn.textContent = "삭제";
     delBtn.onclick = () => deleteTodo(todo.id);
 
+    //넣기
     li.appendChild(span);
     li.appendChild(editInput);
     li.appendChild(editBtn);
