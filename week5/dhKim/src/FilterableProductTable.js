@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import ProductTable from "./ProductTable";
 import SearchBar from "./SearchBar";
-import InputBar from "./InputBar";
+import ProductForm  from "./ProductForm ";
 
 const FilterableProductTable=({products,setProducts})=>{
    
@@ -32,8 +32,8 @@ const FilterableProductTable=({products,setProducts})=>{
             inStockOnly={inStockOnly} 
             setProducts={setProducts}
             />
-            {/* 프롭스를 한번 더 내림림 */}
-            <InputBar addProduct={addProduct}/>
+            {/* 프롭스를 한번 더 내림 */}
+            <ProductForm addProduct={addProduct}/>
         </div>
     );
 };
