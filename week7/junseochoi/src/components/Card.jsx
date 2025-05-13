@@ -1,10 +1,25 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CardList from "../models/CardList";
 
 const Card = ({ count, setCount }) => {
   const [flipped, setFlipped] = useState(Array(CardList.length).fill(false));
 
+  useEffect(() => {
+    const frontCount = {};
+
+    CardList.forEach((item, idx) => {
+      if (flipped[idx]) {
+        frontCount[item.front] = (frontCount[item.front] || 0) + 1;
+      }
+    });
+
+    const countPairs = Object.values(frontCount).filter(
+      (cnt) => cnt >= 2
+    ).length;
+
+    setCount(countPairs);
+  });
   const handleClick = (index) => {
     const currentFront = CardList[index].front;
 
