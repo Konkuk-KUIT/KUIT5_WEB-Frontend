@@ -1,0 +1,71 @@
+import React, { useMemo, useState, useEffect } from 'react'
+import './index.css'
+import styled from "styled-components"
+import Card from './Card'
+
+const BINGO = 5;
+
+const imageSource = [
+    "image/img1.png",
+    "image/img2.png",
+    "image/img3.png",
+    "image/img4.png",
+    "image/img5.png"
+];
+
+
+
+const App = () => {
+    const [flippedCards, setFlippedCards] = useState([]);
+    const [matchedCard, setMatchedCard] = useState([]);
+
+    const cardsData = useMemo(() => {
+        const dup = [...imageSource, ...imageSource];
+        for (let i = 0; i < dup.length; i++) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [dup[i], dup[j]] = [dup[j], dup[i]];
+        }
+        return dup;
+    },[] );
+
+    const handleCardClick = (index)=>{
+        if(flippedCards.length===2|| flippedCards.includes(index)|| matchedCard.includes(index)) return;
+        const newFlipped = [...flippedCards,index];
+        setFlippedCards(newFlipped);
+
+        if(newFlipped.length===2){
+            const [first, second]=newFlipped;
+            if(cardsData[first]===cardsData[second]){
+                setMatchedCard([...matchedCard,first,second]);
+            }
+            setTimeout(()=> setFlippedCards([]),1000);
+        }
+    };
+
+
+    return (
+        <div id='main'>
+            <div id='top'>
+                <p id='count'>맞힌 개수 : {matchedCard.length/2}</p>
+                {matchedCard.length/2===BINGO && (
+                    <p id='correct'>정답입니다.</p>
+                )}
+            </div>
+
+            <div id='grid'>
+                {cardsData.map((src,index)=>(
+                    <Card key={index} src={src} alt={`img${index}`} flipped={flippedCards.includes(index)||matchedCard.includes(index)}
+                    onClick={()=>handleCardClick(index)}/>
+                ))}
+            </div>
+
+            <div id='bottom'>
+                <form>
+                    <button type='button' onClick={()=> window.location.reload()}>start / reset</button>
+                </form>
+            </div>
+        </div>
+    );
+};
+
+export default App
