@@ -24,7 +24,7 @@ const Card = ({ count, setCount }) => {
           updatedFlipped[secondIndex] = false;
           setFlipped(updatedFlipped);
           setSelected([]);
-        }, 3000);
+        }, 2000);
 
         return () => clearTimeout(timer);
       }
