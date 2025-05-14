@@ -1,18 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import CardList from "../models/CardList";
 import * as C from "./Card.Styled";
 
-const Card = ({ count, setCount }) => {
-  const [flipped, setFlipped] = useState(Array(CardList.length).fill(false));
+const Card = ({ count, setCount, cardList, flipped, setFlipped }) => {
   const [selected, setSelected] = useState([]);
 
   // 뒤집혀진 카드들 중 쌍이 맞는 카드가 있는지 확인
   useEffect(() => {
     if (selected.length === 2) {
       const [firstIndex, secondIndex] = selected;
-      const firstCard = CardList[firstIndex];
-      const secondCard = CardList[secondIndex];
+      const firstCard = cardList[firstIndex];
+      const secondCard = cardList[secondIndex];
 
       if (firstCard.front === secondCard.front) {
         setCount((prev) => prev + 1);
@@ -41,9 +39,10 @@ const Card = ({ count, setCount }) => {
     setFlipped(updatedFlipped);
     setSelected([...selected, index]);
   };
+
   return (
     <>
-      {CardList.map((item, index) => (
+      {cardList.map((item, index) => (
         <C.CardContainer key={index} onClick={() => handleClick(index)}>
           <C.CardInner isFlipped={flipped[index]}>
             <C.CardFront>

@@ -1,10 +1,13 @@
 import { useState } from "react";
 import Count from "./components/Count";
 import Card from "./components/Card";
-import StartReset from "./components/StartReset";
+import ResetBtn from "./components/ResetBtn";
+import OriginalCardList from "./models/CardList";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [cardList, setCardList] = useState([...OriginalCardList]);
+  const [flipped, setFlipped] = useState(Array(cardList.length).fill(false));
 
   return (
     <>
@@ -17,9 +20,21 @@ function App() {
           padding: "20px",
         }}
       >
-        <Card count={count} setCount={setCount}></Card>
+        <Card
+          count={count}
+          setCount={setCount}
+          cardList={cardList}
+          flipped={flipped}
+          setFlipped={setFlipped}
+        ></Card>
       </section>
-      <StartReset></StartReset>
+      <ResetBtn
+        cardList={cardList}
+        setCardList={setCardList}
+        flipped={flipped}
+        setFlipped={setFlipped}
+        setCount={setCount}
+      ></ResetBtn>
     </>
   );
 }
