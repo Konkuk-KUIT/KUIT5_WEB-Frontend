@@ -1,14 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { useState } from "react";
-import Search from ".components/Search";
-import { KUIT_WEB } from "./data";
+import React from "react";
+import Search from "./components/Search";
 import Card from "./components/Card";
+import { KUIT_WEB } from "./data";
+import useSearch from "./hooks/useSearch";
 
 function App() {
+  const {search, filter, handleSearch, handleBtn} = useSearch(KUIT_WEB)
+
   return (
     <>
-      <Search />
+      <Search search={search} handleSearch={handleSearch} handleBtn={handleBtn}/>
       <section
         style={{
           display: "flex",
@@ -17,9 +18,9 @@ function App() {
           padding: "20px",
         }}
       >
-        {KUIT_WEB.map((member) => {
-          <Card name={member.name} age={member.age} />;
-        })}
+        {filter.map((member) => 
+          <Card name={member.name} age={member.age} />
+        )}
       </section>
     </>
   );
