@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  width: 390px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 27px 24px 0 24px;
+}
+.salad {
+  margin: 15px 0 0 24px;
+}
