@@ -1,10 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import CardList from "../models/CardList";
+import * as C from "./Card.Styled";
 
 const Card = ({ count, setCount }) => {
   const [flipped, setFlipped] = useState(Array(CardList.length).fill(false));
 
+  // 뒤집혀진 카드들 중 쌍이 맞는 카드가 있는지 확인인
   useEffect(() => {
     const frontCount = {};
 
@@ -20,6 +22,8 @@ const Card = ({ count, setCount }) => {
 
     setCount(countPairs);
   });
+
+  // 쌍이 맞는 카드가 있다면 onClick이 작동하지 않음
   const handleClick = (index) => {
     const currentFront = CardList[index].front;
 
@@ -36,15 +40,16 @@ const Card = ({ count, setCount }) => {
   return (
     <>
       {CardList.map((item, index) => (
-        <img
-          key={index}
-          src={flipped[index] ? item.front : item.back}
-          alt={item.alt}
-          width="120px"
-          height="170px"
-          onClick={() => handleClick(index)}
-          style={{ cursor: "pointer" }}
-        />
+        <C.CardContainer key={index} onClick={() => handleClick(index)}>
+          <C.CardInner isFlipped={flipped[index]}>
+            <C.CardFront>
+              <img src={item.front} alt={item.alt} />
+            </C.CardFront>
+            <C.CardBack>
+              <img src={item.back} alt={item.alt} />
+            </C.CardBack>
+          </C.CardInner>
+        </C.CardContainer>
       ))}
     </>
   );
