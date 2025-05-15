@@ -10,23 +10,43 @@ export default function useGame() {
   const [moves, setMoves] = useState(0);
 
   const resetGame = useCallback(() => {
-    const pairList = CardList.flatMap((c) => [
-      { ...c, uniqueId: `${c.id}-a` },
-      { ...c, uniqueId: `${c.id}-b` },
-    ]);
+    const pairList = [...CardList, ...CardList].map((card, index) => ({
+    ...card,
+    uniqueId: `${card.id}-${index}`,}));
     setCards(shuffle(pairList));
     setFlipped([]);
     setMatchedIds([]);
     setMoves(0);
   }, []);
 
+useEffect(() => {
+    resetGame();
+  }, [resetGame]);
+ 
+
+
+  const flipCard = useCallback((idx) => {
+
+    if (
+      flipped.includes(idx) ||
+      matchedIds.includes(cards[idx].id) ||
+      flipped.length >= 2
+    ) {
+      return;
+    }
+
+    setFlipped((prev) => [...prev, idx]);
+    setMoves((m) => m + 1);
+  },[flipped, matchedIds, cards]);
+
+
 
   useEffect(() => {
-    if (flipped.length < 2) return;
-    const [i, j] = flipped;
+    if (flipped.length !== 2) return;
+    const [first, second] = flipped;
 
-    if (cards[i].id === cards[j].id) {
-        setMatchedIds((prev) => [...prev, cards[i].id]);
+    if (cards[first].id === cards[second].id) {
+        setMatchedIds((prev) => [...prev, cards[first].id]);
       setFlipped([]);
     } else {
       const t = setTimeout(() => setFlipped([]), 1000);
@@ -34,17 +54,6 @@ export default function useGame() {
     }
   }, [flipped, cards]);
 
-  const flipCard = (idx) => {
-    if (
-      flipped.includes(idx) ||
-      matchedIds.includes(cards[idx].id) ||
-      flipped.length >= 2
-    ){return;}
-
-    setFlipped((prev) => [...prev, idx]);
-    setMoves((m) => m + 1);
-  };
-
-
+  
   return { cards, flipped, matchedIds, moves, flipCard, resetGame };
-}
+  };

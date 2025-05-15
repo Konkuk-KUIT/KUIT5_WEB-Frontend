@@ -13,8 +13,7 @@ export const CardInner = styled.div`
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  transform: ${({ isFlipped }) =>
-    isFlipped ? "rotateY(0deg)" : "rotateY(180deg)"};
+  transform: ${({ isFlipped }) => isFlipped ? "rotateY(0deg)" : "rotateY(180deg)"};;
 `;
 const Face = styled.div`
   position: absolute;

@@ -12,6 +12,7 @@ export default function Board({ cards, flipped, matchedIds, flipCard }) {
     >
       {cards.map((card, idx) => {
         const isFlipped = flipped.includes(idx) || matchedIds.includes(card.id);
+        console.log(`card ${idx} flipped?`, isFlipped);
         return (
           <Card
             key={card.uniqueId}
