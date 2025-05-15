@@ -1,3 +1,4 @@
+import React from "react";   
 import Card from "./Card";
 
 export default function Board({ cards, flipped, matchedIds, flipCard }) {
@@ -9,14 +10,17 @@ export default function Board({ cards, flipped, matchedIds, flipCard }) {
         gap: "12px",
       }}
     >
-      {cards.map((card, idx) => (
-        <Card
-          key={card.uniqueId}
-          card={card}
-          isFlipped={flipped.includes(idx) || matchedIds.includes(card.id)}
-          onClick={() => flipCard(idx)}
-        />
-      ))}
+      {cards.map((card, idx) => {
+        const isFlipped = flipped.includes(idx) || matchedIds.includes(card.id);
+        return (
+          <Card
+            key={card.uniqueId}
+            card={card}
+            isFlipped={isFlipped}
+            onClick={() => flipCard(idx)}
+          />
+        );
+      })}
     </div>
   );
 }

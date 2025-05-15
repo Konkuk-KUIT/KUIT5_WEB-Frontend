@@ -1,3 +1,4 @@
+import React from "react";    
 import * as C from "./Card.Styled";
 
 export default function Card({ card, isFlipped, onClick }) {
