@@ -1,5 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react'
-import './index.css'
+import React, { useMemo, useState } from 'react'
 import styled from "styled-components"
 import Card from './Card'
 
@@ -14,6 +13,44 @@ const imageSource = [
 ];
 
 
+const Main = styled.div`
+    display: flex;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    flex-direction: column;
+    p {
+    text-align: center;
+    margin: 10px;
+ }
+`;
+
+const Top = styled.div`
+    width: 100%;
+    padding: 10px;
+    background-color: powderblue;
+    font-size: 16px;
+`;
+
+
+const Bottom = styled.div`
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    background-color: powderblue;
+    align-items: center;
+    flex-direction: column;
+
+`;
+
+const Grid = styled.div`
+    perspective: 900px;
+    width: 900px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+`;
+
 
 const App = () => {
     const [flippedCards, setFlippedCards] = useState([]);
@@ -26,45 +63,45 @@ const App = () => {
             [dup[i], dup[j]] = [dup[j], dup[i]];
         }
         return dup;
-    },[] );
+    }, []);
 
-    const handleCardClick = (index)=>{
-        if(flippedCards.length===2|| flippedCards.includes(index)|| matchedCard.includes(index)) return;
-        const newFlipped = [...flippedCards,index];
+    const handleCardClick = (index) => {
+        if (flippedCards.length === 2 || flippedCards.includes(index) || matchedCard.includes(index)) return;
+        const newFlipped = [...flippedCards, index];
         setFlippedCards(newFlipped);
 
-        if(newFlipped.length===2){
-            const [first, second]=newFlipped;
-            if(cardsData[first]===cardsData[second]){
-                setMatchedCard([...matchedCard,first,second]);
+        if (newFlipped.length === 2) {
+            const [first, second] = newFlipped;
+            if (cardsData[first] === cardsData[second]) {
+                setMatchedCard([...matchedCard, first, second]);
             }
-            setTimeout(()=> setFlippedCards([]),1000);
+            setTimeout(() => setFlippedCards([]), 1000);
         }
     };
 
 
     return (
-        <div id='main'>
-            <div id='top'>
-                <p id='count'>맞힌 개수 : {matchedCard.length/2}</p>
-                {matchedCard.length/2===BINGO && (
+        <Main>
+            <Top>
+                <p id='count'>맞힌 개수 : {matchedCard.length / 2}</p>
+                {matchedCard.length / 2 === BINGO && (
                     <p id='correct'>정답입니다.</p>
                 )}
-            </div>
+            </Top>
 
-            <div id='grid'>
-                {cardsData.map((src,index)=>(
-                    <Card key={index} src={src} alt={`img${index}`} flipped={flippedCards.includes(index)||matchedCard.includes(index)}
-                    onClick={()=>handleCardClick(index)}/>
+            <Grid>
+                {cardsData.map((src, index) => (
+                    <Card key={index} src={src} alt={`img${index}`} flipped={flippedCards.includes(index) || matchedCard.includes(index)}
+                        onClick={() => handleCardClick(index)} />
                 ))}
-            </div>
+            </Grid>
 
-            <div id='bottom'>
+            <Bottom>
                 <form>
-                    <button type='button' onClick={()=> window.location.reload()}>start / reset</button>
+                    <button type='button' onClick={() => window.location.reload()}>start / reset</button>
                 </form>
-            </div>
-        </div>
+            </Bottom>
+        </Main>
     );
 };
 

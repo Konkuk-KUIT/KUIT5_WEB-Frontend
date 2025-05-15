@@ -3,25 +3,23 @@ import styled from "styled-components"
 
 
 
-
 const Carddec = styled.div`
+    perspective: 900px;
     height: 150px;
     width: 150px;
-    perspective: 900px;
     margin: 10px;
 `;
 
 
 const CardInner = styled.div`
-
+    position: relative;
     height: 100%;
     width: 100%;
-    position: relative;
+    margin: 10px;
+    border: 1px solid #000;
     transform-style: preserve-3d;
     transition: transform 0.6s;
-    border: 1px solid #000;
-    margin: 10px;
-    transform: ${flip => flip.$flipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
+    transform: ${flip => flip.flipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
 `;
 
 const CardFace = styled.div`
@@ -45,7 +43,7 @@ const Card = ({ src, alt, flipped, onClick }) => {
 
     return (
         <Carddec>
-            <CardInner $flipped={flipped} onClick={onClick}>
+            <CardInner flipped={flipped} onClick={onClick}>
                 <CardFront />
                 <CardBack>
                     <img src={src} alt={alt} style={{ width: "150px", height: "150px" }} />
