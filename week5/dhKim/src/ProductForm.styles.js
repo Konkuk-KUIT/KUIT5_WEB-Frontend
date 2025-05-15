@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Form=styled.form`
     display:flex;
     box-sizing:border-box;
-    
+
     flex-direction: column;
     gap:10px;
     position: fixed;
