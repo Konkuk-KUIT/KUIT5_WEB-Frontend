@@ -1,16 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import styled from "styled-components"
 import Card from './Card'
-
-const BINGO = 5;
-
-const imageSource = [
-    "image/img1.png",
-    "image/img2.png",
-    "image/img3.png",
-    "image/img4.png",
-    "image/img5.png"
-];
+import {BINGO, imageSource} from './constants/CardConstants'
 
 
 const Main = styled.div`
@@ -54,7 +45,7 @@ const Grid = styled.div`
 
 const App = () => {
     const [flippedCards, setFlippedCards] = useState([]);
-    const [matchedCard, setMatchedCard] = useState([]);
+    const [matchedCards, setMatchedCards] = useState([]);
 
     const cardsData = useMemo(() => {
         const dup = [...imageSource, ...imageSource];
@@ -66,14 +57,14 @@ const App = () => {
     }, []);
 
     const handleCardClick = (index) => {
-        if (flippedCards.length === 2 || flippedCards.includes(index) || matchedCard.includes(index)) return;
+        if (flippedCards.length === 2 || flippedCards.includes(index) || matchedCards.includes(index)) return;
         const newFlipped = [...flippedCards, index];
         setFlippedCards(newFlipped);
 
         if (newFlipped.length === 2) {
             const [first, second] = newFlipped;
             if (cardsData[first] === cardsData[second]) {
-                setMatchedCard([...matchedCard, first, second]);
+                setMatchedCards([...matchedCards, first, second]);
             }
             setTimeout(() => setFlippedCards([]), 1000);
         }
@@ -83,15 +74,15 @@ const App = () => {
     return (
         <Main>
             <Top>
-                <p id='count'>맞힌 개수 : {matchedCard.length / 2}</p>
-                {matchedCard.length / 2 === BINGO && (
+                <p id='count'>맞힌 개수 : {matchedCards.length / 2}</p>
+                {matchedCards.length / 2 === BINGO && (
                     <p id='correct'>정답입니다.</p>
                 )}
             </Top>
 
             <Grid>
                 {cardsData.map((src, index) => (
-                    <Card key={index} src={src} alt={`img${index}`} flipped={flippedCards.includes(index) || matchedCard.includes(index)}
+                    <Card key={index} src={src} alt={`img${index}`} flipped={flippedCards.includes(index) || matchedCards.includes(index)}
                         onClick={() => handleCardClick(index)} />
                 ))}
             </Grid>
