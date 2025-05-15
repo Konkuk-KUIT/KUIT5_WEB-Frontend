@@ -4,10 +4,11 @@ import { useGameStore } from "../GameStore/gameStore";
 
 const CardGrid = styled.div`
   display: grid;
+  box-sizing: border-box;
   grid-template-columns: repeat(5, 110px);
   justify-content: center;
   gap: 12px;
-  padding: 20px;
+  padding: 100px;
 `;
 
 const CardBoard = () => {

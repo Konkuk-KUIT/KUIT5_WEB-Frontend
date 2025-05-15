@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      <ResetButton onClick={resetGame}>Reset / Restart</ResetButton>
+      <ResetButton onClick={resetGame}>다시 시작</ResetButton>
     </FooterWrapper>
   );
 };
