@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Count from "./components/Count";
-import Card from "./components/Card";
-import ResetBtn from "./components/ResetBtn";
+import Count from "./components/Count/Count";
+import Card from "./components/Card/Card";
+import ResetBtn from "./components/ResetBtn/ResetBtn";
 import OriginalCardList from "./models/CardList";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
           cardList={cardList}
           flipped={flipped}
           setFlipped={setFlipped}
-        ></Card>
+        />
       </section>
       <ResetBtn
         cardList={cardList}
@@ -34,7 +34,7 @@ function App() {
         flipped={flipped}
         setFlipped={setFlipped}
         setCount={setCount}
-      ></ResetBtn>
+      />
     </>
   );
 }

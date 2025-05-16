@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
+  display: inline-block;
   width: 120px;
   height: 170px;
   perspective: 1000px;
   margin: 8px;
-  display: inline-block;
 `;
 
 export const CardInner = styled.div`

@@ -27,12 +27,12 @@ const Card = ({ count, setCount, cardList, flipped, setFlipped }) => {
         return () => clearTimeout(timer);
       }
     }
-  });
+  }, [selected, cardList, flipped]);
 
   // 쌍이 맞는 카드가 있다면 onClick이 작동하지 않음
   const handleClick = (index) => {
-    if (flipped[index]) return; // 앞면에서 뒷면으로 뒤집기 예외처리
-    if (selected.length >= 2) return; // 2개 이상 뒤집기 불가
+    if (flipped[index] || selected.includes(index) || selected.length >= 2)
+      return;
 
     const updatedFlipped = [...flipped];
     updatedFlipped[index] = !updatedFlipped[index];
@@ -43,7 +43,7 @@ const Card = ({ count, setCount, cardList, flipped, setFlipped }) => {
   return (
     <>
       {cardList.map((item, index) => (
-        <C.CardContainer key={index} onClick={() => handleClick(index)}>
+        <C.CardContainer key={item.id} onClick={() => handleClick(index)}>
           <C.CardInner isFlipped={flipped[index]}>
             <C.CardFront>
               <img src={item.front} alt={item.alt} />
