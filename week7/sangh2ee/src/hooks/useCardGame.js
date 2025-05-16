@@ -38,13 +38,11 @@ const handleChoice = (card) => {
   };
   
   
-  //두 카드가 선택되면 비교교
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
 
       if (choiceOne.src === choiceTwo.src) {
-        // 같은 카드 → matched 처리
         setCards(prevCards =>
           prevCards.map(c =>
             c.src === choiceOne.src ? { ...c, matched: true } : c
@@ -53,13 +51,12 @@ const handleChoice = (card) => {
         setMatchedCount(prev => prev + 1);
         resetTurn();
       } else {
-        // 다른 카드 → 1초 뒤 초기화
         setTimeout(resetTurn, 3000);
       }
     }
   }, [choiceOne, choiceTwo]);
 
-  //선택 초기화
+
    const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
