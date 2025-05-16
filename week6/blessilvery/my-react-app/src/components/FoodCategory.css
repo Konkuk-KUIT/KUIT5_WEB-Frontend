@@ -1,0 +1,10 @@
+.food-category {
+
+    display: grid;
+    align-items: flex-start;
+    column-gap: 9px;
+    row-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin: 70px 24px 156px;
+}
