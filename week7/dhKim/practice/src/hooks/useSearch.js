@@ -5,6 +5,7 @@ const useSearch=(initial)=>{
       const [search,setSearch]=useState("");
     
       const [filter,setFilter]=useState(initial);
+      
       const handleSearch=(e)=>{
         setSearch(e.target.value); 
       };
