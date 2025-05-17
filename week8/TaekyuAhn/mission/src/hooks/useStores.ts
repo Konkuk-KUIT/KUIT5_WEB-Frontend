@@ -30,6 +30,8 @@ export const useStores = () => {
       body: JSON.stringify(storeItem),
     });
 
+    if (!res.ok) throw new Error("아이템 추가 실패");
+
     const newStore = await res.json();
     setStores((prev) => [...prev, newStore]);
   };
@@ -47,5 +49,15 @@ export const useStores = () => {
     setStores((prev) => prev.map((item) => (item.id === updatedStore.id ? updatedStore : item)));
   };
 
-  return { stores, loading, addStore, patchStore };
+  const deleteStore = async (id: string) => {
+    const res = await fetch(`${API_URL}/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (!res.ok) throw new Error("삭제 실패");
+    setStores((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  return { stores, loading, addStore, patchStore, deleteStore };
 };

@@ -63,24 +63,6 @@
   ],
   "stores": [
     {
-      "rank": 2,
-      "name": "안녕하세용",
-      "rating": 4.9,
-      "reviews": 3919,
-      "deliveryTime": "13분~30분",
-      "deliveryFee": "2,000원",
-      "id": "1deb"
-    },
-    {
-      "rank": 5,
-      "name": "옐로우푸드 샐러드",
-      "rating": 4.8,
-      "reviews": 1129,
-      "deliveryTime": "13분~30분",
-      "deliveryFee": "2,000원",
-      "id": "1e65"
-    },
-    {
       "rank": 5,
       "name": "썬더볼트 한남점",
       "rating": 4.8,

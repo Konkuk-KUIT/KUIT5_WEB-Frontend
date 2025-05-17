@@ -10,7 +10,7 @@ type Props = {
 };
 
 const StoreItem = ({ data }: Props) => {
-  const { stores, patchStore } = useStores();
+  const { stores, patchStore, deleteStore } = useStores();
   const { rank, name, rating, reviews, deliveryTime, deliveryFee } = data;
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [inputName, setInputName] = useState(data.name);
@@ -44,7 +44,9 @@ const StoreItem = ({ data }: Props) => {
     setIsEditing(false);
   };
 
-  const handleDel = () => {};
+  const handleDel = () => {
+    deleteStore(String(data.id));
+  };
 
   return (
     //<Link to="/store/1">
