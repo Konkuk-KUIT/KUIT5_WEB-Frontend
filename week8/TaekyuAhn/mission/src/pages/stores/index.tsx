@@ -3,7 +3,7 @@ import MainText from "../../components/home/MainText";
 import styles from "./index.module.scss";
 import StoresList from "../../components/stores/StoresList";
 import TopNav from "../../components/common/TopNav";
-import BottomActionBar from "../../components/common/BottomActionBar";
+import StoreAddBar from "../../components/common/StoreAddBar";
 
 const index = () => {
   return (
@@ -11,7 +11,7 @@ const index = () => {
       <TopNav />
       <MainText text="샐러드" style="large" />
       <StoresList />
-      <BottomActionBar />
+      <StoreAddBar />
     </div>
   );
 };
