@@ -5,6 +5,7 @@ import { useStores } from "../../hooks/useStores";
 import styles from "./StoresList.module.scss";
 
 export type storeDataType = {
+  id?: string;
   rank: number | undefined;
   name: string;
   rating: number;

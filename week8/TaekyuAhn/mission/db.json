@@ -63,8 +63,8 @@
   ],
   "stores": [
     {
-      "rank": 1,
-      "name": "샐로리 한남점",
+      "rank": 2,
+      "name": "안녕하세용",
       "rating": 4.9,
       "reviews": 3919,
       "deliveryTime": "13분~30분",
@@ -72,7 +72,7 @@
       "id": "1deb"
     },
     {
-      "rank": 2,
+      "rank": 5,
       "name": "옐로우푸드 샐러드",
       "rating": 4.8,
       "reviews": 1129,
@@ -81,7 +81,7 @@
       "id": "1e65"
     },
     {
-      "rank": 3,
+      "rank": 5,
       "name": "썬더볼트 한남점",
       "rating": 4.8,
       "reviews": 919,
@@ -90,7 +90,7 @@
       "id": "48de"
     },
     {
-      "rank": null,
+      "rank": 1,
       "name": "THE 샐러드가득담은",
       "rating": 5,
       "reviews": 27,
@@ -99,7 +99,7 @@
       "id": "64b3"
     },
     {
-      "rank": null,
+      "rank": 5,
       "name": "파스토보이",
       "rating": 4.8,
       "reviews": 801,
@@ -108,7 +108,7 @@
       "id": "b148"
     },
     {
-      "rank": null,
+      "rank": 5,
       "name": "힘난다 샐러드",
       "rating": 4.8,
       "reviews": 321,
@@ -117,7 +117,7 @@
       "id": "8b0d"
     },
     {
-      "rank": null,
+      "rank": 10,
       "name": "면장인의 국수",
       "rating": 4.7,
       "reviews": 654,

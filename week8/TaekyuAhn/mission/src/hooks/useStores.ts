@@ -34,5 +34,18 @@ export const useStores = () => {
     setStores((prev) => [...prev, newStore]);
   };
 
-  return { stores, loading, addStore };
+  const patchStore = async (storeItem: storeDataType) => {
+    const res = await fetch(`${API_URL}/${storeItem.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(storeItem),
+    });
+
+    if (!res.ok) throw new Error("업데이트 실패");
+
+    const updatedStore = await res.json();
+    setStores((prev) => prev.map((item) => (item.id === updatedStore.id ? updatedStore : item)));
+  };
+
+  return { stores, loading, addStore, patchStore };
 };
