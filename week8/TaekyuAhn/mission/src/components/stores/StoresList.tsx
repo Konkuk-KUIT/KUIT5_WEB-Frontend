@@ -2,9 +2,10 @@ import React from "react";
 import { saladStores } from "../../models/saladStores";
 import StoreItem from "./StoreItem";
 import { useStores } from "../../hooks/useStores";
+import styles from "./StoresList.module.scss";
 
 export type storeDataType = {
-  rank: number | null;
+  rank: number | undefined;
   name: string;
   rating: number;
   reviews: number;
@@ -15,7 +16,7 @@ export type storeDataType = {
 const StoresList = () => {
   const { stores, loading } = useStores();
   return (
-    <div>
+    <div className={styles.contents}>
       {loading
         ? "로딩 중"
         : stores &&

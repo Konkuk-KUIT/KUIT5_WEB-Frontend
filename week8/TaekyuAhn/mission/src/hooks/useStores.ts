@@ -27,11 +27,11 @@ export const useStores = () => {
     const res = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ storeItem }),
+      body: JSON.stringify(storeItem),
     });
 
     const newStore = await res.json();
-    setStores((prev) => [...prev, storeItem]);
+    setStores((prev) => [...prev, newStore]);
   };
 
   return { stores, loading, addStore };

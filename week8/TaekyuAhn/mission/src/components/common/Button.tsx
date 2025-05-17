@@ -8,7 +8,11 @@ type Props = {
 };
 
 const Button = ({ text, onClick, size = "medium" }: Props) => {
-  return <button className={`${styles.button} ${styles[size]}`}>{text}</button>;
+  return (
+    <button className={`${styles.button} ${styles[size]}`} onClick={onClick}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;

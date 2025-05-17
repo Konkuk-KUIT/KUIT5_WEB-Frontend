@@ -1,4 +1,3 @@
-import React from "react";
 import MainText from "../../components/home/MainText";
 import styles from "./index.module.scss";
 import StoresList from "../../components/stores/StoresList";
