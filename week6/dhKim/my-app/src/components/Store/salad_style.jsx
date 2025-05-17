@@ -8,8 +8,8 @@ export const SaladContainer=styled.div`
 export const SaladInfo=styled.div`
 
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    flex-direction: row;
+    gap: 10px;
 
 
 `;

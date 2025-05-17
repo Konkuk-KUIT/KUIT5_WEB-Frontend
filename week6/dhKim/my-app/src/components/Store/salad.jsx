@@ -2,8 +2,14 @@ import React from 'react';
 
 import * as S from './salad_style';
 
+import { saladData } from './salad_data';
+
+//일단 saladData는 배열이고 여기서 데이터를 추출해 와서 샤용
+
 function Salad(){
-  return (
+    return(
+   saladData.map((data)=>
+   (
     <S.SaladContainer>
         
         {/* 여기서는 샐러드를 종류 6개를 배치 */}
@@ -12,19 +18,23 @@ function Salad(){
             </div>
 
             <S.SaladTextContainer>
-                <S.SaladStoreText>
-                    1위<br/>
-                    샐로리 한남점
+                <S.SaladStoreText key={data.number}>
+                    {data.number}<br/>
+                    {data.name}
                 </S.SaladStoreText>
                 <S.SaladStoreSubText>
-                    <img src="/imgs/star.svg" alt='star'></img>(3,919)
+                    <img src="/imgs/star.svg" alt='star'></img>
+                    {data.rate}
+                    ({data.comments})
                     <br/>
-                    13분~30분,배달비 2,000원
+                    {data.del_time},{data.del_price}
                 </S.SaladStoreSubText>
             </S.SaladTextContainer>
         </S.SaladInfo>
     </S.SaladContainer>  
-  );
+    )
+    )
+);
 };
 
 export default Salad;
