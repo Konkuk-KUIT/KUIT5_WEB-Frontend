@@ -6,7 +6,7 @@ export const TopBanner=styled.div`
     top:0;
     display:flex;
     justify-content: space-between;
-    box-sizing:border-box;
+    box-sizing: border-box;
     background-color:white;
     align-items: center;
     position:fixed;

@@ -3,8 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 
 import Home from '../pages/Home';
-// import Stores from "../pages/Stores";
-// import Store from "../pages/Store";
+import Store from "../pages/Store";
+// import Store from "../pages/Stores";
 // import Cart from "../pages/Cart";
 
 const Router = () => {
@@ -13,13 +13,13 @@ const Router = () => {
             path:"/",
             element: <Home/>,
         },
+        {
+            path:"/Store",
+            element:<Store/>,
+        },
         // {
         //     path:"/Stores",
         //     element:<Stores/>,
-        // },
-        // {
-        //     path:"/Store",
-        //     element:<Store/>,
         // },
         // {
         //     path:"/Cart",
