@@ -1,0 +1,56 @@
+.img {
+  width: 54px;
+  height: 54px;
+  background-color: #ececec;
+  border-radius: 8px;
+}
+.wrapper {
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 16px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 19px;
+  align-items: flex-start;
+}
+.name {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+.price {
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #6b7684;
+}
+.ingredients {
+  margin-bottom: 5px;
+  text-align: start;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #6b7684;
+  display: flex;
+  width: 193px;
+}
+
+.num {
+  font-family: Pretendard;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #6b7684;
+}
