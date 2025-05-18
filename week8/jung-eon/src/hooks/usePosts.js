@@ -21,36 +21,35 @@ export const usePosts = () => {
     fetchData();
   },[]);
 
-   const addPost = async (newPost) => {
+   const addPost = async (post) => {
     const res = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ newPost }),
+      body: JSON.stringify(post),
     });
 
-    const created = await res.json();
-    setPosts((prev) => [...prev, created]);
+    const newPost = await res.json();
+    setPosts((prev) => [...prev, newPost]);
   };
 
-  const updatePost = async (id, updatedData) => {
+  const updatePost = async (id, edited) => {
     const res = await fetch(`${API_URL}/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedData),
+      body: JSON.stringify(edited),
     });
-    const updatedPost = await res.json();
-    setPosts((prev) =>
-    prev.map((post) => (post.id === id ? updatedPost : post))
-  );
+    const updated = await res.json();
+    setPosts(prev => prev.map(p => p.id === id ? updated : p));
+};
 
   const deletePost = async (id) => {
     await fetch(`${API_URL}/${id}`, { method: "DELETE" });
     setPosts((prev) => prev.filter((p) => p.id !== id));
   };
 
-  
+   return { posts,loading, addPost,updatePost, deletePost };
 }; 
 
-  return { posts,loading, addPost,updatePost,deletePost };
-};
+ 
+
 

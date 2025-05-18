@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import OrderBar from "../components/OrderBar";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +19,7 @@ import { Title } from "../styles/HomeStyles";
 const Stores = () => {
   const navigate = useNavigate();
   const { posts, loading, addPost, updatePost, deletePost } = usePosts();
+
 
   const initialForm = {
     name: "",
@@ -71,7 +73,6 @@ const Stores = () => {
 
 
 
-
   return (
     <div>
       <Top>
@@ -80,10 +81,22 @@ const Stores = () => {
         </Back>
       </Top>
       <Title>샐러드</Title>
-
       <MarketList>
         {posts.map((post) => (
-          <Market>
+          <Market key={post.id}>
+            {editingId === post.id ? (
+            <>
+              <input name="name" value={editForm.name} onChange={e => handleFormChange(e, true)} />
+              <input name="rank" value={editForm.rank} onChange={e => handleFormChange(e, true)} />
+              <input name="rating" value={editForm.rating} onChange={e => handleFormChange(e, true)} />
+              <input name="reviewCount" value={editForm.reviewCount} onChange={e => handleFormChange(e, true)} />
+              <input name="deliveryTime" value={editForm.deliveryTime} onChange={e => handleFormChange(e, true)} />
+              <input name="deliveryFee" value={editForm.deliveryFee} onChange={e => handleFormChange(e, true)} />
+              <button onClick={handleSave}>저장</button>
+              <button onClick={cancelEdit}>취소</button>
+            </>
+          ) : (
+            <>
             <Link
               key={post.name}
               to={post.path}
@@ -102,57 +115,26 @@ const Stores = () => {
                 </StoreSubTitle>
               </StoreInfo>
             </Link>
+            <button onClick={() => startEdit(post)}>수정</button>
+            <button onClick={() => handleDelete(post.id)}>삭제</button>
+            </>
+          )}
           </Market>
         ))}
       </MarketList>
-      {loading ? (
-    <p>불러오는 중…</p>
-  ) : (
-    <MarketList>
-     {posts.map((post) => (
-        <Market key={post.id}>
-          <Link to={post.path} className="category-item">
-            <CategoryImg src={post.img} alt={post.name} />
-            <StoreInfo>
-              {post.rank && <StoreTitle>{post.rank}위</StoreTitle>}
-              <StoreTitle>{post.name}</StoreTitle>
-              <StoreSubtitle>
-                ⭐ {post.rating} ({post.reviewCount})
-              </StoreSubtitle>
-              <StoreSubtitle>
-                {post.deliveryTime} · 배달비 {post.deliveryFee}
-              </StoreSubtitle>
-            </StoreInfo>
-          </Link>
-        </Market>
-      ))}
-    </MarketList>
-  )}
+
+
+      
+      
 <div style={{ marginTop: 24 }}>
     <h3>새 가게 추가</h3>
-    <input
-      value={newName}
-      onChange={(e) => setNewName(e.target.value)}
-      placeholder="가게 이름"
-    />
-    <button
-      onClick={() => {
-        if (!newName.trim()) return;
-        addPost({
-          name: newName,
-          rank: posts.length + 1,
-          rating: 0,
-          reviewCount: 0,
-          deliveryTime: "0분",
-          deliveryFee: "0원",
-          path: `/store/${posts.length + 1}`,
-          img: "/images/categories/Frame.svg",
-        });
-        setNewName("");
-      }}
-    >
-      추가
-    </button>
+    <input name="name"         value={form.name}        onChange={handleFormChange} placeholder="가게 이름" />
+    <input name="rank"         value={form.rank}        onChange={handleFormChange} placeholder="랭크" />
+    <input name="rating"       value={form.rating}      onChange={handleFormChange} placeholder="평점" />
+    <input name="reviewCount"  value={form.reviewCount} onChange={handleFormChange} placeholder="리뷰개수" />
+    <input name="deliveryTime" value={form.deliveryTime} onChange={handleFormChange} placeholder="배달시간" />
+    <input name="deliveryFee"  value={form.deliveryFee} onChange={handleFormChange} placeholder="배달비" />
+    <button onClick={handleAdd}>추가</button>
     <OrderBar />
     </div>
 
