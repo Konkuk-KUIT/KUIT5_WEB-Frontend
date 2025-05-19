@@ -37,7 +37,7 @@ export const BarStyle = styled.div`
 `;
 
 export const Bottomup = styled.div`
-  margin-bottom: 111px;
+  margin-bottom: 131px;
 `;
 
 export const InputDiv = styled.div`
@@ -45,4 +45,5 @@ export const InputDiv = styled.div`
   justify-content: center;
   gap: 3px;
   width: 100%;
+  height: 20px;
 `;

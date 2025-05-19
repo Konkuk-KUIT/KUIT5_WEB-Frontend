@@ -19,5 +19,21 @@ export const useStoresList = () => {
     fetchData();
   }, []);
 
-  return { storesList };
+  const addStoresList = async (grade, storeName, rating, delivery) => {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        Grade: grade,
+        StoreName: storeName,
+        Rating: rating,
+        Delivery: delivery,
+      }),
+    });
+
+    const newStoresList = await res.json();
+    setStoresList((prev) => [...prev, newStoresList]);
+  };
+
+  return { storesList, addStoresList };
 };

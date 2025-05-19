@@ -9,18 +9,30 @@ import Button from "../../components/Button";
 import { useState } from "react";
 
 const Stores = () => {
-  const [grade, setGrade] = useState();
-  const [storeName, setStoreName] = useState();
-  const [rating, setRating] = useState();
-  const [delivery, setDelivery] = useState();
-  const { storesList } = useStoresList();
+  const [grade, setGrade] = useState("");
+  const [storeName, setStoreName] = useState("");
+  const [rating, setRating] = useState("");
+  const [delivery, setDelivery] = useState("");
+
+  const { storesList, addStoresList } = useStoresList();
+
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/");
   };
 
-  const handleAdd = () => {};
+  const handleAdd = () => {
+    try {
+      addStoresList(grade, storeName, rating, delivery);
+      setGrade("");
+      setStoreName("");
+      setRating("");
+      setDelivery("");
+    } catch (err) {
+      console.error("추가 실패", err);
+    }
+  };
 
   return (
     <>
@@ -66,7 +78,7 @@ const Stores = () => {
           <Button
             value="가게 추가"
             width="82px"
-            heigh="32px"
+            heigt="32px"
             onClick={handleAdd}
           />
         </S.InputDiv>

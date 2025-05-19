@@ -2,13 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Button = ({ value, width, height, LinkBtn }) => {
-  return (
+const Button = ({ value, width, height, LinkBtn, onClick }) => {
+  const content = (
+    <StyledButton $width={width} $height={height} onClick={onClick}>
+      <ButtonText>{value}</ButtonText>
+    </StyledButton>
+  );
+
+  return LinkBtn ? (
     <Link to={LinkBtn} style={{ textDecoration: "none" }}>
-      <StyledButton $width={width} $height={height}>
-        <ButtonText>{value}</ButtonText>
-      </StyledButton>
+      {content}
     </Link>
+  ) : (
+    content
   );
 };
 

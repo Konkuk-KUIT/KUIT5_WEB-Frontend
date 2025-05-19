@@ -4,37 +4,57 @@
       "Grade": "1위",
       "StoreName": "샐로리 한남점",
       "Rating": "4.9 (3,919)",
-      "Delivery": "13분~30분 ∙ 배달비 2,000원"
+      "Delivery": "13분~30분 ∙ 배달비 2,000원",
+      "id": "6bb4"
     },
     {
       "Grade": "2위",
       "StoreName": "옐로우푸드 샐러드",
       "Delivery": "13분~30분 ∙ 배달비 2,000원",
-      "Rating": "4.8 (1,129)"
+      "Rating": "4.8 (1,129)",
+      "id": "5311"
     },
     {
       "Grade": "3위",
       "StoreName": "씬더볼드 한남점",
       "Rating": "4.8 (919)",
-      "Delivery": "13분~30분 ∙ 배달비 2,000원"
+      "Delivery": "13분~30분 ∙ 배달비 2,000원",
+      "id": "7a28"
     },
     {
       "Grade": "",
       "StoreName": "THE 샐러드가득담은",
       "Rating": "5.0 (27)",
-      "Delivery": "13분~30분 ∙ 배달비 2,000원"
+      "Delivery": "13분~30분 ∙ 배달비 2,000원",
+      "id": "a1ff"
     },
     {
       "Grade": "",
       "StoreName": "파스토보이",
       "Rating": "4.8 (801)",
-      "Delivery": "13분~30분 ∙ 배달비 2,000원"
+      "Delivery": "13분~30분 ∙ 배달비 2,000원",
+      "id": "b13d"
     },
     {
       "Grade": "",
       "StoreName": "힘난다 샐러드",
       "Rating": "4.1 (34)",
-      "Delivery": "13분~30분 ∙ 배달비 2,000원"
+      "Delivery": "13분~30분 ∙ 배달비 2,000원",
+      "id": "c5fe"
+    },
+    {
+      "id": "936d",
+      "Grade": "4위",
+      "StoreName": "죽었음 샐러드",
+      "Rating": "4.5 (45)",
+      "Delivery": "13분~30분 배달비 3,000원"
+    },
+    {
+      "id": "b6d4",
+      "Grade": "",
+      "StoreName": "허거덩 샐러드",
+      "Rating": "4.5 (45)",
+      "Delivery": "13분~30분 배달비 2,000원"
     }
   ]
 }
