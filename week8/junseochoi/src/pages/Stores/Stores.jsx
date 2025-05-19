@@ -14,7 +14,7 @@ const Stores = () => {
   const [rating, setRating] = useState("");
   const [delivery, setDelivery] = useState("");
 
-  const { storesList, addStoresList } = useStoresList();
+  const { storesList, addStoresList, deleteStoresList } = useStoresList();
 
   const navigate = useNavigate();
 
@@ -41,13 +41,15 @@ const Stores = () => {
         <Title value="샐러드" />
       </S.Header>
       <S.Bottomup>
-        {storesList.map((item, index) => (
+        {storesList.map((item) => (
           <StoreList
-            key={index}
+            key={item.id}
+            Id={item.id}
             Grade={item.Grade}
             StoreName={item.StoreName}
             Rating={item.Rating}
             Delivery={item.Delivery}
+            deleteStoresList={deleteStoresList}
           />
         ))}
         <S.InputDiv>

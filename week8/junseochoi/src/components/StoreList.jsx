@@ -4,8 +4,19 @@ import star from "../img/star.svg";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
+const StoreList = ({
+  Id,
+  Grade,
+  StoreName,
+  Rating,
+  Delivery,
+  deleteStoresList,
+}) => {
   const navigate = useNavigate();
+
+  const handleDelete = () => {
+    deleteStoresList(Id);
+  };
 
   const handleClick = () => {
     navigate("/store/1");
@@ -27,7 +38,7 @@ const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
       </ListDiv>
       <ButtonPosition>
         <Button value="수정" width="52px" heigh="32px" />
-        <Button value="삭제" width="52px" heigh="32px" />
+        <Button value="삭제" width="52px" heigh="32px" onClick={handleDelete} />
       </ButtonPosition>
     </StoreListAll>
   );

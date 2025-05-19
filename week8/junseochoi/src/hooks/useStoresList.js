@@ -35,5 +35,20 @@ export const useStoresList = () => {
     setStoresList((prev) => [...prev, newStoresList]);
   };
 
-  return { storesList, addStoresList };
+  const deleteStoresList = async (id) => {
+    try {
+      const res = await fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) throw new Error("삭제 실패");
+
+      setStoresList((prev) => prev.filter((store) => store.id !== id));
+    } catch (err) {
+      console.error("가게 삭제 실패:", err);
+      alert("가게 삭제에 실패했습니다.");
+    }
+  };
+
+  return { storesList, addStoresList, deleteStoresList };
 };
