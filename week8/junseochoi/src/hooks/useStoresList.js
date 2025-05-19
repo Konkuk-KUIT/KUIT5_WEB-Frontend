@@ -50,5 +50,38 @@ export const useStoresList = () => {
     }
   };
 
-  return { storesList, addStoresList, deleteStoresList };
+  const updateStoresList = async (
+    id,
+    editGrade,
+    editStoreName,
+    editRating,
+    editDelivery
+  ) => {
+    try {
+      const res = await fetch(`${API_URL}/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id,
+          Grade: editGrade,
+          StoreName: editStoreName,
+          Rating: editRating,
+          Delivery: editDelivery,
+        }),
+      });
+
+      if (!res.ok) throw new Error("수정 실패");
+
+      const newStoresList = await res.json();
+      console.log("업데이트된 항목:", newStoresList);
+      setStoresList((prev) =>
+        prev.map((store) => (store.id === id ? newStoresList : store))
+      );
+    } catch (err) {
+      console.error("가게 수정 실패:", err);
+      alert("가게 수정에 실패했습니다.");
+    }
+  };
+
+  return { storesList, addStoresList, deleteStoresList, updateStoresList };
 };

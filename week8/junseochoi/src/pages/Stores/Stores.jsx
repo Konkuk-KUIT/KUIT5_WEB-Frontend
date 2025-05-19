@@ -14,7 +14,8 @@ const Stores = () => {
   const [rating, setRating] = useState("");
   const [delivery, setDelivery] = useState("");
 
-  const { storesList, addStoresList, deleteStoresList } = useStoresList();
+  const { storesList, addStoresList, deleteStoresList, updateStoresList } =
+    useStoresList();
 
   const navigate = useNavigate();
 
@@ -44,12 +45,13 @@ const Stores = () => {
         {storesList.map((item) => (
           <StoreList
             key={item.id}
-            Id={item.id}
+            id={item.id}
             Grade={item.Grade}
             StoreName={item.StoreName}
             Rating={item.Rating}
             Delivery={item.Delivery}
             deleteStoresList={deleteStoresList}
+            updateStoresList={updateStoresList}
           />
         ))}
         <S.InputDiv>
