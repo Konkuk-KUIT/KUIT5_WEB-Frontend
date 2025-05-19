@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import star from "../img/star.svg";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
   const navigate = useNavigate();
@@ -11,17 +12,23 @@ const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
   };
 
   return (
-    <StoreListAll onClick={handleClick}>
-      <StoreImg></StoreImg>
-      <Description>
-        <GradeStyle>{Grade}</GradeStyle>
-        <StoreNameStyle>{StoreName}</StoreNameStyle>
-        <RatingStyle>
-          <img src={star} alt="별" />
-          {Rating}
-        </RatingStyle>
-        <DeliveryStyle>{Delivery}</DeliveryStyle>
-      </Description>
+    <StoreListAll>
+      <ListDiv onClick={handleClick}>
+        <StoreImg></StoreImg>
+        <Description>
+          <GradeStyle>{Grade}</GradeStyle>
+          <StoreNameStyle>{StoreName}</StoreNameStyle>
+          <RatingStyle>
+            <img src={star} alt="별" />
+            {Rating}
+          </RatingStyle>
+          <DeliveryStyle>{Delivery}</DeliveryStyle>
+        </Description>
+      </ListDiv>
+      <ButtonPosition>
+        <Button value="수정" width="52px" heigh="32px" />
+        <Button value="삭제" width="52px" heigh="32px" />
+      </ButtonPosition>
     </StoreListAll>
   );
 };
@@ -30,6 +37,7 @@ const StoreListAll = styled.div`
   width: 100%;
   height: 116px;
   display: flex;
+  justify-content: space-between;
 `;
 
 const StoreImg = styled.div`
@@ -73,6 +81,17 @@ const DeliveryStyle = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+`;
+
+const ButtonPosition = styled.div`
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  margin: 15px 30px 0 0;
+`;
+
+const ListDiv = styled.div`
+  display: flex;
 `;
 
 export default StoreList;

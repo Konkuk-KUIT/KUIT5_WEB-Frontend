@@ -35,3 +35,14 @@ export const BarStyle = styled.div`
   font-weight: 600;
   padding: 26px 0 0 24px;
 `;
+
+export const Bottomup = styled.div`
+  margin-bottom: 111px;
+`;
+
+export const InputDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+`;
