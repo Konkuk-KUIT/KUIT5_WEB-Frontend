@@ -6,11 +6,11 @@ import StoreMendbtn from './storeMendbtn';
 
 import styled from "styled-components";
 
-const StoreMDbtnContainer = () => {
+const StoreMDbtnContainer = ({id,onDelete}) => {
   return (
     <MDbtnContainerStyle>
-        <StoreMendbtn/>
-        <StoreDeletebtn/>
+        <StoreMendbtn id={id}/>
+        <StoreDeletebtn onDelete={onDelete}/>
     </MDbtnContainerStyle>
   );
 };
