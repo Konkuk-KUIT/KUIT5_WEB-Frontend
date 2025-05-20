@@ -1,14 +1,6 @@
 {
   "saladStores": [
     {
-      "id": "4",
-      "name": "THE 샐러드가득담은",
-      "rate": "5.0",
-      "comments": "27",
-      "del_time": "13분~30분",
-      "del_price": "2,000원"
-    },
-    {
       "id": "5",
       "name": "파스트보이",
       "rate": "4.8",
