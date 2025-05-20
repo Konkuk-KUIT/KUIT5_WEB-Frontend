@@ -2,11 +2,16 @@ import {React,useState, useEffect } from 'react';
 
 import * as S from './salad_style';
 
+import AddStoreContainer from './addStoreContainer';
+
+
 import { getSaladStores } from '../../apis/saladStores';
 //일단 saladData는 배열이고 여기서 데이터를 추출해 와서 샤용
 
 function Salad(){
     const [saladstores,setSaladStores]=useState([]);
+    
+
 
     useEffect(() => {
     async function fetchData(){
@@ -25,7 +30,6 @@ function Salad(){
     <S.SaladContainer>{
    saladstores.map((data)=>
    (
-   
         <>
         {/* 여기서는 샐러드를 종류 6개를 배치 */}
         <S.SaladInfo key={data.id}>
@@ -54,9 +58,12 @@ function Salad(){
                 </S.SaladStoreSubText>
             </S.SaladTextContainer>
         </S.SaladInfo>
+
     </>
     )
     )}
+
+   <AddStoreContainer/> 
    </S.SaladContainer>
 );
 

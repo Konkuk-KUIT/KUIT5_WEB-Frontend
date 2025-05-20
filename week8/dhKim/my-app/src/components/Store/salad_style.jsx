@@ -6,7 +6,7 @@ export const SaladContainer=styled.div`
     top:147px;
     width:390px;
     height:630px;
-    overflow: hidden;
+    overflow: scroll;
 `;
 
 export const SaladInfo=styled.div`
