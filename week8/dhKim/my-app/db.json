@@ -47,22 +47,6 @@
       "comments": "24",
       "del_time": "13분~30분",
       "del_price": "2,000원"
-    },
-    {
-      "id": "8cd9",
-      "name": "로봇김밥",
-      "rate": "4.5",
-      "comments": "356",
-      "del_time": "12분~20분",
-      "del_price": "30분"
-    },
-    {
-      "id": "6a3e",
-      "name": "엄마손 김밥",
-      "rate": "4.6",
-      "comments": "15",
-      "del_time": "22분~33분",
-      "del_price": "3000원"
     }
   ]
 }

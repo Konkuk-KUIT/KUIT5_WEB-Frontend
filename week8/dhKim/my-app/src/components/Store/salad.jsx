@@ -8,6 +8,8 @@ import AddStoreContainer from './addStoreContainer';
 import { getSaladStores } from '../../apis/saladStores';
 //일단 saladData는 배열이고 여기서 데이터를 추출해 와서 샤용
 
+import StoreMDbtnContainer from './storeMDbtnContainer';
+
 function Salad(){
     const [saladstores,setSaladStores]=useState([]);
     
@@ -56,7 +58,9 @@ function Salad(){
                  <S.SaladStoreSubText>
                     {data.del_time},{data.del_price}
                 </S.SaladStoreSubText>
+                
             </S.SaladTextContainer>
+            <StoreMDbtnContainer/>
         </S.SaladInfo>
 
     </>

@@ -5,10 +5,13 @@ import AddButton from './addButton';
 import styled from "styled-components";
 
 function AddStoreContainer (){
-  return (
-    <StoreContainerStyle>
-        <AddButton/>
-    </StoreContainerStyle>
+   
+
+
+    return (
+        <StoreContainerStyle>
+            <AddButton/>
+        </StoreContainerStyle>
   );
 };
 

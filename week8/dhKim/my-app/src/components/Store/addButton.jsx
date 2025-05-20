@@ -4,7 +4,6 @@ import { createStore,getSaladStores } from '../../apis/saladStores';
 
 function AddButton (){
     const [stores,setStores]=useState([]);
-
     const [storeName,setStoreName]=useState('');
     const [rate,setRate]=useState('');
     const [reviews,setReviews]=useState('');
@@ -39,8 +38,6 @@ function AddButton (){
         <input type='text' value={storeName} 
         onChange={(e)=>setStoreName(e.target.value)} 
         placeholder='가게이름'></input>
-        
-      
         
         <input type='text' value={rate}
         onChange={(e)=>setRate(e.target.value)} 
