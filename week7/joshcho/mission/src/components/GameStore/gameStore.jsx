@@ -52,7 +52,7 @@ export const useGameStore = create((set, get) => ({
         set({ lock: true });
         setTimeout(() => {
           set({ flipped: [], lock: false });
-        }, 500);
+        }, 3000);
       }
     }
   },
