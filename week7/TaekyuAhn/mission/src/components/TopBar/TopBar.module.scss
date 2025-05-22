@@ -1,0 +1,16 @@
+.topbar {
+  width: 100%;
+  height: 10rem;
+  background-color: blueviolet;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__rightCount {
+    font-size: larger;
+  }
+  &__victory {
+    font-size: x-large;
+  }
+}

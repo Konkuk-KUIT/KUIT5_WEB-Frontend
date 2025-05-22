@@ -1,0 +1,58 @@
+import React from "react";
+
+export const StoreData = [
+  {
+    img: "https://placehold.co/54x54",
+    rank: "1",
+    name: "샐로리 한남점",
+    rating: 4.9,
+    reviews: 3919,
+    deliveryTime: "13분~30분",
+    deliveryFee: 2000,
+  },
+  {
+    img: "https://placehold.co/54x54",
+    rank: "2",
+    name: "옐로우푸드 샐러드",
+    rating: 4.8,
+    reviews: 1129,
+    deliveryTime: "13분~30분",
+    deliveryFee: 2000,
+  },
+  {
+    img: "https://placehold.co/54x54",
+    rank: "3",
+    name: "썬더볼트 한남점",
+    rating: 4.8,
+    reviews: 919,
+    deliveryTime: "13분~30분",
+    deliveryFee: 2000,
+  },
+  {
+    img: "https://placehold.co/54x54",
+    rank: "0",
+    name: "THE 샐러드가득담은",
+    rating: 5.0,
+    reviews: 27,
+    deliveryTime: "13분~30분",
+    deliveryFee: 2000,
+  },
+  {
+    img: "https://placehold.co/54x54",
+    rank: "0",
+    name: "파스토보이",
+    rating: 4.8,
+    reviews: 801,
+    deliveryTime: "13분~30분",
+    deliveryFee: 2000,
+  },
+  {
+    img: "https://placehold.co/54x54",
+    rank: "0",
+    name: "힘난다 샐러드",
+    rating: 4.1,
+    reviews: 24,
+    deliveryTime: "13분~30분",
+    deliveryFee: 2000,
+  },
+];
