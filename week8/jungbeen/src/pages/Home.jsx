@@ -8,7 +8,6 @@ import OrderBar from "../common/OrderBar";
 const Main = styled.div`
   margin: 0 auto;
   margin-top: 88px;
-  min-width: 412px;
   max-width: 1080px;
   padding: 0 24px;
 `;

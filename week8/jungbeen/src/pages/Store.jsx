@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 
 import Header from "../common/Header";
 import OrderBar from "../common/OrderBar";
-// import { menu } from "../models/stores";
 import MenuItem from "../common/MenuItem";
 import star from "../assets/images/star.svg";
 import { useMenus } from "../hooks/useMenus";
@@ -11,7 +10,6 @@ import { useMenus } from "../hooks/useMenus";
 const Main = styled.div`
   margin: 0 auto;
   margin-top: 88px;
-  min-width: 412px;
   max-width: 1080px;
   padding: 0 24px;
   margin-bottom: 100px;

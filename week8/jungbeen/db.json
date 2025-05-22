@@ -2,73 +2,85 @@
   "categories": [
     {
       "name": "피자",
-      "imgName": "pizza"
+      "imgName": "pizza",
+      "id": "6d6b"
     },
     {
       "name": "샐러드",
-      "imgName": "salad"
+      "imgName": "salad",
+      "id": "6c82"
     },
     {
       "name": "햄버거",
-      "imgName": "hamburger"
+      "imgName": "hamburger",
+      "id": "abf1"
     },
     {
       "name": "한식",
-      "imgName": "koreanFood"
+      "imgName": "koreanFood",
+      "id": "df2c"
     },
     {
       "name": "분식",
-      "imgName": "flourFood"
+      "imgName": "flourFood",
+      "id": "3a5f"
     },
     {
       "name": "치킨",
-      "imgName": "chicken"
+      "imgName": "chicken",
+      "id": "f248"
     },
     {
       "name": "초밥",
-      "imgName": "suchi"
+      "imgName": "suchi",
+      "id": "2732"
     },
     {
       "name": "샌드위치",
-      "imgName": "sandwitch"
+      "imgName": "sandwitch",
+      "id": "e6ed"
     },
     {
       "name": "파스타",
-      "imgName": "pasta"
+      "imgName": "pasta",
+      "id": "ea86"
     },
     {
       "name": "디저트",
-      "imgName": "dessert"
+      "imgName": "dessert",
+      "id": "aa5c"
     },
     {
       "name": "커피",
-      "imgName": "coffee"
+      "imgName": "coffee",
+      "id": "cb7a"
     },
     {
       "name": "더보기",
-      "imgName": "more"
+      "imgName": "more",
+      "id": "ae36"
     }
   ],
   "stores": [
     {
-      "name": "샐로리 한남점",
+      "name": "샐로리 건머점",
       "rating": 4.9,
       "ratingTotal": 3919,
       "eta": "13분 ~ 30분",
-      "rideTip": 2000,
+      "rideTip": 1000,
       "grade": 1,
-      "id": 1,
+      "id": "1",
       "paymethod": "토스 결제만 현장 결제 안됨",
       "minOrder": 13000
     },
     {
-      "name": "맥도날드 한남점",
+      "name": "맥도날드 건대점",
       "rating": 4.3,
       "ratingTotal": 2113,
       "eta": "13분 ~ 32분",
       "rideTip": 2000,
       "grade": 2,
-      "id": 2,
+      "id": "2",
       "paymethod": "토스 결제만 현장 결제 안됨",
       "minOrder": 13000
     },
@@ -79,7 +91,7 @@
       "eta": "19분 ~ 40분",
       "rideTip": 2000,
       "grade": 3,
-      "id": 3,
+      "id": "3",
       "paymethod": "토스 결제만 현장 결제 안됨",
       "minOrder": 13000
     },
@@ -89,17 +101,17 @@
       "ratingTotal": 1516,
       "eta": "17분 ~ 26분",
       "rideTip": 2000,
-      "id": 4,
+      "id": "4",
       "paymethod": "토스 결제만 현장 결제 안됨",
       "minOrder": 13000
     },
     {
       "name": "호야 한남점",
-      "rating": 5.0,
+      "rating": 5,
       "ratingTotal": 5225,
       "eta": "15분 ~ 30분",
       "rideTip": 2000,
-      "id": 5,
+      "id": "5",
       "paymethod": "토스 결제만 현장 결제 안됨",
       "minOrder": 13000
     },
@@ -109,7 +121,7 @@
       "ratingTotal": 336,
       "eta": "19분 ~ 25분",
       "rideTip": 2000,
-      "id": 6,
+      "id": "6",
       "paymethod": "토스 결제만 현장 결제 안됨",
       "minOrder": 13000
     },
@@ -119,9 +131,19 @@
       "ratingTotal": 6262,
       "eta": "18분 ~ 27분",
       "rideTip": 2000,
-      "id": 7,
+      "id": "7",
       "paymethod": "토스 결제만 현장 결제 안됨",
       "minOrder": 13000
+    },
+    {
+      "id": "000b",
+      "name": "맛있는 가게",
+      "rating": 0,
+      "ratingTotal": 0,
+      "eta": "30분",
+      "rideTip": "7000",
+      "paymethod": "알아서 결제",
+      "minOrder": "12500"
     }
   ],
   "menus": [
@@ -129,43 +151,50 @@
       "name": "토마트 샐러드",
       "isBest": true,
       "price": 7600,
-      "ingredient": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱"
+      "ingredient": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "d04e"
     },
     {
       "name": "불고기 버거",
       "isBest": false,
       "price": 5800,
-      "ingredient": "불고기, 빵, 양파, 올리브, 베이컨, 시저드레싱"
+      "ingredient": "불고기, 빵, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "0480"
     },
     {
       "name": "초밥 A세트",
       "isBest": true,
       "price": 16000,
-      "ingredient": "물고기, 밥, 와사비, 올리브, 베이컨, 시저드레싱"
+      "ingredient": "물고기, 밥, 와사비, 올리브, 베이컨, 시저드레싱",
+      "id": "051c"
     },
     {
       "name": "로제 찜닭",
       "isBest": false,
       "price": 13500,
-      "ingredient": "로제 소스, 닭, 양파, 올리브, 베이컨, 시저드레싱"
+      "ingredient": "로제 소스, 닭, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "f522"
     },
     {
       "name": "계란 볶음밥",
       "isBest": false,
       "price": 6000,
-      "ingredient": "계란, 파, 당근, 밥, 식용유, 미원"
+      "ingredient": "계란, 파, 당근, 밥, 식용유, 미원",
+      "id": "21a7"
     },
     {
       "name": "간장 국수",
       "isBest": false,
       "price": 5000,
-      "ingredient": "간장, 국수, 양파, 올리브, 베이컨, 시저드레싱"
+      "ingredient": "간장, 국수, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "f1e3"
     },
     {
       "name": "타닌동",
       "isBest": false,
       "price": 9000,
-      "ingredient": "계란, 돼지고기, 양파, 올리브, 베이컨, 시저드레싱"
+      "ingredient": "계란, 돼지고기, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "c511"
     }
   ]
 }
