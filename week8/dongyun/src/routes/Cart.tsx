@@ -10,11 +10,11 @@ const Cart = () => {
 
     useEffect(() => {
         getCartList().then(setCartList).catch(console.error);
-    }, []);
+    }, [cartList]);
 
     const [itemName, setItemName] = useState('');
     const [itemIngred, setITemIngred] = useState('');
-    const [itemCount, setItemCount] = useState<number | ''>('');
+    const [itemID, setItemID] = useState<number | ''>('');
 
     const handleClick = async () => {
         const res = await fetch('http://localhost:3001/cart-list', {
@@ -23,14 +23,15 @@ const Cart = () => {
             body: JSON.stringify({
                 name: itemName,
                 ingredients: itemIngred,
-                count: itemCount
+                id: itemID,
+                count: 1
             })
         });
         const newCart = await res.json();
         setCartList((prev) => [...prev, newCart]);
         setItemName('')
         setITemIngred('')
-        setItemCount(0)
+        setItemID(0)
         setIsAdding(false)
         return await res.json();
     }
@@ -63,6 +64,12 @@ const Cart = () => {
             {isAdding ? (
                 <S.AddingContainer>
                     <S.InputContainer>
+                        <S.ItemCountInput
+                            type="number"
+                            placeholder="카트에 담을 아이템 ID 입력"
+                            value={itemID}
+                            onChange={(e) => setItemID(e.target.value === '' ? '' : Number(e.target.value))}
+                        />
                         <S.ItemNameInput
                             type="text"
                             placeholder="카트에 담을 음식 이름 입력"
@@ -75,12 +82,7 @@ const Cart = () => {
                             value={itemIngred}
                             onChange={(e) => setITemIngred(e.target.value)}
                         />
-                        <S.ItemCountInput
-                            type="number"
-                            placeholder="카트에 담을 개수 입력"
-                            value={itemCount}
-                            onChange={(e) => setItemCount(e.target.value === '' ? '' : Number(e.target.value))}
-                        />
+
                     </S.InputContainer>
                     <S.AddCartButton onClick={handleClick}>담기</S.AddCartButton>
                 </S.AddingContainer>

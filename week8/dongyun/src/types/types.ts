@@ -26,6 +26,7 @@ export type storeMenu =
 
 export type cartItem =
     {
+        id:number
         name: string
         price: number
         ingredients: string
