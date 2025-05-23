@@ -204,16 +204,12 @@ const Stores = () => {
 
   return (
     <>
-      <GoBack onClick={handleClick} />
       <S.Header>
+        <GoBack onClick={handleClick} />
         <Title value="샐러드" />
       </S.Header>
 
-      {/* 메인 콘텐츠 영역에 하단 패딩 추가 */}
-      <div style={{ paddingBottom: "100px" }}>
-        {" "}
-        {/* BottomOrderBar 높이만큼 패딩 추가 (필요에 따라 조정) */}
-        {/* stores 상태를 사용하여 가게 목록 렌더링 */}
+      <div style={{ paddingTop: "59px", paddingBottom: "100px" }}>
         {stores.length === 0 ? (
           <p>가게 목록이 비어있습니다.</p>
         ) : (

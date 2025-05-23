@@ -14,6 +14,7 @@ const GoBack = ({ value, onClick }) => {
 
 const GoBackStyle = styled.div`
   display: flex;
+  padding-left: 0px;
   align-items: center;
 `;
 

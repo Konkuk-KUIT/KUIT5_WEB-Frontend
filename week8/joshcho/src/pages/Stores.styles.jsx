@@ -5,6 +5,11 @@ export const Header = styled.div`
   width: 100%;
   height: 59px;
   padding: 26px 298px 2px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
 `;
 
 export const review = styled.div`

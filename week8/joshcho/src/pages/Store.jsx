@@ -47,19 +47,18 @@ const Store = () => {
 
   return (
     <>
-      <GoBack onClick={handleClick} />
-      <S.Header>
+      <S.Header style={{ display: "flex", alignItems: "center" }}>
+        <GoBack onClick={handleClick} />
         <Title value="샐로리 한남점" />
       </S.Header>
-      <S.review>
-        <img src={star} alt="별" />
-        4.9 리뷰3,919
-      </S.review>
-      <S.navStyle>결제방법 토스결제만 현장결제 안됨</S.navStyle>
-      <S.navStyle>최소주문 13,000원</S.navStyle>
-      <S.navStyle>배달시간 약 15-25분</S.navStyle>
-
-      <div style={{ paddingBottom: "100px" }}>
+      <div style={{ paddingTop: "87px", paddingBottom: "100px" }}>
+        <S.review>
+          <img src={star} alt="별" />
+          4.9 리뷰3,919
+        </S.review>
+        <S.navStyle>결제방법 토스결제만 현장결제 안됨</S.navStyle>
+        <S.navStyle>최소주문 13,000원</S.navStyle>
+        <S.navStyle>배달시간 약 15-25분</S.navStyle>
         <S.BarStyle>샐러드</S.BarStyle>
         {menus.length === 0 ? (
           <p>메뉴 목록이 비어있습니다.</p>

@@ -28,7 +28,7 @@ const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
 
 const StoreListAll = styled.div`
   width: 100%;
-  height: 116px;
+  height: 100px;
   display: flex;
 `;
 
