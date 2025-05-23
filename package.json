@@ -29,13 +29,7 @@
     "@types/node": "^22.14.0",
     "http-server": "^14.1.1"
   },
-  "dependencies": {
+  "dependencies": { 
     "react-router-dom": "^7.5.3"
-<<<<<<< HEAD
-  },
-  "resolutions": {
-    "styled-components": "^5"
-=======
->>>>>>> b8395b8678afdc070110e48e57a7d48c9b2b1459
   }
 }

@@ -1,0 +1,20 @@
+{
+  "saladStores": [
+    {
+      "id": "5",
+      "name": "파스트보이",
+      "rate": "4.8",
+      "comments": "801",
+      "del_time": "13분~30분",
+      "del_price": "2,000원"
+    },
+    {
+      "id": "afb4",
+      "name": "건국밀크",
+      "rate": "1.5",
+      "comments": "44",
+      "del_time": "14분",
+      "del_price": "2000원"
+    }
+  ]
+}
