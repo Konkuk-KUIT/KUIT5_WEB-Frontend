@@ -4,7 +4,7 @@ import "./App.css";
 
 const App = () => {
   const [title, setTitle] = useState("");
-  const { posts, addPost, loading } = usePosts();     // 커스텀 훅 가져오기
+  const { posts, addPost, loading } = usePosts();   // 커스텀 훅 가져오기
 
   const handleSubmit = () => {
     addPost(title);
