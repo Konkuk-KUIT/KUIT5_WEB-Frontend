@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./Stores.styles";
 import BottomOrderBar from "../components/BottomOrderBar";
 import Title from "../components/Title";
@@ -9,24 +9,22 @@ import { useStores } from "../hooks/useStores";
 
 const Stores = () => {
   const navigate = useNavigate();
-  const { stores, loading, addStore } = useStores();
+  const {
+    stores,
+    loading,
+    form,
+    editingId,
+    handleChange,
+    handleSubmit,
+    handleEdit,
+    handleCancel,
+    deleteStore,
+  } = useStores();
 
-  // ✅ newStore 제거 → 대신 로컬 상태 form으로 입력 관리
-  const [form, setForm] = useState({
-    Grade: "",
-    StoreName: "",
-    Rating: "",
-    Delivery: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = () => {
-    addStore(form);
-    setForm({ Grade: "", StoreName: "", Rating: "", Delivery: "" }); // 입력 초기화
+  const handleDelete = (id) => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      deleteStore(id);
+    }
   };
 
   const handleClick = () => {
@@ -42,14 +40,58 @@ const Stores = () => {
         <Title value="샐러드" />
       </S.Header>
 
-      {stores.map((item, index) => (
-        <StoreList
-          key={index}
-          Grade={item.Grade}
-          StoreName={item.StoreName}
-          Rating={item.Rating}
-          Delivery={item.Delivery}
-        />
+      {stores.map((item) => (
+        <div key={item.id} style={{ padding: "1rem" }}>
+          {editingId === item.id ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <input
+                type="text"
+                name="Grade"
+                placeholder="등급 ex: 1위 / 공백 가능"
+                value={form.Grade}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="StoreName"
+                placeholder="가게 이름"
+                value={form.StoreName}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="Rating"
+                placeholder="평점 ex: 4.8"
+                value={form.Rating}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="Delivery"
+                placeholder="배달 정보 ex: 13~30분 ∙ 배달비 2,000원"
+                value={form.Delivery}
+                onChange={handleChange}
+              />
+              <div style={{ display: 'flex', gap: '5px' }}>
+                <button onClick={handleSubmit}>수정 완료</button>
+                <button onClick={handleCancel}>취소</button>
+              </div>
+            </div>
+          ) : (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <StoreList
+                Grade={item.Grade}
+                StoreName={item.StoreName}
+                Rating={item.Rating}
+                Delivery={item.Delivery}
+              />
+              <div style={{ display: 'flex', gap: '5px' }}>
+                <button onClick={() => handleEdit(item)}>수정</button>
+                <button onClick={() => handleDelete(item.id)}>삭제</button>
+              </div>
+            </div>
+          )}
+        </div>
       ))}
 
       <BottomOrderBar />
@@ -58,7 +100,7 @@ const Stores = () => {
         <input
           type="text"
           name="Grade"
-          placeholder="등급 예: 1위 / 공백 가능"
+          placeholder="등급 ex: 1위 / 공백 가능"
           value={form.Grade}
           onChange={handleChange}
         />
@@ -72,14 +114,14 @@ const Stores = () => {
         <input
           type="text"
           name="Rating"
-          placeholder="평점 예: 4.8 (112)"
+          placeholder="평점 ex: 4.8"
           value={form.Rating}
           onChange={handleChange}
         />
         <input
           type="text"
           name="Delivery"
-          placeholder="배달 정보 예: 13~30분 ∙ 배달비 2,000원"
+          placeholder="배달 정보 ex: 13~30분 ∙ 배달비 2,000원"
           value={form.Delivery}
           onChange={handleChange}
         />

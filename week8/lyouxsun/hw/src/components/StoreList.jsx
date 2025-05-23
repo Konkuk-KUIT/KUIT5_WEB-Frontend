@@ -1,16 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
 const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/store/1");
-  };
-
   return (
-    <StoreListAll onClick={handleClick}>
+    <StoreListAll>
       <StoreImg></StoreImg>
       <Description>
         <GradeStyle>{Grade}</GradeStyle>

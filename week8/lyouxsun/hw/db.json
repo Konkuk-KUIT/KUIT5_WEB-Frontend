@@ -4,37 +4,37 @@
       "MenuName": "토마토 샐러드",
       "Price": "7,600원",
       "Material": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
-      "id": 1
+      "id": "1"
     },
     {
       "MenuName": "시저 샐러드",
       "Price": "6,900원",
       "Material": "로메인 상추와 크루통이며, 달걀, 올리브유, 레몬 즙, 마늘",
-      "id": 2
+      "id": "2"
     },
     {
       "MenuName": "리코타치즈 샐러드",
       "Price": "6,900원",
       "Material": "리코타치즈, 양상추, 베이비채소, 방울토마톹, 블랙올리브",
-      "id": 3
+      "id": "3"
     },
     {
       "MenuName": "탄단지 샐러드",
       "Price": "7,600원",
       "Material": "치킨, 고구마, 견과류, 크래배리, 오리엔탈",
-      "id": 4
+      "id": "4"
     },
     {
       "MenuName": "연어 샐러드",
       "Price": "9,800원",
       "Material": "훈제연어 슬라이스, 양상추, 베이비채소, 양파, 케이퍼",
-      "id": 5
+      "id": "5"
     },
     {
       "MenuName": "우삼겹 메밀면 샐러드",
       "Price": "8,900원",
       "Material": "우삼겹, 메밀면, 오이, 양상추, 호두, 옥수수, 참께 드레싱",
-      "id": 6
+      "id": "6"
     }
   ],
   "orders": [
@@ -44,113 +44,113 @@
       "Material": "추천소스, 채소볼, 베이컨추가, 시저드레싱추가",
       "Price": "10,600원",
       "Count": "1개",
-      "id": 7
+      "id": "7"
     }
   ],
   "rectangles": [
     {
       "img_src": "/assets/pizza.svg",
       "value": "피자",
-      "id": 8
+      "id": "8"
     },
     {
       "img_src": "/assets/salad.svg",
       "value": "샐러드",
-      "id": 9
+      "id": "9"
     },
     {
       "img_src": "/assets/hamburger.svg",
       "value": "햄버거",
-      "id": 10
+      "id": "10"
     },
     {
       "img_src": "/assets/koreanFood.svg",
       "value": "한식",
-      "id": 11
+      "id": "11"
     },
     {
       "img_src": "/assets/snackFood.svg",
       "value": "분식",
-      "id": 12
+      "id": "12"
     },
     {
       "img_src": "/assets/chicken.svg",
       "value": "치킨",
-      "id": 13
+      "id": "13"
     },
     {
       "img_src": "/assets/sushi.svg",
       "value": "초밥",
-      "id": 14
+      "id": "14"
     },
     {
       "img_src": "/assets/sandwich.svg",
       "value": "샌드위치",
-      "id": 15
+      "id": "15"
     },
     {
       "img_src": "/assets/pasta.svg",
       "value": "파스타",
-      "id": 16
+      "id": "16"
     },
     {
       "img_src": "/assets/dessert.svg",
       "value": "디저트",
-      "id": 17
+      "id": "17"
     },
     {
       "img_src": "/assets/coffee.svg",
       "value": "커피",
-      "id": 18
+      "id": "18"
     },
     {
       "img_src": "/assets/seeMore.svg",
       "value": "더보기",
-      "id": 19
+      "id": "19"
     }
   ],
   "stores": [
     {
       "Grade": "1위",
-      "StoreName": "샐로리 한남점",
+      "StoreName": "샐로리 건대점",
       "Rating": "4.9 (3,919)",
       "Delivery": "13분~30분 ∙ 배달비 2,000원",
-      "id": 20
+      "id": "20"
     },
     {
       "Grade": "2위",
       "StoreName": "옐로우푸드 샐러드",
       "Rating": "4.8 (1,129)",
       "Delivery": "13분~30분 ∙ 배달비 2,000원",
-      "id": 21
+      "id": "21"
     },
     {
       "Grade": "3위",
       "StoreName": "씬더볼드 한남점",
       "Rating": "4.8 (919)",
       "Delivery": "13분~30분 ∙ 배달비 2,000원",
-      "id": 22
+      "id": "22"
     },
     {
       "Grade": "",
       "StoreName": "THE 샐러드가득담은은",
       "Rating": "5.0 (27)",
       "Delivery": "13분~30분 ∙ 배달비 2,000원",
-      "id": 23
+      "id": "23"
     },
     {
       "Grade": "",
       "StoreName": "파스토보이",
       "Rating": "4.8 (801)",
       "Delivery": "13분~30분 ∙ 배달비 2,000원",
-      "id": 24
+      "id": "24"
     },
     {
       "Grade": "",
       "StoreName": "힘난다 샐러드",
       "Rating": "4.1 (34)",
       "Delivery": "13분~30분 ∙ 배달비 2,000원",
-      "id": 25
+      "id": "25"
     },
     {
       "id": "e6ac",

@@ -5,6 +5,13 @@ const API_URL = "http://localhost:3001/stores";
 export const useStores = () => {
   const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [form, setForm] = useState({
+    Grade: "",
+    StoreName: "",
+    Rating: "",
+    Delivery: "",
+  });
+  const [editingId, setEditingId] = useState(null);
 
   useEffect(() => {
     const fetchStores = async () => {
@@ -22,33 +29,97 @@ export const useStores = () => {
     fetchStores();
   }, []);
 
-  const getNextId = () => {
-    if (stores.length === 0) return 1;
-    return Math.max(...stores.map(store => store.id)) + 1;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = () => {
+    if (editingId) {
+      updateStore(editingId, form);
+      setEditingId(null);
+    } else {
+      addStore(form);
+    }
+    setForm({ Grade: "", StoreName: "", Rating: "", Delivery: "" });
+  };
+
+  const handleEdit = (store) => {
+    setEditingId(store.id);
+    setForm({
+      Grade: store.Grade,
+      StoreName: store.StoreName,
+      Rating: store.Rating,
+      Delivery: store.Delivery,
+    });
+  };
+
+  const handleCancel = () => {
+    setEditingId(null);
+    setForm({ Grade: "", StoreName: "", Rating: "", Delivery: "" });
   };
 
   const addStore = async (store) => {
     try {
-      const newStore = {
-        ...store,
-        id: getNextId()
-      };
-
       const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newStore),
+        body: JSON.stringify(store),
       });
-      const added = await res.json();
-      setStores((prev) => [...prev, added]);
+      const newStore = await res.json();
+      setStores((prev) => [...prev, newStore]);
     } catch (err) {
       console.error("가게 추가 실패:", err);
+    }
+  };
+
+  const updateStore = async (id, updatedStore) => {
+    try {
+      const storeWithId = { ...updatedStore, id };
+      const res = await fetch(`${API_URL}/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(storeWithId),
+      });
+      
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      
+      const updated = await res.json();
+      setStores((prev) =>
+        prev.map((store) => (store.id === id ? updated : store))
+      );
+    } catch (err) {
+      console.error("가게 수정 실패:", err);
+      setStores((prev) =>
+        prev.map((store) => (store.id === id ? { ...store, ...updatedStore } : store))
+      );
+    }
+  };
+
+  const deleteStore = async (id) => {
+    try {
+      await fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
+      });
+      setStores((prev) => prev.filter((store) => store.id !== id));
+    } catch (err) {
+      console.error("가게 삭제 실패:", err);
     }
   };
 
   return {
     stores,
     loading,
+    form,
+    editingId,
+    handleChange,
+    handleSubmit,
+    handleEdit,
+    handleCancel,
     addStore,
+    updateStore,
+    deleteStore,
   };
 };
