@@ -1,7 +1,6 @@
 import React from "react";
 
 const ProductPost = ({ product }) => {
-  // 비구조화 할당을 사용하여 product 객체의 속성을 추출
   const { image, alt, title, location, date, price, likes, chats } = product;
 
   return (
