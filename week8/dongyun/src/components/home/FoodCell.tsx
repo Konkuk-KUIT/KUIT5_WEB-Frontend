@@ -8,11 +8,15 @@ type FoodCellProps = {
 
 const FoodCell = ({categoryName, categoryIcon}:FoodCellProps) => {
     const navigate = useNavigate();
-    const goToStore = () => {                                    // 3
-        navigate('/store');
+    const handleClick = () => {                                    // 3
+        navigate('/store', {
+            state: {
+                categoryName : categoryName
+            },
+        });
     };
     return (
-        <S.FoodCellWrapper onClick={goToStore}>
+        <S.FoodCellWrapper onClick={handleClick}>
             <S.FoodCategoryIcon>
                 <img src={`${categoryIcon}`} alt="icon"/>
             </S.FoodCategoryIcon>

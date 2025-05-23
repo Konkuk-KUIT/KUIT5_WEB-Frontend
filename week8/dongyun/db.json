@@ -37,7 +37,7 @@
       "image": "/public_assets/pizzaIcon.svg"
     }
   ],
-  "storeList": [
+  "store-list": [
     {
       "rank": 1,
       "name": "샐로리 한남점",
@@ -109,7 +109,7 @@
       "purMethod": "토스결제만 현장결제 안됨"
     }
   ],
-  "saladMenu": [
+  "salad-menu": [
     {
       "name": "토마토 샐러드",
       "isBest": true,

@@ -2,6 +2,7 @@ import FoodCell from "./FoodCell.jsx";
 import {getFoodCategory} from "../../apis/food-category.ts";
 import styled from "styled-components";
 import {useEffect, useState} from "react";
+import type {foodCategory} from "../../types/types.ts";
 
 const FoodCategoryWrapper = styled.div`
     display: grid;
@@ -14,11 +15,6 @@ const FoodCategoryWrapper = styled.div`
     height: 326px;
     box-sizing: border-box;
 `;
-
-type foodCategory = {
-    name : string,
-    image : string,
-}
 
 const FoodCategory = () => {
     const [foodCategories, setFoodCategories] = useState<foodCategory[] | null>([])
