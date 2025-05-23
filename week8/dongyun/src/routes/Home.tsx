@@ -3,6 +3,12 @@ import SectionHeader from "../components/shared/SectionHeader.tsx";
 import OrderFooter from "../components/shared/OrderFooter.tsx";
 import HomeIndicator from "../components/shared/HomeIndicator.tsx";
 import {useEffect, useState} from "react";
+import styled from "styled-components";
+
+const Layout = styled.div`
+    width: 390px;
+    height: 798px;
+`
 
 const Home = () => {
     let location  = useLocation()
@@ -12,12 +18,12 @@ const Home = () => {
     }, [location.pathname]);
 
     return (
-        <div style={{position:"absolute"}}>
+        <Layout>
             <SectionHeader/>
             <Outlet/>
             {isOrderNow ? null : <OrderFooter/>}
             <HomeIndicator/>
-        </div>
+        </Layout>
     )
 }
 

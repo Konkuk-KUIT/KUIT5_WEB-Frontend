@@ -1,7 +1,40 @@
 import CartCard from "../components/cart/CartCard.tsx";
 import * as S from "../components/cart/Cart.style.tsx"
+import {useEffect, useState} from "react";
+import {getCartList} from "../apis/cart-list.ts";
+import type {cartItem} from "../types/types.ts";
 
 const Cart = () => {
+    const [cartList, setCartList] = useState<cartItem[]>([])
+    const [isAdding, setIsAdding] = useState(false);
+
+    useEffect(() => {
+        getCartList().then(setCartList).catch(console.error);
+    }, []);
+
+    const [itemName, setItemName] = useState('');
+    const [itemIngred, setITemIngred] = useState('');
+    const [itemCount, setItemCount] = useState<number | ''>('');
+
+    const handleClick = async () => {
+        const res = await fetch('http://localhost:3001/cart-list', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                name: itemName,
+                ingredients: itemIngred,
+                count: itemCount
+            })
+        });
+        const newCart = await res.json();
+        setCartList((prev) => [...prev, newCart]);
+        setItemName('')
+        setITemIngred('')
+        setItemCount(0)
+        setIsAdding(false)
+        return await res.json();
+    }
+
     return (
         <>
             <S.Seperator/>
@@ -14,11 +47,44 @@ const Cart = () => {
                 </S.WarningMinOrder>
             </S.StoreCartHeader>
 
-            <CartCard/>
+            {/*fetch하는 컴포넌트*/}
+            {cartList.map((cartItem)=>{
+                return (
+                    <CartCard cartItem={cartItem}/>
+                )
+            })}
 
-            <S.AddMoreCart>
+            <S.AddMoreCart onClick={()=>{
+                setIsAdding(!isAdding)
+            }}>
                 더담기 <S.AddMoreCartIcon src="/public_assets/blue-plus-icon.svg"/>
             </S.AddMoreCart>
+
+            {isAdding ? (
+                <S.AddingContainer>
+                    <S.InputContainer>
+                        <S.ItemNameInput
+                            type="text"
+                            placeholder="카트에 담을 음식 이름 입력"
+                            value={itemName}
+                            onChange={(e) => setItemName(e.target.value)}
+                        />
+                        <S.ItemIngredInput
+                            type="text"
+                            placeholder="카트에 담을 재료 목록 입력"
+                            value={itemIngred}
+                            onChange={(e) => setITemIngred(e.target.value)}
+                        />
+                        <S.ItemCountInput
+                            type="number"
+                            placeholder="카트에 담을 개수 입력"
+                            value={itemCount}
+                            onChange={(e) => setItemCount(e.target.value === '' ? '' : Number(e.target.value))}
+                        />
+                    </S.InputContainer>
+                    <S.AddCartButton onClick={handleClick}>담기</S.AddCartButton>
+                </S.AddingContainer>
+            ) : null}
 
             <S.Seperator/>
 

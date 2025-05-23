@@ -5,7 +5,7 @@ export const Greeting =  styled.div`
     flex-direction: column;
     width: 298px;
     height: 59px;
-    margin: 0 4px;
+    margin: 0 24px;
 `
 export const MainText = styled.span`
     color: #191F28;

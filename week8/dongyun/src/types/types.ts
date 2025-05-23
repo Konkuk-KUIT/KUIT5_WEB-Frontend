@@ -12,8 +12,8 @@ export type storeList = {
 }
 
 export type foodCategory = {
-    name : string
-    image : string
+    name: string
+    image: string
 }
 
 export type storeMenu =
@@ -22,4 +22,12 @@ export type storeMenu =
         isBest: boolean
         price: number
         ingredients: string
+    }
+
+export type cartItem =
+    {
+        name: string
+        price: number
+        ingredients: string
+        count: number
     }

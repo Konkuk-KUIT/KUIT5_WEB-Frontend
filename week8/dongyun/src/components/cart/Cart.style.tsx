@@ -153,3 +153,72 @@ export const PurchaseButton = styled.button`
     left: 20px;
     right: 20px;
 `;
+
+export const AddingContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: 170px;
+`
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 300px;
+    
+`;
+
+export const ItemNameInput = styled.input`
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  &:focus {
+    border-color: #3182f6;
+    outline: none;
+  }
+`;
+
+export const ItemIngredInput = styled.input`
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  &:focus {
+    border-color: #3182f6;
+    outline: none;
+  }
+`;
+
+export const ItemCountInput = styled.input`
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  &:focus {
+    border-color: #3182f6;
+    outline: none;
+  }
+`;
+
+export const AddCartButton = styled.button`
+    width: 52px;
+    height: 90%;
+    display: inline-flex;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    background: #3182f6;
+    color: #fff;
+    font-size: 13px;
+    font-family: Pretendard, serif;
+    font-weight: 500;
+    word-wrap: break-word;
+    cursor: pointer;
+`
