@@ -1,6 +1,8 @@
 export type storeList = {
+    id: number
     rank: number
     name: string
+    category: string
     rating: number
     reviews: number
     deliveryTime: string
@@ -10,6 +12,14 @@ export type storeList = {
 }
 
 export type foodCategory = {
-    name : string,
-    image : string,
+    name : string
+    image : string
 }
+
+export type storeMenu =
+    {
+        name: string
+        isBest: boolean
+        price: number
+        ingredients: string
+    }

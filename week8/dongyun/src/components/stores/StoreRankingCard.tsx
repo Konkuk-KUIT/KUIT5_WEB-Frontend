@@ -9,11 +9,15 @@ type StoreRankingCardProps = {
 const StoreRankingCard = ({store}:StoreRankingCardProps) =>{
     const navigate = useNavigate()
     const { rank, name, rating, reviews, deliveryTime, deliveryFee} = store;
-    const goToStoreMenu = () => {
-        navigate('/store/1')
+    const handleClick = () => {
+        navigate(`/store/${store.id}`, {
+            state: {
+                storeInfo : store
+            },
+        })
     }
     return (
-        <S.StoreCard onClick={goToStoreMenu}>
+        <S.StoreCard onClick={handleClick}>
             <S.StoreImage/>
 
             <S.StoreInfo>
