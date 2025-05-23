@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import star from "../img/star.svg";
 import { useNavigate } from "react-router-dom";
 
 const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
@@ -17,7 +16,7 @@ const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
         <GradeStyle>{Grade}</GradeStyle>
         <StoreNameStyle>{StoreName}</StoreNameStyle>
         <RatingStyle>
-          <img src={star} alt="별" />
+          <img src="/assets/star.svg" alt="별" />
           {Rating}
         </RatingStyle>
         <DeliveryStyle>{Delivery}</DeliveryStyle>

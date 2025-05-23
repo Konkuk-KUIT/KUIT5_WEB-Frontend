@@ -1,17 +1,14 @@
 import React from "react";
-import warn from "../img/warn.svg";
 import styled from "styled-components";
-import right_chevron from "../img/right_chevron.svg";
-import plus from "../img/plus.svg";
 
-const OrderList = ({ StoreName, MenuName, Material, Price, Count }) => {
+const OrderList = ({ StoreName, MenuName, Material, Price, Count, onAddOrder }) => {
   return (
     <>
       <OrderHeader>
         <StoresName>{StoreName}</StoresName>
         <Warning>
           최소금액 미달
-          <img src={warn} alt="경고" />
+          <img src="/assets/warn.svg" alt="경고" />
         </Warning>
       </OrderHeader>
       <OrderMain>
@@ -23,12 +20,12 @@ const OrderList = ({ StoreName, MenuName, Material, Price, Count }) => {
         </Description>
         <CountDiv>
           {Count}
-          <img src={right_chevron} alt="바로가기" width="16px" height="16px" />
+          <img src="/assets/right_chevron.svg" alt="바로가기" width="16px" height="16px" />
         </CountDiv>
       </OrderMain>
-      <OrderFooter>
+      <OrderFooter onClick={onAddOrder}>
         더 담기
-        <img src={plus} alt="더하기" />
+        <img src="/assets/plus.svg" alt="더하기" />
       </OrderFooter>
     </>
   );

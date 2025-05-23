@@ -2,10 +2,14 @@ import React from "react";
 import Title from "../components/Title";
 import Rectangle from "../components/Rectangle";
 import * as H from "./Home.styles";
-import RectangleList from "../models/RectangleList";
 import BottomOrderBar from "../components/BottomOrderBar";
+import { useRectangles } from "../hooks/useRectangles";
 
 const Home = () => {
+  const { rectangles, loading } = useRectangles();
+
+  if (loading) return <p>카테고리를 불러오는 중입니다...</p>;
+
   return (
     <>
       <H.Header>
@@ -13,7 +17,7 @@ const Home = () => {
         <H.SubTitle>한남중앙로 40길 (한남 빌리지)(으)로 배달 &gt;</H.SubTitle>
       </H.Header>
       <H.RectangleDiv>
-        {RectangleList.map((item, index) => (
+        {rectangles.map((item, index) => (
           <Rectangle key={index} img_src={item.img_src} value={item.value} />
         ))}
       </H.RectangleDiv>

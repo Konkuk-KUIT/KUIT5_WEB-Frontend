@@ -11,7 +11,7 @@ const Rectangle = ({ img_src, value }) => {
 
   return (
     <StyledRectangle onClick={handleCilck}>
-      <StyledImage src={img_src} alt="이미지" />
+      <StyledImage src={img_src} alt={value} />
       <StyledText>{value}</StyledText>
     </StyledRectangle>
   );
