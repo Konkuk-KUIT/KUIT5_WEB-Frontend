@@ -15,11 +15,18 @@ const Stores = () => {
   const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [newStoreName, setNewStoreName] = useState(""); // 새로운 가게 이름 입력을 위한 상태
-  const [editingStoreId, setEditingStoreId] = useState(null); // 수정 중인 가게 ID
-  const [editingStoreName, setEditingStoreName] = useState(""); // 수정 중인 가게 이름
+  // 새로운 가게 정보 입력을 위한 상태
+  const [newStore, setNewStore] = useState({
+    Grade: "",
+    StoreName: "",
+    Rating: "",
+    Delivery: "",
+  });
+  // 수정 중인 가게 정보 상태
+  const [editingStoreId, setEditingStoreId] = useState(null);
+  const [editingStore, setEditingStore] = useState(null);
 
-  // 가게 목록 가져오기 (GET)
+  // 가게 목록 가져오기 (GET) 및 정렬
   useEffect(() => {
     const fetchStores = async () => {
       try {
@@ -28,9 +35,19 @@ const Stores = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
+        // 등수(Grade)를 기준으로 정렬
+        const sortedStores = data.sort((a, b) => {
+          // "N위" 형태의 문자열에서 숫자만 추출하여 비교
+          const gradeA = parseInt(a.Grade.replace("위", "")) || Infinity; // 숫자가 아니면 무한대로 처리하여 뒤로 보냄
+          const gradeB = parseInt(b.Grade.replace("위", "")) || Infinity;
+          return gradeA - gradeB;
+        });
         // 각 가게 객체에 고유한 id가 없으면 json-server가 자동으로 생성한 id를 사용하도록 key를 id로 변경
         setStores(
-          data.map((item) => ({ ...item, id: item.id || item.StoreName }))
+          sortedStores.map((item) => ({
+            ...item,
+            id: item.id || item.StoreName,
+          }))
         ); // 예시: StoreName을 임시 id로 사용하거나 서버에서 받은 id 사용
       } catch (error) {
         console.error("가게 목록을 가져오는 데 실패했습니다:", error);
@@ -43,9 +60,16 @@ const Stores = () => {
     fetchStores();
   }, []); // 컴포넌트가 처음 마운트될 때만 실행
 
+  // 새로운 가게 입력 필드 변경 핸들러
+  const handleNewInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewStore({ ...newStore, [name]: value });
+  };
+
   // 새로운 가게 추가 (POST)
   const handleAddStore = async () => {
-    if (!newStoreName.trim()) return; // 이름이 비어있으면 추가하지 않음
+    // 필수 필드(예: StoreName) 검증
+    if (!newStore.StoreName.trim()) return;
 
     try {
       const response = await fetch(API_URL, {
@@ -53,16 +77,32 @@ const Stores = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ StoreName: newStoreName }), // 가게 이름만 전송
+        body: JSON.stringify(newStore), // 새로운 가게 정보를 모두 전송
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const newStore = await response.json();
-      setStores((prevStores) => [...prevStores, newStore]); // 상태 업데이트
-      setNewStoreName(""); // 입력 필드 초기화
+      const addedStore = await response.json();
+      // 새로운 가게를 추가한 후 다시 목록을 가져와 정렬
+      // 또는 추가된 가게를 기존 목록에 추가하고 정렬
+      // 여기서는 간단하게 새로고침하는 방식을 사용 (실제 앱에서는 데이터 가져오는 로직 재사용 고려)
+      // fetchStores(); // 이렇게 하면 전체 목록을 다시 가져옴
+
+      // 또는 추가된 항목만 상태에 반영하고 정렬
+      setStores((prevStores) => {
+        const updatedStores = [
+          ...prevStores,
+          { ...addedStore, id: addedStore.id || addedStore.StoreName },
+        ];
+        return updatedStores.sort((a, b) => {
+          const gradeA = parseInt(a.Grade.replace("위", "")) || Infinity;
+          const gradeB = parseInt(b.Grade.replace("위", "")) || Infinity;
+          return gradeA - gradeB;
+        });
+      });
+      setNewStore({ Grade: "", StoreName: "", Rating: "", Delivery: "" }); // 입력 필드 초기화
     } catch (error) {
       console.error("가게 추가 중 오류 발생:", error);
       setError(error);
@@ -72,30 +112,32 @@ const Stores = () => {
   // 가게 수정 시작 핸들러
   const handleStartEditing = (store) => {
     setEditingStoreId(store.id);
-    setEditingStoreName(store.StoreName);
+    setEditingStore({ ...store }); // 수정 중인 가게 정보 상태 설정
+  };
+
+  // 수정 입력 필드 변경 핸들러
+  const handleEditingInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditingStore({ ...editingStore, [name]: value });
   };
 
   // 수정 취소 핸들러
   const handleCancelEditing = () => {
     setEditingStoreId(null);
-    setEditingStoreName("");
+    setEditingStore(null);
   };
 
   // 가게 수정 완료 (PUT)
-  const handleUpdateStore = async (id) => {
-    if (!editingStoreName.trim()) return; // 이름이 비어있으면 수정하지 않음
+  const handleUpdateStore = async () => {
+    if (!editingStore || !editingStore.StoreName.trim()) return;
 
     try {
-      const response = await fetch(`${API_URL}/${id}`, {
+      const response = await fetch(`${API_URL}/${editingStore.id}`, {
         method: "PUT", // 또는 PATCH 사용 가능
         headers: {
           "Content-Type": "application/json",
         },
-        // 수정 가능한 필드만 전송. 여기서는 StoreName만 수정한다고 가정.
-        body: JSON.stringify({
-          ...stores.find((s) => s.id === id),
-          StoreName: editingStoreName,
-        }),
+        body: JSON.stringify(editingStore), // 수정된 가게 정보를 모두 전송
       });
 
       if (!response.ok) {
@@ -103,12 +145,20 @@ const Stores = () => {
       }
 
       const updatedStore = await response.json();
-      setStores((prevStores) =>
-        prevStores.map((store) => (store.id === id ? updatedStore : store))
-      ); // 상태 업데이트
+      // 수정된 가게를 상태에 반영하고 정렬
+      setStores((prevStores) => {
+        const updatedStores = prevStores.map((store) =>
+          store.id === updatedStore.id ? updatedStore : store
+        );
+        return updatedStores.sort((a, b) => {
+          const gradeA = parseInt(a.Grade.replace("위", "")) || Infinity;
+          const gradeB = parseInt(b.Grade.replace("위", "")) || Infinity;
+          return gradeA - gradeB;
+        });
+      }); // 상태 업데이트 및 정렬
       handleCancelEditing(); // 수정 모드 종료
     } catch (error) {
-      console.error(`가게 ${id} 수정 중 오류 발생:`, error);
+      console.error(`가게 ${editingStore.id} 수정 중 오류 발생:`, error);
       setError(error);
     }
   };
@@ -124,8 +174,15 @@ const Stores = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      // 삭제 성공 시 상태에서 해당 가게 제거
-      setStores((prevStores) => prevStores.filter((store) => store.id !== id)); // 상태 업데이트
+      // 삭제 성공 시 상태에서 해당 가게 제거하고 정렬
+      setStores((prevStores) => {
+        const updatedStores = prevStores.filter((store) => store.id !== id);
+        return updatedStores.sort((a, b) => {
+          const gradeA = parseInt(a.Grade.replace("위", "")) || Infinity;
+          const gradeB = parseInt(b.Grade.replace("위", "")) || Infinity;
+          return gradeA - gradeB;
+        });
+      }); // 상태 업데이트 및 정렬
     } catch (error) {
       console.error(`가게 ${id} 삭제 중 오류 발생:`, error);
       setError(error);
@@ -151,6 +208,7 @@ const Stores = () => {
       <S.Header>
         <Title value="샐러드" />
       </S.Header>
+
       {/* 메인 콘텐츠 영역에 하단 패딩 추가 */}
       <div style={{ paddingBottom: "100px" }}>
         {" "}
@@ -170,48 +228,65 @@ const Stores = () => {
                 padding: "10px 0",
               }}
             >
-              {" "}
-              {/* flexbox 스타일 적용 */}
-              {editingStoreId === item.id ? (
+              {editingStoreId === item.id && editingStore ? (
                 // 수정 모드
                 <div
                   style={{
                     flexGrow: 1,
                     marginRight: "10px",
                     display: "flex",
-                    alignItems: "center",
+                    flexDirection: "column",
+                    gap: "5px",
                   }}
                 >
                   {" "}
-                  {/* 입력 필드 영역이 공간을 차지하도록 설정 */}
+                  {/* 컬럼 방향 정렬 및 간격 추가 */}
                   <Input
                     type="text"
-                    value={editingStoreName}
-                    onChange={(e) => setEditingStoreName(e.target.value)}
-                    placeholder="가게 이름 수정"
-                    style={{ marginRight: "10px" }}
+                    name="Grade" // name 속성 추가
+                    value={editingStore.Grade}
+                    onChange={handleEditingInputChange}
+                    placeholder="등수 (예: 1위)"
                   />
-                  <ActionButton
-                    actiontype="edit"
-                    onClick={() => handleUpdateStore(item.id)}
-                  >
-                    저장
-                  </ActionButton>
-                  <ActionButton
-                    actiontype="default"
-                    onClick={handleCancelEditing}
-                  >
-                    취소
-                  </ActionButton>
+                  <Input
+                    type="text"
+                    name="StoreName" // name 속성 추가
+                    value={editingStore.StoreName}
+                    onChange={handleEditingInputChange}
+                    placeholder="가게 이름"
+                  />
+                  <Input
+                    type="text"
+                    name="Rating" // name 속성 추가
+                    value={editingStore.Rating}
+                    onChange={handleEditingInputChange}
+                    placeholder="평점 (예: 4.9 (3,919))"
+                  />
+                  <Input
+                    type="text"
+                    name="Delivery" // name 속성 추가
+                    value={editingStore.Delivery}
+                    onChange={handleEditingInputChange}
+                    placeholder="배달 시간 및 비용 (예: 13분~30분 ∙ 배달비 2,000원)"
+                  />
+                  <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                    {" "}
+                    {/* 버튼들을 오른쪽으로 정렬 */}
+                    <ActionButton actiontype="edit" onClick={handleUpdateStore}>
+                      저장
+                    </ActionButton>
+                    <ActionButton
+                      actiontype="default"
+                      onClick={handleCancelEditing}
+                    >
+                      취소
+                    </ActionButton>
+                  </div>
                 </div>
               ) : (
                 // 일반 모드
                 <>
-                  {" "}
-                  {/* StoreList와 버튼 div를 감싸는 flex 아이템 */}
                   <div style={{ flexGrow: 1 }}>
-                    {" "}
-                    {/* StoreList가 공간을 차지하도록 설정 */}
                     <StoreList
                       Grade={item.Grade}
                       StoreName={item.StoreName}
@@ -221,8 +296,6 @@ const Stores = () => {
                   </div>
                   {/* 수정/삭제 버튼 컨테이너 */}
                   <div style={{ display: "flex", alignItems: "center" }}>
-                    {" "}
-                    {/* 버튼들을 가로로 배치 */}
                     <ActionButton
                       actiontype="edit"
                       onClick={() => handleStartEditing(item)}
@@ -247,24 +320,47 @@ const Stores = () => {
             marginTop: "20px",
             padding: "10px 0",
             display: "flex",
-            alignItems: "center",
+            flexDirection: "column",
+            gap: "10px",
           }}
         >
           {" "}
-          {/* 추가 입력 영역 스타일 */}
+          {/* 컬럼 방향 정렬 및 간격 추가 */}
+          <h3>새 가게 추가</h3> {/* 제목 추가 */}
           <Input
             type="text"
-            value={newStoreName}
-            onChange={(e) => setNewStoreName(e.target.value)}
+            name="Grade" // name 속성 추가
+            value={newStore.Grade}
+            onChange={handleNewInputChange}
+            placeholder="등수 (예: 1위)"
+          />
+          <Input
+            type="text"
+            name="StoreName" // name 속성 추가
+            value={newStore.StoreName}
+            onChange={handleNewInputChange}
             placeholder="새 가게 이름"
-            style={{ marginRight: "10px" }}
+          />
+          <Input
+            type="text"
+            name="Rating" // name 속성 추가
+            value={newStore.Rating}
+            onChange={handleNewInputChange}
+            placeholder="평점 (예: 4.9 (3,919))"
+          />
+          <Input
+            type="text"
+            name="Delivery" // name 속성 추가
+            value={newStore.Delivery}
+            onChange={handleNewInputChange}
+            placeholder="배달 시간 및 비용 (예: 13분~30분 ∙ 배달비 2,000원)"
           />
           <ActionButton actiontype="add" onClick={handleAddStore}>
             가게 추가
           </ActionButton>
         </div>
-      </div>{" "}
-      {/* 메인 콘텐츠 영역 끝 */}
+      </div>
+
       <BottomOrderBar />
     </>
   );
