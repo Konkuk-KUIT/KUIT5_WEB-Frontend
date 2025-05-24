@@ -1,0 +1,180 @@
+{
+  "food-category": [
+    {
+      "name": "피자1",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "1"
+    },
+    {
+      "name": "피자2",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "2"
+    },
+    {
+      "name": "피자3",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "3"
+    },
+    {
+      "name": "피자4",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "4"
+    },
+    {
+      "name": "피자5",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "5"
+    },
+    {
+      "name": "피자6",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "6"
+    },
+    {
+      "name": "피자7",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "7"
+    },
+    {
+      "name": "피자8",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "8"
+    },
+    {
+      "name": "피자9",
+      "image": "/public_assets/pizzaIcon.svg",
+      "id": "9"
+    }
+  ],
+  "store-list": [
+    {
+      "id": "0",
+      "rank": 1,
+      "name": "샐로리 한남점",
+      "category": "샐러드",
+      "rating": 4.9,
+      "reviews": 3919,
+      "deliveryTime": "15분~25분",
+      "deliveryFee": 2000,
+      "minOrder": 13000,
+      "purMethod": "토스결제만 현장결제 안됨"
+    },
+    {
+      "id": "1",
+      "rank": 2,
+      "name": "샐로리 한남점",
+      "category": "샐러드",
+      "rating": 4.9,
+      "reviews": 3919,
+      "deliveryTime": "15분~25분",
+      "deliveryFee": 2000,
+      "minOrder": 13000,
+      "purMethod": "토스결제만 현장결제 안됨"
+    },
+    {
+      "id": "2",
+      "rank": 3,
+      "name": "샐로리 한남점",
+      "category": "샐러드",
+      "rating": 4.9,
+      "reviews": 3919,
+      "deliveryTime": "15분~25분",
+      "deliveryFee": 2000,
+      "minOrder": 13000,
+      "purMethod": "토스결제만 현장결제 안됨"
+    },
+    {
+      "id": "3",
+      "rank": 4,
+      "name": "샐로리 한남점",
+      "category": "샐러드",
+      "rating": 4.9,
+      "reviews": 3919,
+      "deliveryTime": "15분~25분",
+      "deliveryFee": 2000,
+      "minOrder": 13000,
+      "purMethod": "토스결제만 현장결제 안됨"
+    },
+    {
+      "id": "4",
+      "rank": 5,
+      "name": "샐로리 한남점",
+      "category": "샐러드",
+      "rating": 4.9,
+      "reviews": 3919,
+      "deliveryTime": "15분~25분",
+      "deliveryFee": 2000,
+      "minOrder": 13000,
+      "purMethod": "토스결제만 현장결제 안됨"
+    },
+    {
+      "id": "5",
+      "rank": 6,
+      "name": "샐로리 한남점",
+      "category": "샐러드",
+      "rating": 4.9,
+      "reviews": 3919,
+      "deliveryTime": "15분~25분",
+      "deliveryFee": 2000,
+      "minOrder": 13000,
+      "purMethod": "토스결제만 현장결제 안됨"
+    },
+    {
+      "id": "6",
+      "rank": 7,
+      "name": "샐로리 한남점",
+      "category": "샐러드",
+      "rating": 4.9,
+      "reviews": 3919,
+      "deliveryTime": "15분~25분",
+      "deliveryFee": 2000,
+      "minOrder": 13000,
+      "purMethod": "토스결제만 현장결제 안됨"
+    }
+  ],
+  "store-menu": [
+    {
+      "name": "토마토 샐러드",
+      "isBest": true,
+      "price": 7600,
+      "ingredients": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "1"
+    },
+    {
+      "name": "토마토 샐러드",
+      "isBest": true,
+      "price": 7600,
+      "ingredients": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "2"
+    },
+    {
+      "name": "토마토 샐러드",
+      "isBest": true,
+      "price": 7600,
+      "ingredients": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "3"
+    },
+    {
+      "name": "토마토 샐러드",
+      "isBest": true,
+      "price": 7600,
+      "ingredients": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "4"
+    },
+    {
+      "name": "토마토 샐러드",
+      "isBest": true,
+      "price": 7600,
+      "ingredients": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+      "id": "5"
+    }
+  ],
+  "cart-list": [
+    {
+      "id": "0",
+      "name": "토마토 샐러드",
+      "ingredients": "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+      "count": 123456
+    }
+  ]
+}
