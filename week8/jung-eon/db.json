@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": "d2b8",
+      "name": "샐로리 한남점!",
+      "rank": "1",
+      "rating": "4.9",
+      "reviewCount": "3919",
+      "deliveryTime": "13분~30분",
+      "deliveryFee": "2000원"
+    },
+    {
+      "id": "0d61",
+      "name": "옐로우푸드 샐러드",
+      "rank": "2",
+      "rating": "4.8",
+      "reviewCount": "1129",
+      "deliveryTime": "13분~30분",
+      "deliveryFee": "2,000원"
+    },
+    {
+      "id": "eb85",
+      "name": "씬더볼드 한남점",
+      "rank": "",
+      "rating": "4.8",
+      "reviewCount": "919",
+      "deliveryTime": "13분~30분",
+      "deliveryFee": "2,000원"
+    }
+  ]
+}
