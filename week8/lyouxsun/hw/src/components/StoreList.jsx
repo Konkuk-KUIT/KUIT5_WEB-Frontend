@@ -1,7 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const StoreList = ({ Grade, StoreName, Rating, Delivery }) => {
+const StoreList = ({
+  Grade, StoreName, Rating, Delivery,
+  isEditing = false, form, onChange, onSubmit, onCancel
+}) => {
+  if (isEditing) {
+    return (
+      <form onSubmit={onSubmit}>
+        <input name="Grade" value={form.Grade} onChange={onChange} />
+        <input name="StoreName" value={form.StoreName} onChange={onChange} />
+        <input name="Rating" value={form.Rating} onChange={onChange} />
+        <input name="Delivery" value={form.Delivery} onChange={onChange} />
+        <button type="submit">수정 완료</button>
+        <button type="button" onClick={onCancel}>취소</button>
+      </form>
+    );
+  }
   return (
     <StoreListAll>
       <StoreImg></StoreImg>

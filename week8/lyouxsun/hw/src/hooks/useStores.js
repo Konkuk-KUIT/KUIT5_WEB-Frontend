@@ -30,18 +30,9 @@ export const useStores = () => {
   }, []);
 
   const handleChange = (e) => {
+    if (!e.target || !e.target.name) return;
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = () => {
-    if (editingId) {
-      updateStore(editingId, form);
-      setEditingId(null);
-    } else {
-      addStore(form);
-    }
-    setForm({ Grade: "", StoreName: "", Rating: "", Delivery: "" });
   };
 
   const handleEdit = (store) => {
@@ -115,7 +106,6 @@ export const useStores = () => {
     form,
     editingId,
     handleChange,
-    handleSubmit,
     handleEdit,
     handleCancel,
     addStore,
