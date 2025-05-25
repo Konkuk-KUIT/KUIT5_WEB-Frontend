@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
 
+
+const API_URL = "http://localhost:3001/store";
+
 const MainDiv = styled.div`
     font-family: "Pretendard";
     display: flex;
@@ -37,10 +40,25 @@ const TextAlign = styled.div`
     gap: 3px;
 `;
 
-const StoreDetail = ({rank, name, rate, count, time, fee}) => {
+const StoreDetail = ({id,rank, name, rate, count, time, fee}) => {
+
+
+  const deleteStore =async(id)=>{
+    await fetch(`${API_URL}/${id}`,{
+      method: 'DELETE'
+    });
+
+
+  };
+
+  const editStore =() =>{
+
+  };
+
+
   return (
     <MainDiv>
-      <img style={{borderRadius:"8px", width:"54px", height:"54px"}} src='http://placehold.co/54x54' alt="placeholder"/>
+      <img style={{borderRadius:"8px", width:"54px", height:"54px"}} src={"http://placehold.co/54x54"} alt="placeholder"/>
       <TextAlign>
         {(rank!==0)&&<FontBold>{rank}위</FontBold>}
         <FontBold>{name}</FontBold>
@@ -52,6 +70,11 @@ const StoreDetail = ({rank, name, rate, count, time, fee}) => {
         <FontLight>
             {time} · 배달비 {fee}원
         </FontLight>
+      </TextAlign>
+      <TextAlign>
+        <button onClick={()=>deleteStore(id)}>❌</button>
+        <button onClick={editStore}>✏️</button>
+
       </TextAlign>
     </MainDiv>
   )

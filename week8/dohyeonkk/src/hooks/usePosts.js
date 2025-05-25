@@ -31,6 +31,9 @@ export const usePosts = () => {
         const newStore = await res.json();
         setStore((prev) => [...prev, newStore]);
     };
+
+    
+
     return { store, addStore, loading };
 
 }

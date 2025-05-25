@@ -29,7 +29,7 @@ const Stores = () => {
       {loading ? (<p>loading...</p>) : (
         <ul>
           {store.map((p) => (
-            <StoreDetail key={p.id} rank={p.rank} name={p.name} rate={p.rate} count={p.count} time={p.time} fee={p.fee} />
+            <StoreDetail id={p.id} rank={p.rank} name={p.name} rate={p.rate} count={p.count} time={p.time} fee={p.fee} />
           ))}
         </ul>
       )}
