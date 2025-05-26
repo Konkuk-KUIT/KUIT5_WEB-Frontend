@@ -1,0 +1,201 @@
+{
+  "category": [
+    {
+      "name": "피자",
+      "imgLink": "/imgs/pizza.svg",
+      "id": "d55b"
+    },
+    {
+      "name": "샐러드",
+      "imgLink": "/imgs/salad.svg",
+      "id": "4e1f"
+    },
+    {
+      "name": "햄버거",
+      "imgLink": "/imgs/hamburger.svg",
+      "id": "6531"
+    },
+    {
+      "name": "한식",
+      "imgLink": "/imgs/korean-food.svg",
+      "id": "9ec0"
+    },
+    {
+      "name": "분식",
+      "imgLink": "/imgs/snack-food.svg",
+      "id": "215b"
+    },
+    {
+      "name": "치킨",
+      "imgLink": "/imgs/chicken.svg",
+      "id": "bf9f"
+    },
+    {
+      "name": "초밥",
+      "imgLink": "/imgs/sushi.svg",
+      "id": "c575"
+    },
+    {
+      "name": "샌드위치",
+      "imgLink": "/imgs/sandwich.svg",
+      "id": "26dc"
+    },
+    {
+      "name": "파스타",
+      "imgLink": "/imgs/pasta.svg",
+      "id": "a44b"
+    },
+    {
+      "name": "디저트",
+      "imgLink": "/imgs/dessert.svg",
+      "id": "ecc3"
+    },
+    {
+      "name": "커피",
+      "imgLink": "/imgs/coffee.svg",
+      "id": "360a"
+    },
+    {
+      "name": "더보기",
+      "imgLink": "/imgs/etc.svg",
+      "id": "a848"
+    }
+  ],
+  "stores": [
+    {
+      "rank": 5,
+      "name": "썬더볼트 한남점",
+      "rating": 4.8,
+      "reviews": 919,
+      "deliveryTime": "13분~30분",
+      "deliveryFee": "2,000원",
+      "id": "48de"
+    },
+    {
+      "rank": 1,
+      "name": "THE 샐러드가득담은",
+      "rating": 5,
+      "reviews": 27,
+      "deliveryTime": "13분~30분",
+      "deliveryFee": "2,000원",
+      "id": "64b3"
+    },
+    {
+      "rank": 5,
+      "name": "파스토보이",
+      "rating": 4.8,
+      "reviews": 801,
+      "deliveryTime": "13분~30분",
+      "deliveryFee": "2,000원",
+      "id": "b148"
+    },
+    {
+      "rank": 5,
+      "name": "힘난다 샐러드",
+      "rating": 4.8,
+      "reviews": 321,
+      "deliveryTime": "10~20분",
+      "deliveryFee": "1,500원",
+      "id": "8b0d"
+    },
+    {
+      "rank": 10,
+      "name": "면장인의 국수",
+      "rating": 4.7,
+      "reviews": 654,
+      "deliveryTime": "15분~25분",
+      "deliveryFee": "1,500원",
+      "id": "75f6"
+    },
+    {
+      "rank": null,
+      "name": "바삭치킨",
+      "rating": 4.6,
+      "reviews": 1023,
+      "deliveryTime": "20분~35분",
+      "deliveryFee": "2,000원",
+      "id": "1f20"
+    },
+    {
+      "rank": null,
+      "name": "김밥왕국",
+      "rating": 4.4,
+      "reviews": 487,
+      "deliveryTime": "10분~20분",
+      "deliveryFee": "1,000원",
+      "id": "5eee"
+    },
+    {
+      "rank": null,
+      "name": "도쿄덮밥",
+      "rating": 4.8,
+      "reviews": 923,
+      "deliveryTime": "18분~30분",
+      "deliveryFee": "2,500원",
+      "id": "692d"
+    },
+    {
+      "rank": null,
+      "name": "육회한판",
+      "rating": 4.9,
+      "reviews": 376,
+      "deliveryTime": "12분~25분",
+      "deliveryFee": "3,000원",
+      "id": "fed8"
+    },
+    {
+      "rank": null,
+      "name": "떡볶이연구소",
+      "rating": 4.5,
+      "reviews": 811,
+      "deliveryTime": "14분~22분",
+      "deliveryFee": "1,800원",
+      "id": "d141"
+    },
+    {
+      "rank": null,
+      "name": "버거플래닛",
+      "rating": 4.6,
+      "reviews": 915,
+      "deliveryTime": "17분~28분",
+      "deliveryFee": "2,000원",
+      "id": "8ef7"
+    },
+    {
+      "rank": null,
+      "name": "쌀국수집",
+      "rating": 4.3,
+      "reviews": 532,
+      "deliveryTime": "19분~32분",
+      "deliveryFee": "1,200원",
+      "id": "cc90"
+    },
+    {
+      "rank": null,
+      "name": "인도카레하우스",
+      "rating": 4.7,
+      "reviews": 298,
+      "deliveryTime": "20분~40분",
+      "deliveryFee": "2,500원",
+      "id": "c087"
+    },
+    {
+      "rank": null,
+      "name": "스시도쿠",
+      "rating": 4.9,
+      "reviews": 1102,
+      "deliveryTime": "22분~38분",
+      "deliveryFee": "3,000원",
+      "id": "2c21"
+    },
+    {
+      "id": "4388",
+      "rank": 17,
+      "name": "ㅋㅋ",
+      "rating": 1,
+      "reviews": 1,
+      "deliveryTime": "1",
+      "deliveryFee": "1"
+    }
+  ]
+}
