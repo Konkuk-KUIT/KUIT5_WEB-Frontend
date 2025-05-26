@@ -1,25 +1,26 @@
-import * as C from "./Card.Styled";
+import React from "react";    
+import * as StyledCard from "./Card.Styled";
 
 export default function Card({ card, isFlipped, onClick }) {
   return (
-    <C.CardContainer onClick={onClick}>
-      <C.CardInner isFlipped={isFlipped}>
-        <C.CardFront>
+    <StyledCard.CardContainer onClick={onClick}>
+      <StyledCard.CardInner isFlipped={isFlipped}>
+        <StyledCard.CardFront>
           <img
             src={card.front}
             alt={card.alt}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
-        </C.CardFront>
+        </StyledCard.CardFront>
 
-        <C.CardBack>
+        <StyledCard.CardBack>
           <img
             src={card.back}
             alt="back"
             style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
-        </C.CardBack>
-      </C.CardInner>
-    </C.CardContainer>
+        </StyledCard.CardBack>
+      </StyledCard.CardInner>
+    </StyledCard.CardContainer>
   );
 }

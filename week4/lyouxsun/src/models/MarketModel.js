@@ -47,7 +47,7 @@ const marketModel = {
       timeAgo: "1초 전",
       price: "100,000원",
       image: "coffee-machine.png",
-      comments: 0,
+      comments: 4,
       likes: 0,
       isSold: true,
     },
