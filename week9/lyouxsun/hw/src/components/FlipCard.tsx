@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Card } from "../data"; 
 
-function FlipCard({ card, isFlipped, onClick }) {
+interface FlipCardProps {
+  card: Card;
+  isFlipped: boolean;
+  onClick: () => void;
+}
+
+function FlipCard ({ card, isFlipped, onClick }: FlipCardProps) {
   const BACK_IMG_PATH = "/assets/back.png";
 
   return (
@@ -15,7 +22,7 @@ function FlipCard({ card, isFlipped, onClick }) {
       }}
     >
       <motion.div
-        initial={{ rotateY: 0 }} // 💡 추가
+        initial={{ rotateY: 0 }}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6 }}
         style={{

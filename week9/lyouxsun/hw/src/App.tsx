@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { CARDS } from "./data";
+import { CARDS, Card } from "./data";
 import CardContainer from "./components/CardContainer";
 import Score from "./components/Score";
 import ResetButton from "./components/ResetButton";
 import useFlip from "./hooks/useFlip";
 
 
-function shuffleCards() {
+function shuffleCards() : Card[] {
   return [...CARDS, ...CARDS]
     .map((card, index) => ({ ...card, id: index }))
     .sort(() => Math.random() - 0.5);

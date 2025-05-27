@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function Score({ score }) {
+interface ScoreProps {
+  score: number;
+}
+
+export default function Score({ score }: ScoreProps) {
   return (
     <div
       style={{

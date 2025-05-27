@@ -1,7 +1,16 @@
 import React from "react";
 import FlipCard from "./FlipCard";
+import { Card } from "../data";
 
-function CardContainer({ tenCards, flipped, matched, handleCardClick }) {
+
+interface CardContainerProps {
+  tenCards: Card[];
+  flipped: number[];
+  matched: number[];
+  handleCardClick: (id: number) => void;
+}
+
+function CardContainer({ tenCards, flipped, matched, handleCardClick }: CardContainerProps) {
   return (
     <div
       style={{
@@ -14,10 +23,9 @@ function CardContainer({ tenCards, flipped, matched, handleCardClick }) {
         margin: "0 auto",
       }}
     >
-      {
-      tenCards.map((card) => (
+      {tenCards.map((card): React.ReactElement => (
         <FlipCard
-          key={card.id} 
+          key={card.id}
           card={card}
           isFlipped={flipped.includes(card.id) || matched.includes(card.id)}
           onClick={() => handleCardClick(card.id)}
