@@ -5,7 +5,7 @@ const useFlip = (tenCards) => {
   const [matched, setMatched] = useState([]);
   const [score, setScore] = useState(0);
 
-  const handleCardClick = (id) => {
+  const handleCardClick = (id: number) => {
     if (flipped.length === 2 || flipped.includes(id) || matched.includes(id)) {
       return;
     }

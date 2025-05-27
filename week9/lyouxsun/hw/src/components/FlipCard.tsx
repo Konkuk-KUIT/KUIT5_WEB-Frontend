@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 
 function FlipCard({ card, isFlipped, onClick }) {
