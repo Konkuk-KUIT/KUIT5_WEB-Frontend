@@ -1,0 +1,25 @@
+.contents {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 3px;
+  padding: 0px 24px;
+
+  color: #4e5968;
+
+  &__rating {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 100%;
+    letter-spacing: 0px;
+  }
+
+  &__reviewNum {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0px;
+  }
+}
