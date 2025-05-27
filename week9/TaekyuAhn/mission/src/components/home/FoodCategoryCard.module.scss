@@ -1,0 +1,17 @@
+.card {
+  width: 108px;
+  height: 74px;
+
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fafafb;
+  &__icon {
+  }
+  &__label {
+  }
+}

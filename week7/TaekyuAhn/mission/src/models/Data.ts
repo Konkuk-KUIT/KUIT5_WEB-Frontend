@@ -1,9 +1,11 @@
+import backImg from "../assets/imgs/back.jpeg";
+
 export const cardData = [
   {
     id: 1,
     name: "봉인된 자의 오른쪽 팔",
     imgPath: "/imgs/right-arm.jpg",
-    backImgPath: "/imgs/back.jpeg",
+    backImgPath: backImg,
   },
   {
     id: 2,
