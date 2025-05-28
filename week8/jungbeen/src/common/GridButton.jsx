@@ -22,6 +22,11 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  & > img {
+    width: 28px;
+    height: 28px;
+  }
 `;
 
 function GridButton({ cateName, imgSrc = null, idx }) {
@@ -41,11 +46,7 @@ function GridButton({ cateName, imgSrc = null, idx }) {
   ];
   return (
     <Button>
-      <img
-        style={{ width: "28px", height: "28px" }}
-        src={temp[idx]}
-        alt={imgSrc}
-      />
+      <img src={temp[idx]} alt={imgSrc} />
       <span>{cateName}</span>
     </Button>
   );

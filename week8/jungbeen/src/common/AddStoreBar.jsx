@@ -18,12 +18,23 @@ const FormButton = styled.button`
   border-radius: 8px;
   flex: 1;
 `;
+const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 5px;
+`;
 
 function AddStoreBar({ className, setIsadding, addStore }) {
   const [name, setName] = useState("");
   const [rideTip, setRideTip] = useState("");
   const [paymethod, setPaymethod] = useState("");
   const [minOrder, setMinOrder] = useState("");
+
+  const handleAddButton = async () => {
+    if (name && rideTip && paymethod && minOrder) {
+      await addStore(name, rideTip, paymethod, minOrder);
+      setIsadding(false);
+    }
+  };
 
   return (
     <AddForm className={className}>
@@ -59,16 +70,8 @@ function AddStoreBar({ className, setIsadding, addStore }) {
           setMinOrder(e.target.value);
         }}
       />
-      <div style={{ display: "flex", gap: "5px" }}>
-        <FormButton
-          type="button"
-          onClick={async () => {
-            if (name && rideTip && paymethod && minOrder) {
-              await addStore(name, rideTip, paymethod, minOrder);
-              setIsadding(false);
-            }
-          }}
-        >
+      <ButtonWrapper style={{ display: "flex", gap: "5px" }}>
+        <FormButton type="button" onClick={handleAddButton}>
           확인
         </FormButton>
         <FormButton
@@ -79,7 +82,7 @@ function AddStoreBar({ className, setIsadding, addStore }) {
         >
           취소
         </FormButton>
-      </div>
+      </ButtonWrapper>
     </AddForm>
   );
 }

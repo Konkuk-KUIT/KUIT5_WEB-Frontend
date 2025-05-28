@@ -9,6 +9,18 @@ const Content = styled.div`
   & p {
     max-width: 80%;
   }
+  & .marginBottom {
+    margin-bottom: 5px;
+  }
+  & .infoColor {
+    color: #6b7684;
+  }
+  & .menuName {
+    font-weight: 700;
+    font-size: 17px;
+    color: #333d4b;
+    margin-bottom: 5px;
+  }
 `;
 const MenuImg = styled.div`
   background-color: #ececec;
@@ -30,20 +42,11 @@ function CartList() {
     <Content>
       <MenuImg></MenuImg>
       <div>
-        <p
-          style={{
-            fontWeight: "700",
-            fontSize: "17px",
-            color: "#333d4b",
-            marginBottom: "5px",
-          }}
-        >
-          토마토 샐러드
-        </p>
-        <p style={{ color: "#6b7684", marginBottom: "5px" }}>
+        <p className="marginBottom menuName">토마토 샐러드</p>
+        <p className="marginBottom infoColor">
           계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱
         </p>
-        <p style={{ color: "#6b7684" }}>10,600원</p>
+        <p className="infoColor">10,600원</p>
       </div>
       <Detail>1개 &gt;</Detail>
     </Content>

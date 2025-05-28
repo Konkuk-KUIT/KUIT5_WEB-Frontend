@@ -6,10 +6,15 @@ const Container = styled.div`
   gap: 16px;
   padding: 16px 0;
   position: relative;
-  & p {
+
+  & .menuInfo {
     color: #6b7684;
     margin-bottom: 5px;
     max-width: 70%;
+  }
+
+  & .menuName {
+    color: #333d4b;
   }
 `;
 const MenuImg = styled.div`
@@ -35,12 +40,12 @@ function MenuItem({ item }) {
     <Container>
       <MenuImg />
       <div>
-        <p style={{ color: "#333d4b" }}>
+        <p className="menuName">
           {item.name}
           {item.isBest && <Best>Best</Best>}
         </p>
-        <p>{item.price.toLocaleString()}원</p>
-        <p>{item.ingredient}</p>
+        <p className="menuInfo">{item.price.toLocaleString()}원</p>
+        <p className="menuInfo">{item.ingredient}</p>
       </div>
       <ChooseButton value="담기" />
     </Container>
