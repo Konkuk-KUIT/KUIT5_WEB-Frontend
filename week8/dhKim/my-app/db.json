@@ -1,20 +1,36 @@
 {
   "saladStores": [
     {
-      "id": "5",
-      "name": "파스트보이",
-      "rate": "4.8",
-      "comments": "801",
-      "del_time": "13분~30분",
-      "del_price": "2,000원"
+      "id": "ab8d",
+      "name": "메밀소바",
+      "rate": "8",
+      "comments": "8",
+      "del_time": "8",
+      "del_price": "8"
     },
     {
-      "id": "afb4",
-      "name": "건국밀크",
-      "rate": "1.5",
-      "comments": "44",
-      "del_time": "14분",
-      "del_price": "2000원"
+      "id": "ee2c",
+      "name": "ㅇㅇ",
+      "rate": "5",
+      "comments": "5",
+      "del_time": "5",
+      "del_price": "5"
+    },
+    {
+      "id": "d577",
+      "name": "",
+      "rate": "",
+      "comments": "",
+      "del_time": "",
+      "del_price": ""
+    },
+    {
+      "id": "085d",
+      "name": "ㅂㅂㅂㅂ",
+      "rate": "ㅈㅈ",
+      "comments": "ㅈㅈ",
+      "del_time": "ㅈㅈ",
+      "del_price": "ㅈㅈ"
     }
   ]
 }

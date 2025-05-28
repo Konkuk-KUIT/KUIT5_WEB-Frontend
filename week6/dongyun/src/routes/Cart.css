@@ -1,0 +1,151 @@
+.store-cart-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 390px;
+    height: 58px;
+    padding: 26px 24px 24px 12px;
+    box-sizing: border-box;
+}
+
+.store-cart-name{
+    color: #6B7684;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.warning-min-order{
+    color: #F04452;
+    font-size: 15px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word;
+
+    display: flex;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning-min-order-icon{
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    margin-left: 6px;
+}
+
+.add-more-cart{
+    width: 390px;
+    height: 60px;
+    border-top: 1px #E5E8EB solid;
+
+    color: #3182F6;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 600;
+    word-wrap: break-word;
+
+    display: flex;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-more-cart-icon{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    margin-left: 3px;
+}
+
+.cost-info-set{
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    box-sizing: border-box;
+    padding: 16px 23px 17px 24px;
+}
+
+.cost-order{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top:8px;
+    padding-bottom:10px;
+}
+
+.cost-item{
+    color: #8B95A1;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word;
+
+}
+
+.cost-amount{
+    color: #505967;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.total-cost-order{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top:16px;
+    padding-bottom:18px;
+}
+
+.total-cost-item{
+    color: #4E5968;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.total-cost-amount{
+    color: #4E5968;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+
+
+.nav-min-order{
+    width: 165px;
+    height: 20px;
+    margin: 222px 112px 19px 112px;
+    text-align:center;
+    justify-content: center;
+    color: #6B7684;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.purchase-btn{
+    width: 350px;
+    height: 56px;
+    background: #D0DFFB;
+    border-radius: 16px;
+    text-align:center;
+    justify-content: center;
+    color: white; font-size: 16px;
+    font-family: Pretendard;
+    font-weight: 600; word-wrap: break-word;
+    border:none;
+
+    position: relative;
+    bottom: 3px;
+    left : 20px;
+    right: 20px;
+}

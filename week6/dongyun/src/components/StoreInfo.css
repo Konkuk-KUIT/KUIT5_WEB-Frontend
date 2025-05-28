@@ -1,0 +1,43 @@
+
+.store-detail-info{
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    /*row-gap: px;*/
+    padding : 25px 24px 14px 24px;
+    border-bottom: 2px solid #E5E8EB;
+    box-sizing:border-box;
+}
+
+.store-detail-name{
+    color: #191F28;
+    font-size: 26px;
+    font-family: Pretendard;
+    font-weight: 700;
+    word-wrap: break-word
+}
+.store-detail-reviews{
+    padding-top: 7px;
+    padding-bottom: 12px;
+    color: #4E5968;
+    font-size: 16px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.store-detail-order{
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+}
+
+.store-detail-order-info{
+    color: #4E5968;
+    font-size: 15px;
+    font-family: Pretendard;
+    font-weight: 500;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+}

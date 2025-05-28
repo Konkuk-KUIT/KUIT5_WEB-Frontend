@@ -19,8 +19,6 @@ const DeliveryLocationHeaderBase = ({mainText, isDeleverd}) => {
                     lineHeight: 'normal',
                     marginTop: '13px',
                 }}>한남중앙로 40길 (한남 빌리지)(으)로 배달 {">"} </span>)}
-
-                {/*<span>한남중앙로 40길 (한남 빌리지)(으)로 배달 ></span>*/}
             </S.Greeting>
         </>
     )

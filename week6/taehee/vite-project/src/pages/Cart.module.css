@@ -1,0 +1,93 @@
+.wrapper {
+  display: flex;
+  width: 390px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 27px 24px 0 24px;
+}
+.margin {
+  width: 390px;
+  height: 16px;
+  margin-bottom: 10px;
+  background-color: #f2f4f6;
+}
+.store {
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #6b7684;
+}
+.minmoney {
+  color: #f04452;
+  font-family: Pretendard;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: right;
+  display: flex;
+  flex-flow: nowrap;
+}
+.info_header {
+  padding: 20px 22px 0 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+}
+.caution {
+  border: 1px solid #f04452;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  font-size: 12px;
+  margin-left: 3px;
+  justify-content: center;
+}
+.hr {
+  border: 0.5px solid #ececec;
+  width: 390px;
+}
+.plus {
+  color: #3182f6;
+  padding: 20px 163px;
+  margin: 0;
+  cursor: pointer;
+}
+.fee {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 24px 5px 24px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 100%;
+  width: 390px;
+  letter-spacing: 0px;
+  margin: 0;
+  color: #8b95a1;
+  box-sizing: border-box;
+}
+.total {
+  font-family: Pretendard;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 16px 24px;
+  width: 390px;
+  color: #4e5968;
+
+  margin: 0;
+}
+.total span:nth-child(2) {
+  font-weight: 600;
+}
