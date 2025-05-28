@@ -1,6 +1,7 @@
 import './OrderFooter.css'
 
 const OrderFooter = () => {
+
     return (
         <>
             <div className="order-footer">

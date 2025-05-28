@@ -28,5 +28,11 @@
     "@playwright/test": "^1.51.1",
     "@types/node": "^22.14.0",
     "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.5.3"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }

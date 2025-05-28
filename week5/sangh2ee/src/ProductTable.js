@@ -1,13 +1,15 @@
 import React , { useState }from 'react'; 
 import ProductCategoryRow from './ProductCategoryRow';
 import ProductRow from './ProductRow';
-import Deleteproduct from './Deleteproduct';
 
-const ProductTable = ({ products,filterText, inStockOnly,onDelete }) => {
+const ProductTable = ({ products,filterText, inStockOnly, onDelete, onEdit}) => {
     const rows=[];
     let lastCategory=null;
-
-    products.map((product) => {
+    //추가할 때 발생하는 문제 해결
+    const sortedProducts = [...products].sort((a, b) =>
+      a.category.localeCompare(b.category)
+    );
+    sortedProducts.map((product) => {
         if(product.name.toLowerCase().indexOf(filterText.toLowerCase()) == -1){
             return;
         }
@@ -21,13 +23,16 @@ const ProductTable = ({ products,filterText, inStockOnly,onDelete }) => {
                 <ProductCategoryRow
                 category={product.category}
                 key={product.category}
-                onDelete={onDelete}/> 
+                onDelete={onDelete}
+                onEdit={onEdit}
+                /> 
             );
         }    
     rows.push(<ProductRow 
       product={product} 
       key={product.name}
       onDelete={onDelete}
+      onEdit={onEdit}
       />);
       lastCategory=product.category;
       });
