@@ -70,7 +70,7 @@ function AddStoreBar({ className, setIsadding, addStore }) {
           setMinOrder(e.target.value);
         }}
       />
-      <ButtonWrapper style={{ display: "flex", gap: "5px" }}>
+      <ButtonWrapper>
         <FormButton type="button" onClick={handleAddButton}>
           확인
         </FormButton>
