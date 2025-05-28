@@ -1,0 +1,36 @@
+{
+  "saladStores": [
+    {
+      "id": "ab8d",
+      "name": "메밀소바",
+      "rate": "8",
+      "comments": "8",
+      "del_time": "8",
+      "del_price": "8"
+    },
+    {
+      "id": "ee2c",
+      "name": "ㅇㅇ",
+      "rate": "5",
+      "comments": "5",
+      "del_time": "5",
+      "del_price": "5"
+    },
+    {
+      "id": "d577",
+      "name": "",
+      "rate": "",
+      "comments": "",
+      "del_time": "",
+      "del_price": ""
+    },
+    {
+      "id": "085d",
+      "name": "ㅂㅂㅂㅂ",
+      "rate": "ㅈㅈ",
+      "comments": "ㅈㅈ",
+      "del_time": "ㅈㅈ",
+      "del_price": "ㅈㅈ"
+    }
+  ]
+}

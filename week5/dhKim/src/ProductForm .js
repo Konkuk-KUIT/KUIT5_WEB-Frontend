@@ -1,6 +1,10 @@
 import React,{useState} from "react";
 
-const InputBar=({addProduct})=>{
+import * as S from './ProductForm.styles';
+import Input from "./Input";
+
+
+const ProductForm =({addProduct})=>{
     const [newProduct, setNewProduct]=useState({
        category: "",
        price: "",
@@ -16,9 +20,9 @@ const InputBar=({addProduct})=>{
     };
  
     return(
-        <form>
+        <S.Form>
 
-            <input
+            <Input
                 type={"text"}
                 value={newProduct.category}
                 onChange={(e)=>    
@@ -26,7 +30,7 @@ const InputBar=({addProduct})=>{
                 placeholder="category..."
             />
 
-            <input 
+            <Input
                 type={"text"} 
                 value={newProduct.price}
                 onChange={(e)=>handleChange(e.target.value,"price")}
@@ -34,12 +38,12 @@ const InputBar=({addProduct})=>{
             />
 
             <label>Is Stocked</label>
-            <input
+            <Input
                 type={"checkbox"}
                 checked={newProduct.stocked}
                 onChange={(e)=>handleChange(e.target.checked,"stocked")}
             />
-            <input
+            <Input
                 type={"text"}
                 value={newProduct.name}
                 onChange={(e)=>handleChange(e.target.value,"name")}
@@ -48,11 +52,11 @@ const InputBar=({addProduct})=>{
             <button onClick={handleAddNewProduct} type={"button"}>
                 add new product
             </button>
-        </form>
+        </S.Form>
     );
 };
  
 
 
-export default InputBar;
+export default ProductForm ;
   

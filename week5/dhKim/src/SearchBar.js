@@ -1,12 +1,16 @@
 import React from "react";
 
+import * as S from "./SearchBar.styles";
+
+import Input from "./Input";
+
 const SearchBar=({
     filterText,
     inStockOnly,
     onFilterTextChange,
     onInStockOnlyChange,
 })=>{
-    const handleTextChange=(e)=>{
+    const handleTextChange=(e )=>{
         onFilterTextChange(e.target.value);
     }
 
@@ -14,11 +18,13 @@ const SearchBar=({
         onInStockOnlyChange(e.target.checked);
     }
     return (
-        <form>
-            <input type={"text"} 
-            value={filterText} 
-            placeholder="Search..." 
-            onChange={handleTextChange}/>
+        <S.SearchForm>
+            <Input 
+                type={"text"} 
+                value={filterText} 
+                placeholder="Search..." 
+                onChange={handleTextChange}
+            />
             <label>
                 <input 
                 type={"checkbox"} 
@@ -27,7 +33,7 @@ const SearchBar=({
                 />
                 Only show products in stock
             </label>
-        </form>
+        </S.SearchForm>
     );
 };
 
