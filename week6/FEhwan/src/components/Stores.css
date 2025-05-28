@@ -1,0 +1,14 @@
+.stores-container {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: #fff;
+  }
+  
+  .store-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  

@@ -31,5 +31,8 @@
   },
   "dependencies": {
     "react-router-dom": "^7.5.3"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
