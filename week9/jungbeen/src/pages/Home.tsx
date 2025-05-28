@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useCategories } from "../hooks/useCategories";
 import GridButton from "../common/GridButton";
-import OrderBar from "../common/OrderBar";
+import OrderBar from "../common/Orderbar";
 
 const Main = styled.div`
   margin: 0 auto;

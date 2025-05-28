@@ -35,7 +35,15 @@ const Best = styled.span`
   margin-left: 6px;
 `;
 
-function MenuItem({ item }) {
+type Menu = {
+  name: string;
+  isBest: boolean;
+  price: number;
+  ingredient: string;
+  id: string;
+};
+
+function MenuItem({ item }: { item: Menu }) {
   return (
     <Container>
       <MenuImg />

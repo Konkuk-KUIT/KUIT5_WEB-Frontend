@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 
 import Header from "../common/Header";
-import OrderBar from "../common/OrderBar";
+import OrderBar from "../common/Orderbar";
 import MenuItem from "../common/MenuItem";
 import star from "../assets/images/star.svg";
 import { useMenus } from "../hooks/useMenus";

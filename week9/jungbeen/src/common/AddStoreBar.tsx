@@ -23,7 +23,18 @@ const ButtonWrapper = styled.div`
   gap: 5px;
 `;
 
-function AddStoreBar({ className, setIsadding, addStore }) {
+type AddStoreBarProps = {
+  className?: string;
+  setIsadding: React.Dispatch<React.SetStateAction<boolean>>;
+  addStore: (
+    name: string,
+    rideTip: number,
+    paymethod: string,
+    minOrder: number
+  ) => Promise<void>;
+};
+
+function AddStoreBar({ className, setIsadding, addStore }: AddStoreBarProps) {
   const [name, setName] = useState("");
   const [rideTip, setRideTip] = useState("");
   const [paymethod, setPaymethod] = useState("");
@@ -31,7 +42,7 @@ function AddStoreBar({ className, setIsadding, addStore }) {
 
   const handleAddButton = async () => {
     if (name && rideTip && paymethod && minOrder) {
-      await addStore(name, rideTip, paymethod, minOrder);
+      await addStore(name, Number(rideTip), paymethod, Number(minOrder));
       setIsadding(false);
     }
   };
@@ -70,7 +81,7 @@ function AddStoreBar({ className, setIsadding, addStore }) {
           setMinOrder(e.target.value);
         }}
       />
-      <ButtonWrapper>
+      <ButtonWrapper style={{ display: "flex", gap: "5px" }}>
         <FormButton type="button" onClick={handleAddButton}>
           확인
         </FormButton>

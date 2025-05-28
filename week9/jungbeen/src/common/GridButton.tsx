@@ -22,14 +22,15 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  & > img {
-    width: 28px;
-    height: 28px;
-  }
 `;
 
-function GridButton({ cateName, imgSrc = null, idx }) {
+type GridButtonProps = {
+  cateName: string;
+  imgSrc?: string;
+  idx: number;
+};
+
+function GridButton({ cateName, imgSrc, idx }: GridButtonProps) {
   const temp = [
     pizza,
     chicken,
@@ -46,7 +47,11 @@ function GridButton({ cateName, imgSrc = null, idx }) {
   ];
   return (
     <Button>
-      <img src={temp[idx]} alt={imgSrc} />
+      <img
+        style={{ width: "28px", height: "28px" }}
+        src={temp[idx]}
+        alt={imgSrc}
+      />
       <span>{cateName}</span>
     </Button>
   );
