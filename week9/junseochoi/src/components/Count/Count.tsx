@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Count = ({ count }) => {
+interface CountProps {
+  count: number;
+}
+
+const Count: React.FC<CountProps> = ({ count }) => {
   return (
     <CountDiv>
       <div>맞힌 개수 {count}/5</div>

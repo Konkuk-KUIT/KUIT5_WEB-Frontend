@@ -1,9 +1,24 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as C from "./Card.Styled";
+import { CardType } from "../../models/CardList";
 
-const Card = ({ count, setCount, cardList, flipped, setFlipped }) => {
-  const [selected, setSelected] = useState([]);
+interface CardProps {
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+  cardList: CardType[];
+  flipped: boolean[];
+  setFlipped: React.Dispatch<React.SetStateAction<boolean[]>>;
+}
+
+const Card: React.FC<CardProps> = ({
+  count,
+  setCount,
+  cardList,
+  flipped,
+  setFlipped,
+}) => {
+  const [selected, setSelected] = useState<number[]>([]);
 
   // 뒤집혀진 카드들 중 쌍이 맞는 카드가 있는지 확인
   useEffect(() => {
@@ -30,7 +45,7 @@ const Card = ({ count, setCount, cardList, flipped, setFlipped }) => {
   }, [selected, cardList, flipped]);
 
   // 쌍이 맞는 카드가 있다면 onClick이 작동하지 않음
-  const handleClick = (index) => {
+  const handleClick = (index: number) => {
     if (flipped[index] || selected.includes(index) || selected.length >= 2)
       return;
 

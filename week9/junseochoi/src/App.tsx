@@ -2,24 +2,20 @@ import { useState } from "react";
 import Count from "./components/Count/Count";
 import Card from "./components/Card/Card";
 import ResetBtn from "./components/ResetBtn/ResetBtn";
-import OriginalCardList from "./models/CardList";
+import OriginalCardList, { CardType } from "./models/CardList";
+import styled from "styled-components";
 
 function App() {
   const [count, setCount] = useState<number>(0);
-  const [cardList, setCardList] = useState([...OriginalCardList]);
-  const [flipped, setFlipped] = useState(Array(cardList.length).fill(false));
+  const [cardList, setCardList] = useState<CardType[]>([...OriginalCardList]);
+  const [flipped, setFlipped] = useState<boolean[]>(
+    Array(OriginalCardList.length).fill(false)
+  );
 
   return (
     <>
       <Count count={count}></Count>
-      <section
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "20px",
-          padding: "20px",
-        }}
-      >
+      <WrapperDiv>
         <Card
           count={count}
           setCount={setCount}
@@ -27,7 +23,7 @@ function App() {
           flipped={flipped}
           setFlipped={setFlipped}
         />
-      </section>
+      </WrapperDiv>
       <ResetBtn
         cardList={cardList}
         setCardList={setCardList}
@@ -38,5 +34,12 @@ function App() {
     </>
   );
 }
+
+const WrapperDiv = styled.section`
+  display: "flex";
+  flex-wrap: "wrap";
+  gap: "20px";
+  padding: "20px";
+`;
 
 export default App;

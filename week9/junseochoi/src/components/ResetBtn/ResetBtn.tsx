@@ -1,7 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { CardType } from "../../models/CardList";
 
-const ResetBtn = ({ cardList, setCardList, flipped, setFlipped, setCount }) => {
+interface ResetBtnProps {
+  cardList: CardType[];
+  setCardList: React.Dispatch<React.SetStateAction<CardType[]>>;
+  flipped: boolean[];
+  setFlipped: React.Dispatch<React.SetStateAction<boolean[]>>;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const ResetBtn: React.FC<ResetBtnProps> = ({
+  cardList,
+  setCardList,
+  flipped,
+  setFlipped,
+  setCount,
+}) => {
   const shuffleCards = () => {
     const shuffled = [...cardList].sort(() => Math.random() - 0.5);
     setCardList(shuffled);

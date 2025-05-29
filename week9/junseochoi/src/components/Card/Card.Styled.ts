@@ -8,7 +8,11 @@ export const CardContainer = styled.div`
   margin: 8px;
 `;
 
-export const CardInner = styled.div`
+interface CardInnerProps {
+  isFlipped: boolean;
+}
+
+export const CardInner = styled.div<CardInnerProps>`
   position: relative;
   width: 100%;
   height: 100%;
