@@ -30,7 +30,8 @@
     "http-server": "^14.1.1"
   },
   "dependencies": {
-    "react-router-dom": "^7.5.3"
+    "react-router-dom": "^7.5.3",
+    "styled-components": "^6.1.18"
   },
   "resolutions": {
     "styled-components": "^5"
