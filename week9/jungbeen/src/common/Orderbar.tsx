@@ -34,7 +34,12 @@ const FixedButton = styled(Button)`
   top: 19px;
 `;
 
-function OrderBar({ total = 0, className }) {
+type OrderBarProps = {
+  total: number;
+  className?: string;
+};
+
+function OrderBar({ total = 0, className }: OrderBarProps) {
   return (
     <Bar className={className}>
       <p className="totalIndex">총 주문금액</p>

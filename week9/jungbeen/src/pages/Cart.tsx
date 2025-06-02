@@ -75,7 +75,7 @@ const OrderedMenu = styled.div`
 `;
 
 function Cart() {
-  const renderLists = () => [1, 2].map((item, idx) => <CartList />);
+  const renderLists = () => [1, 2].map(() => <CartList />);
   return (
     <Main>
       <Header headerBtn={"주문취소"} to="/" />

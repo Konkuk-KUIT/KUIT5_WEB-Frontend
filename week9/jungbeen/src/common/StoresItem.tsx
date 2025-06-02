@@ -57,7 +57,30 @@ const StoreDescription = styled.div`
   }
 `;
 
-function StoresItem({ store, cateName, editStore, deleteStore }) {
+type Store = {
+  name: string;
+  rating: number;
+  ratingTotal: number;
+  eta: string;
+  rideTip: number;
+  grade?: number;
+  id: string;
+  paymethod: string;
+  minOrder: number;
+};
+type StoresItemProps = {
+  store: Store;
+  cateName: string;
+  editStore: (storeId: string, name: string, rideTip: number) => Promise<void>;
+  deleteStore: (storeId: string) => Promise<void>;
+};
+
+function StoresItem({
+  store,
+  cateName,
+  editStore,
+  deleteStore,
+}: StoresItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState(store.name);
   const [rideTip, setRideTip] = useState(store.rideTip);
@@ -97,7 +120,7 @@ function StoresItem({ store, cateName, editStore, deleteStore }) {
               className="rideTipInput"
               value={rideTip}
               onChange={(e) => {
-                setRideTip(e.target.value);
+                setRideTip(Number(e.target.value));
               }}
             />
             원
