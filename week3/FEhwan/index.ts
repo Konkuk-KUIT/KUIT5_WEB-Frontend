@@ -1,17 +1,26 @@
-let todos = [];
+//export {};
 
-const form = document.getElementById("todo-form");
-const input = document.getElementById("todo-input");
-const list = document.getElementById("todo-list");
 
-form.addEventListener("submit", (e) => {
+type Todo = {
+  id: number;
+  text: string;
+  done: boolean;
+};
+
+let todos: Todo[] = [];
+
+const form = document.getElementById("todo-form") as HTMLFormElement;
+const input = document.getElementById("todo-input") as HTMLInputElement;
+const list = document.getElementById("todo-list") as HTMLUListElement;
+
+form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
-  const text = input.value.trim();//공백 제거
+  const text = input.value.trim();
   if (text) {
-    const newTodo = {
+    const newTodo: Todo = {
       id: Date.now(),
       text,
-      done: false
+      done: false,
     };
     todos = [...todos, newTodo];
     input.value = "";
@@ -19,27 +28,26 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-function deleteTodo(id) {
+function deleteTodo(id: number): void {
   todos = todos.filter(todo => todo.id !== id);
   render();
 }
 
-function toggleDone(id) {
+function toggleDone(id: number): void {
   todos = todos.map(todo =>
     todo.id === id ? { ...todo, done: !todo.done } : todo
   );
   render();
 }
 
-function updateTodo(id, newText) {
+function updateTodo(id: number, newText: string): void {
   todos = todos.map(todo =>
     todo.id === id ? { ...todo, text: newText } : todo
   );
-  //수정?이 안된다
   render();
 }
 
-function render() {
+function render(): void {
   list.innerHTML = "";
   todos.forEach(todo => {
     const li = document.createElement("li");
@@ -54,13 +62,12 @@ function render() {
     editInput.type = "text";
     editInput.value = todo.text;
     editInput.style.display = "none";
-    editInput.onkeypress = (e) => {
+    editInput.onkeypress = (e: KeyboardEvent) => {
       if (e.key === "Enter") {
         updateTodo(todo.id, editInput.value.trim());
       }
     };
 
-    //수정 버튼임 이거 누르면 바뀜
     const editBtn = document.createElement("button");
     editBtn.textContent = "수정";
     editBtn.onclick = () => {
@@ -69,12 +76,10 @@ function render() {
       editInput.focus();
     };
 
-    //삭제 버튼
     const delBtn = document.createElement("button");
     delBtn.textContent = "삭제";
     delBtn.onclick = () => deleteTodo(todo.id);
 
-    //넣기
     li.appendChild(span);
     li.appendChild(editInput);
     li.appendChild(editBtn);
