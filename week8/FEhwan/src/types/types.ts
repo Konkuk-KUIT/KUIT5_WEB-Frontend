@@ -5,6 +5,7 @@ export type storeList = {
     category: string
     rating: number
     reviews: number
+    time: string;
     deliveryTime: string
     deliveryFee: number
     minOrder: number

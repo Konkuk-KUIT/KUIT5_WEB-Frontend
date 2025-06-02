@@ -1,21 +1,62 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import StoreRankingCard from "../components/stores/StoreRankingCard";
 import type { storeList } from "../types/types";
 
+// 스타일 정의
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+`;
+
 const CategoryHeader = styled.div`
-  width: 390px;
-  height: 630px;
-  overflow-y: auto;
   padding: 26px 24px;
+  overflow-y: auto;
+`;
+
+const StoreList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+`;
+
+const AddBar = styled.div`
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+`;
+
+const Input = styled.input`
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
+
+const Button = styled.button`
+  background-color: #3182f6;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
 `;
 
 const Stores = () => {
   const [stores, setStores] = useState<storeList[]>([]);
   const [newStoreName, setNewStoreName] = useState("");
-  const location = useLocation();
-  const categoryName = location.state?.categoryName || "샐러드";
+  const [searchParams] = useSearchParams();
+  const categoryName = searchParams.get("category") || "샐러드";
 
   const fetchStores = async () => {
     const res = await fetch("http://localhost:3001/stores");
@@ -35,7 +76,7 @@ const Stores = () => {
       body: JSON.stringify({
         name: newStoreName,
         rating: 4.5,
-        time: "13분~30분",
+        time: "10분~25분",
         deliveryFee: "2,000원",
       }),
     });
@@ -60,26 +101,30 @@ const Stores = () => {
   };
 
   return (
-    <CategoryHeader>
-      <h2>{categoryName}</h2>
-      {stores.map((store) => (
-        <StoreRankingCard
-          key={store.id}
-          store={store}
-          onDelete={handleDelete}
-          onEdit={handleEdit}
-        />
-      ))}
+    <Wrapper>
+      <CategoryHeader>
+        <h2>{categoryName}</h2>
+        <StoreList>
+          {stores.map((store) => (
+            <StoreRankingCard
+              key={store.id}
+              store={store}
+              onDelete={handleDelete}
+              onEdit={handleEdit}
+            />
+          ))}
+        </StoreList>
+      </CategoryHeader>
 
-      <div style={{ marginTop: "20px" }}>
-        <input
+      <AddBar>
+        <Input
+          placeholder="새 가게 이름 입력"
           value={newStoreName}
           onChange={(e) => setNewStoreName(e.target.value)}
-          placeholder="새 가게 이름 입력"
         />
-        <button onClick={handleAddStore}>추가하기</button>
-      </div>
-    </CategoryHeader>
+        <Button onClick={handleAddStore}>추가하기</Button>
+      </AddBar>
+    </Wrapper>
   );
 };
 
