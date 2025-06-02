@@ -25,44 +25,62 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
 `;
+const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: end;
+  gap: 10px;
+
+  & > img {
+    width: 24px;
+    height: 24px;
+  }
+`;
+const StoreDescription = styled.div`
+  & > .grade {
+    font-size: 17px;
+    font-weight: 600;
+    margi-bottom: 2px;
+  }
+  & > .storeNameInput {
+    border: 1px solid black;
+  }
+  & > .storeNameP {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  & .rideTipInput {
+    width: 75px;
+    border: 1px solid black;
+  }
+`;
 
 function StoresItem({ store, cateName, editStore, deleteStore }) {
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState(store.name);
   const [rideTip, setRideTip] = useState(store.rideTip);
 
+  const editComplete = () => {
+    editStore(store.id, name, Number(rideTip));
+    setIsEditing(false);
+  };
+
   const storeDescription = (
-    <div>
-      {"grade" in store && (
-        <p
-          style={{
-            fontSize: "17px",
-            fontWeight: "600",
-            marginBottom: "2px",
-          }}
-        >
-          {store.grade}위
-        </p>
-      )}
+    <StoreDescription>
+      {"grade" in store && <p className="grade">{store.grade}위</p>}
       {isEditing ? (
         <input
           type="text"
+          className="storeNameInput"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
-          style={{ border: "1px solid black" }}
         />
       ) : (
-        <p
-          style={{
-            fontSize: "17px",
-            fontWeight: "600",
-            marginBottom: "5px",
-          }}
-        >
-          {store.name}
-        </p>
+        <p className="storeNameP">{store.name}</p>
       )}
 
       <p>
@@ -71,12 +89,12 @@ function StoresItem({ store, cateName, editStore, deleteStore }) {
       </p>
       {isEditing ? (
         <>
-          <p>store.eta</p>
+          <p>{store.eta}</p>
           <p>
             배달비{" "}
             <input
               type="number"
-              style={{ width: "75px", border: "1px solid black" }}
+              className="rideTipInput"
               value={rideTip}
               onChange={(e) => {
                 setRideTip(e.target.value);
@@ -88,7 +106,7 @@ function StoresItem({ store, cateName, editStore, deleteStore }) {
       ) : (
         <p>{`${store.eta} ∙ 배달비 ${store.rideTip.toLocaleString()}원`}</p>
       )}
-    </div>
+    </StoreDescription>
   );
 
   return (
@@ -105,30 +123,13 @@ function StoresItem({ store, cateName, editStore, deleteStore }) {
         </StyledLink>
       )}
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flex: "1",
-          justifyContent: "end",
-          gap: "10px",
-        }}
-      >
+      <ButtonWrapper>
         {isEditing ? (
-          <img
-            src={checkImg}
-            alt="check"
-            style={{ height: "24px", width: "24px" }}
-            onClick={() => {
-              editStore(store.id, name, Number(rideTip));
-              setIsEditing(false);
-            }}
-          />
+          <img src={checkImg} alt="check" onClick={editComplete} />
         ) : (
           <img
             src={editImg}
             alt="edit"
-            style={{ height: "24px", width: "24px" }}
             onClick={() => {
               setIsEditing(true);
             }}
@@ -137,12 +138,11 @@ function StoresItem({ store, cateName, editStore, deleteStore }) {
         <img
           src={deleteImg}
           alt="delete"
-          style={{ height: "24px", width: "24px" }}
           onClick={() => {
             deleteStore(store.id);
           }}
         />
-      </div>
+      </ButtonWrapper>
     </Item>
   );
 }

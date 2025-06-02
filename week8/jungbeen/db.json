@@ -141,7 +141,7 @@
       "rating": 0,
       "ratingTotal": 0,
       "eta": "30분",
-      "rideTip": "7000",
+      "rideTip": 7000,
       "paymethod": "알아서 결제",
       "minOrder": "12500"
     }

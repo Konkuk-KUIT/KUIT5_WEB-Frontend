@@ -1,0 +1,9 @@
+.grid {
+  width: 342px;
+  height: 326px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3열
+  gap: 9px; // 카드 사이 간격
+  // padding: 16px;
+}

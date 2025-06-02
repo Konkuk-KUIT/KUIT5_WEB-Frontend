@@ -18,12 +18,23 @@ const StoreInfo = styled.div`
   border-bottom: 1px solid #e5e8eb;
   margin: 0 -28px;
   padding: 0 28px;
-  & p {
+  & > .infoItem {
     color: #4e5968;
     line-height: 33px;
   }
+  & > .storeName {
+    font-weight: 700;
+    font-size: 26px;
+    color: #191f28;
+  }
 `;
-const Content = styled.div``;
+const Content = styled.div`
+  & > p {
+    padding: 26px 0 11px;
+    color: #6b7684;
+    font-weight: 600;
+  }
+`;
 
 function Store() {
   const location = useLocation();
@@ -37,27 +48,17 @@ function Store() {
     <Main>
       <Header />
       <StoreInfo>
-        <p style={{ fontWeight: "700", fontSize: "26px", color: "#191F28" }}>
-          {store.name}
-        </p>
-        <p>
+        <p className="storeName">{store.name}</p>
+        <p className="infoItem">
           <img src={star} alt="star" /> {store.rating} 리뷰
           {store.ratingTotal.toLocaleString()}
         </p>
-        <p>결제방법 {store.paymethod}</p>
-        <p>최소주문 {store.minOrder.toLocaleString()}원</p>
-        <p>배달시간 {store.eta}</p>
+        <p className="infoItem">결제방법 {store.paymethod}</p>
+        <p className="infoItem">최소주문 {store.minOrder.toLocaleString()}원</p>
+        <p className="infoItem">배달시간 {store.eta}</p>
       </StoreInfo>
       <Content>
-        <p
-          style={{
-            padding: "26px 0 11px",
-            color: "#6b7684",
-            fontWeight: "600",
-          }}
-        >
-          {cateName}
-        </p>
+        <p>{cateName}</p>
         {loading && <p>음식 가져오는 중~~</p>}
         <div>{renderItems()}</div>
       </Content>

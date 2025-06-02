@@ -1,0 +1,273 @@
+.post-header .post-header__text {
+  width: 60px;
+  height: 28px;
+  font-family: Inter;
+  font-weight: 700px;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+
+.post-header .post-header__left {
+  width: 100px;
+  height: 28px;
+  gap: 6px;
+}
+
+.post-header .post-header__icon-container img {
+  width: 24px;
+  height: 24px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.post-header .post-header__icon-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.post-header__left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  position: fixed;
+  top: 0px;
+
+  width: 390px;
+  height: 52px;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d9d9d9;
+
+  z-index: 10;
+}
+
+.screen {
+  margin-top: 68px;
+  width: 390px;
+  height: 845px;
+  top: 47px;
+}
+
+.post img {
+  display: flex;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+  background: #d9d9d9;
+}
+
+.post {
+  width: 358px;
+  height: 110px;
+  gap: 16px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin-top: 16px;
+  padding-bottom: 16px;
+  margin-left: 12px;
+  border-bottom: 1px solid #d9d9d9;
+  position: relative;
+}
+
+.post:last-child {
+  border: none;
+}
+
+.post-list {
+  padding-bottom: 74.8px;
+}
+
+.post .post__name .post__title {
+  width: 232px;
+  height: 20px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin-top: 0px;
+  margin-bottom: 1px;
+  white-space: nowrap;
+}
+
+.post .post__name .post__info {
+  width: 80px;
+  height: 16px;
+  gap: 4px;
+  font-family: Inter;
+  font-weight: 400px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #8c8c8c;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+.post .post__name .price {
+  width: 78px;
+  height: 22px;
+  font-family: Inter;
+  font-weight: 700px;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  color: #ff7e36;
+  margin-top: 0px;
+  white-space: nowrap;
+}
+
+.post .post__reaction {
+  width: 232px;
+  height: 16px;
+  background-color: #ffffff;
+
+  justify-content: flex-end;
+
+  margin-top: 110px;
+  margin-left: 68px;
+
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.post .post__reaction .chat_reaction {
+  width: 40px;
+  height: 28px;
+  gap: 2px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  position: absolute;
+  right: 30px;
+  bottom: 0px;
+}
+
+.post .post__reaction .heart_reaction {
+  width: 40px;
+  height: 28px;
+  gap: 2px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  margin-left: -10px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.post .post__reaction img {
+  background: none;
+  border: none;
+
+  width: 16px;
+  height: 16px;
+  margin-top: -9px;
+}
+
+.post .post__reaction .sold-badge {
+}
+
+.post .post__reaction span {
+  width: 12px;
+  height: 25px;
+
+  font-family: Inter;
+  font-weight: 400px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #8c8c8c;
+  gap: 10px;
+}
+
+.post-bottom .plus-button {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 90px;
+
+  position: fixed;
+  left: 310px;
+  bottom: 100px;
+  border: none;
+}
+
+.post-bottom .post-bottom__icon-container {
+  border-top: 1px solid #d9d9d9;
+  width: 390px;
+  height: 58px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  position: fixed;
+  bottom: 0px;
+  background-color: #ffffff;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.post-bottom .post-bottom__icon-container img {
+  padding-top: 8px;
+  padding-bottom: 0px;
+  width: 24;
+  height: 24;
+
+  position: fixed;
+  bottom: 38px;
+
+  align-items: center;
+}
+
+.post-bottom .post-bottom__icon-container .icon-text {
+  width: 50px;
+  height: 14px;
+  padding-top: 23px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  display: flex;
+  position: fixed;
+  justify-content: center;
+
+  font-family: Inter;
+  font-weight: 400px;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0%;
+}
+
+.post-bottom .post-bottom__icon-container .button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

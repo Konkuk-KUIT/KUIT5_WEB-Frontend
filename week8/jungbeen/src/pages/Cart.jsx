@@ -37,6 +37,18 @@ const TotalPrice = styled.div`
   & span {
     font-size: 17px;
   }
+  & .priceIndex {
+    color: #8b95a1;
+  }
+  & .price {
+    color: #505967;
+  }
+  & .totalPrice {
+    color: #4e5968;
+  }
+  & .weightPrice {
+    font-weight: 600;
+  }
 `;
 const PayButton = styled.button`
   background-color: #d0dffb;
@@ -51,6 +63,15 @@ const PayDiv = styled.div`
   bottom: 34px;
   right: 24px;
   left: 24px;
+
+  & > p {
+    color: #6b7684;
+    text-align: center;
+    margin-bottom: 19px;
+  }
+`;
+const OrderedMenu = styled.div`
+  padding-top: 26px;
 `;
 
 function Cart() {
@@ -59,46 +80,31 @@ function Cart() {
     <Main>
       <Header headerBtn={"주문취소"} to="/" />
       <Divider />
-      <div style={{ paddingTop: "26px" }}>
-        <StoreName
-          style={{
-            color: "#6b7684",
-            fontWeight: "700",
-            fontSize: "17px",
-            position: "relative",
-          }}
-        >
+      <OrderedMenu>
+        <StoreName>
           셀토리 한남점
           <NotEnough>최소금액 미달</NotEnough>
         </StoreName>
         {renderLists()}
         <div></div>
-      </div>
+      </OrderedMenu>
       <Divider />
       <TotalPrice>
         <p>
-          <span style={{ color: "#8b95a1" }}>주문금액</span>
-          <span style={{ color: "#505967" }}>10,600원</span>
+          <span className="priceIndex">주문금액</span>
+          <span className="price">10,600원</span>
         </p>
         <p>
-          <span style={{ color: "#8b95a1" }}>배달요금</span>
-          <span style={{ color: "#505967" }}>2,000원</span>
+          <span className="priceIndex">배달요금</span>
+          <span className="price">2,000원</span>
         </p>
         <p>
-          <span style={{ color: "#4e5968" }}>총 결제금액</span>
-          <span style={{ fontWeight: "600", color: "#4e5968" }}>12,600원</span>
+          <span className="totalprice">총 결제금액</span>
+          <span className="totalprice weightPrice">12,600원</span>
         </p>
       </TotalPrice>
       <PayDiv>
-        <p
-          style={{
-            color: "#6b7684",
-            textAlign: "center",
-            marginBottom: "19px",
-          }}
-        >
-          최소 주문금액 13,000원
-        </p>
+        <p>최소 주문금액 13,000원</p>
         <PayButton>12,600원 결제하기</PayButton>
       </PayDiv>
     </Main>
