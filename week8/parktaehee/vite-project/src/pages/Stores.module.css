@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  width: 390px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 27px 24px 0 24px;
+}
+.salad {
+  margin: 15px 0 0 24px;
+}
+.addStoreForm {
+  padding: 20px;
+  padding-bottom: 110px;
+  border-top: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.inputRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.inputRow input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.addButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #45a049;
+}

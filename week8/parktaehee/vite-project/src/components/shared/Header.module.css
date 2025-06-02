@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  width: 390px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.img {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.cancel {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  cursor: pointer;
+  margin-right: 15px;
+}

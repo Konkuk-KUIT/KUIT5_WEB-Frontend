@@ -1,0 +1,48 @@
+.store-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.store-thumbnail {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #e5e5e5;
+  margin-right: 12px;
+}
+
+.store-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.store-line1 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.store-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #212121;
+}
+
+.store-rating {
+  font-size: 13px;
+  color: #6B7684;
+}
+
+.store-rating .star {
+  color: #fbbf24; /* 노란 별색 */
+  font-size: 13px;
+}
+
+.store-meta {
+  font-size: 13px;
+  color: #8B95A1;
+}

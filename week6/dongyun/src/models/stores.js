@@ -17,7 +17,7 @@ export const storeList = [
         name: "샐로리 한남점",
         rating: 4.9,
         reviews: 3919,
-        deliveryTime: "15~25분",
+        deliveryTime: "15분~25분",
         deliveryFee: 2000,
         minOrder: 13000,
         purMethod: "토스결제만 현장결제 안됨"
@@ -27,7 +27,7 @@ export const storeList = [
         name: "샐로리 한남점",
         rating: 4.9,
         reviews: 3919,
-        deliveryTime: "15~25분",
+        deliveryTime: "15분~25분",
         deliveryFee: 2000,
         minOrder: 13000,
         purMethod: "토스결제만 현장결제 안됨"
@@ -37,7 +37,7 @@ export const storeList = [
         name: "샐로리 한남점",
         rating: 4.9,
         reviews: 3919,
-        deliveryTime: "15~25분",
+        deliveryTime: "15분~25분",
         deliveryFee: 2000,
         minOrder: 13000,
         purMethod: "토스결제만 현장결제 안됨"
@@ -47,7 +47,7 @@ export const storeList = [
         name: "샐로리 한남점",
         rating: 4.9,
         reviews: 3919,
-        deliveryTime: "15~25분",
+        deliveryTime: "15분~25분",
         deliveryFee: 2000,
         minOrder: 13000,
         purMethod: "토스결제만 현장결제 안됨"
@@ -57,7 +57,27 @@ export const storeList = [
         name: "샐로리 한남점",
         rating: 4.9,
         reviews: 3919,
-        deliveryTime: "15~25분",
+        deliveryTime: "15분~25분",
+        deliveryFee: 2000,
+        minOrder: 13000,
+        purMethod: "토스결제만 현장결제 안됨"
+    },
+    {
+        rank: 6,
+        name: "샐로리 한남점",
+        rating: 4.9,
+        reviews: 3919,
+        deliveryTime: "15분~25분",
+        deliveryFee: 2000,
+        minOrder: 13000,
+        purMethod: "토스결제만 현장결제 안됨"
+    },
+    {
+        rank: 7,
+        name: "샐로리 한남점",
+        rating: 4.9,
+        reviews: 3919,
+        deliveryTime: "15분~25분",
         deliveryFee: 2000,
         minOrder: 13000,
         purMethod: "토스결제만 현장결제 안됨"
