@@ -1,19 +1,5 @@
 import React from "react";
-
-interface PostItem {
-  title: string;
-  image: string;
-  location: string;
-  timeAgo: string;
-  price: string;
-  comments: number;
-  likes: number;
-  isSold: boolean;
-}
-
-interface ContentProps {
-  items: PostItem[];
-}
+import { ContentProps } from "../models/MarketModels";
 
 const Content: React.FC<ContentProps> = ({ items }) => {
   return (

@@ -54,4 +54,19 @@ const marketModel = {
   ],
 };
 
+export interface PostItem {
+  title: string;
+  image: string;
+  location: string;
+  timeAgo: string;
+  price: string;
+  comments: number;
+  likes: number;
+  isSold: boolean;
+}
+
+export interface ContentProps {
+  items: PostItem[];
+}
+
 export default marketModel;
